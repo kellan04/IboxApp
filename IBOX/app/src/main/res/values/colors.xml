@@ -8,4 +8,15 @@
     <color name="cursorTextColor">#B6B6B6</color>
     <color name="colorButton">#FF4081</color>
     <color name="colorTextView">#03A9F4</color>
+
+    <color name="white_fab">#fafafa</color>
+    <color name="white_pressed_fab">#f1f1f1</color>
+    <color name="pink_fab">#e91e63</color>
+    <color name="pink_pressed_fab">#ec407a</color>
+    <color name="half_black_fab">#808080</color>
+    <color name="half_white_fab">#FFFFFF</color>
+    <color name="black_semi_transparentk_fab">#B2000000</color>
+    <color name="backgroundk_fab">#e5e5e5</color>
+    <color name="blue_semi_transparent_fab">#805677fc</color>
+    <color name="blue_semi_transparent_pressed_fab">#80738ffe</color>
 </resources>

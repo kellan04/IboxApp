@@ -2,15 +2,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iboxapp.ibox.IboxFragment">
+    tools:context="com.iboxapp.ibox.IboxFragment"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <!-- TODO: Update blank fragment layout -->
-    <android.support.v7.widget.RecyclerView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recycler_view"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_height="match_parent" >
+
+        <android.support.v7.widget.RecyclerView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/multiple_actions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            fab:fab_addButtonColorNormal="@color/pink_fab"
+            fab:fab_addButtonColorPressed="@color/pink_pressed_fab"
+            fab:fab_addButtonPlusIconColor="@color/half_white_fab"
+            fab:fab_labelStyle="@style/menu_labels_style"
+            app:layout_behavior="com.iboxapp.ibox.widget.ScrollAwareFABBehavior"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="right|bottom">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/action_a"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_colorNormal="@color/white_fab"
+                fab:fab_title="Action A"
+                fab:fab_colorPressed="@color/white_pressed_fab"
+                fab:fab_size="mini" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/action_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_colorNormal="@color/white_fab"
+                fab:fab_title="Action B"
+                fab:fab_colorPressed="@color/white_pressed_fab"
+                fab:fab_size="mini" />
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
 
 </FrameLayout>

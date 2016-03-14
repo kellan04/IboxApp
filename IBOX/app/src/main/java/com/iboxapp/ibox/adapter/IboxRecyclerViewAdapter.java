@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.iboxapp.ibox.R;
@@ -68,10 +69,14 @@ public class IboxRecyclerViewAdapter extends RecyclerView.Adapter<IboxRecyclerVi
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public CardView mCardView;
         public TextView mTextView;
+        public ImageView mImageView;
+
         public ViewHolder(View view){
             super(view);
             mCardView = (CardView) view.findViewById(R.id.cv_item);
             mTextView = (TextView) mCardView.findViewById(R.id.text_view_hp);
+            mImageView = (ImageView) mCardView.findViewById(R.id.image_view_hp);
+
 
         }
     }

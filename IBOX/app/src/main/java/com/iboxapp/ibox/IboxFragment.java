@@ -15,6 +15,9 @@ import android.widget.Toast;
 import com.iboxapp.ibox.adapter.IboxRecyclerViewAdapter;
 import com.iboxapp.ibox.ui.MyScrollingActivity;
 
+import com.getbase.floatingactionbutton.FloatingActionButton;
+import com.getbase.floatingactionbutton.FloatingActionsMenu;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,6 +35,7 @@ public class IboxFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLayoutManager;
     private IboxRecyclerViewAdapter mAdapter;
+    private FloatingActionsMenu menuMultipleActions;
 
     public IboxFragment() {
         // Required empty public constructor
@@ -89,7 +93,14 @@ public class IboxFragment extends Fragment {
         // 设置item动画
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        initfab(view);
+
         return view;
+    }
+
+    private void initfab(View view) {
+
+        menuMultipleActions = (FloatingActionsMenu) view.findViewById(R.id.multiple_actions);
     }
 
 }

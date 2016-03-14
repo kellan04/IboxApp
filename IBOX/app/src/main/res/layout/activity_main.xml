@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:fitsSystemWindows="true">
+    android:fitsSystemWindows="true"
+    xmlns:fab="http://schemas.android.com/apk/res-auto" >
     <!-- 可保证toolbar在状态栏的下方，而不与状态栏重叠 -->
 
 
@@ -22,10 +23,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-
+            android:orientation="vertical" >
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/viewpager"
@@ -34,14 +32,6 @@
         </LinearLayout>
 
 
-
-        <FrameLayout
-            android:id="@+id/frame_content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/appbar"
-            android:scrollbars="none"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView

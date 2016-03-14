@@ -2,12 +2,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iboxapp.ibox.IbuyFragment">
+    tools:context="com.iboxapp.ibox.IboxFragment"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent" >
+
+        <android.support.v7.widget.RecyclerView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/multiple_actions"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            fab:fab_addButtonColorNormal="@color/pink_fab"
+            fab:fab_addButtonColorPressed="@color/pink_pressed_fab"
+            fab:fab_addButtonPlusIconColor="@color/half_white_fab"
+            fab:fab_labelStyle="@style/menu_labels_style"
+            android:layout_marginBottom="40dp"
+            android:layout_gravity="right|center_vertical">
+
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    </android.support.design.widget.CoordinatorLayout>
 
 </FrameLayout>
