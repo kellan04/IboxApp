@@ -46,9 +46,9 @@ public class IboxRecyclerViewAdapter extends RecyclerView.Adapter<IboxRecyclerVi
              * 目的是减少对象的创建，如果已经为view设置了click监听事件,就不用重复设置了
              * 不然每次调用onBindViewHolder方法，都会创建两个监听事件对象，增加了内存的开销
              */
-            if(!viewHolder.mImageView.hasOnClickListeners()) {
+            if(!viewHolder.mCardView.hasOnClickListeners()) {
                 Log.e("ListAdapter", "setOnClickListener");
-                viewHolder.mImageView.setOnClickListener(new View.OnClickListener() {
+                viewHolder.mCardView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         int pos = viewHolder.getPosition();
