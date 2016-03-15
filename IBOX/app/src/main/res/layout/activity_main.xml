@@ -16,14 +16,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
-            android:id="@+id/appbar_toolbar"
-            layout="@layout/activity_main_toolbar" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" >
+
+            <include
+                android:id="@+id/appbar_toolbar"
+                layout="@layout/activity_main_toolbar" />
 
             <android.support.v4.view.ViewPager
                 android:id="@+id/viewpager"
@@ -31,6 +34,13 @@
                 android:layout_height="match_parent" />
         </LinearLayout>
 
+        <!--<FrameLayout
+            android:id="@+id/frame_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appbar_toolbar"
+            android:scrollbars="none"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
 
     </android.support.design.widget.CoordinatorLayout>
 

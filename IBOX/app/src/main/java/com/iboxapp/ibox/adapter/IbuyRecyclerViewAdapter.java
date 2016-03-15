@@ -13,16 +13,16 @@ import android.widget.TextView;
 import com.iboxapp.ibox.R;
 
 /**
- * Created by gongchen on 2016/3/12.
+ * Created by gongchen on 2016/3/15.
  */
-public class IboxRecyclerViewAdapter extends RecyclerView.Adapter<IboxRecyclerViewAdapter.ViewHolder>  {
+public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<IbuyRecyclerViewAdapter.ViewHolder> {
 
     private final LayoutInflater mLayoutInflater;
     private final Context mContext;
     private String[] datas;
     private OnItemClickListener mOnItemClickListener;
 
-    public IboxRecyclerViewAdapter(Context context) {
+    public IbuyRecyclerViewAdapter(Context context) {
         datas = context.getResources().getStringArray(R.array.datas);
         mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
@@ -30,7 +30,7 @@ public class IboxRecyclerViewAdapter extends RecyclerView.Adapter<IboxRecyclerVi
     //创建新View，被LayoutManager所调用
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View view = mLayoutInflater.inflate(R.layout.ibox_cardview,viewGroup,false);
+        View view = mLayoutInflater.inflate(R.layout.ibuy_cardview,viewGroup,false);
         ViewHolder vh = new ViewHolder(view);
         return vh;
     }
@@ -73,9 +73,9 @@ public class IboxRecyclerViewAdapter extends RecyclerView.Adapter<IboxRecyclerVi
 
         public ViewHolder(View view){
             super(view);
-            mCardView = (CardView) view.findViewById(R.id.cv_item_box);
-            mTextView = (TextView) mCardView.findViewById(R.id.text_card_box);
-            mImageView = (ImageView) mCardView.findViewById(R.id.image_card_box);
+            mCardView = (CardView) view.findViewById(R.id.cv_item_buy);
+            mTextView = (TextView) mCardView.findViewById(R.id.text_card_buy);
+            mImageView = (ImageView) mCardView.findViewById(R.id.image_card_buy);
 
 
         }

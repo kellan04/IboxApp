@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cv_item"
+    android:id="@+id/cv_item_buy"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -70,14 +71,14 @@
             android:layout_height="match_parent">
 
             <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/image_view_hp"
+                android:id="@+id/image_card_buy"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/test" />
 
             <TextView
-                android:id="@+id/text_view_hp"
+                android:id="@+id/text_card_buy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"

@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.iboxapp.ibox.adapter.IboxRecyclerViewAdapter;
+import com.iboxapp.ibox.adapter.IbuyRecyclerViewAdapter;
 import com.iboxapp.ibox.ui.MyScrollingActivity;
 
 
@@ -31,7 +32,7 @@ public class IbuyFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLayoutManager;
-    private IboxRecyclerViewAdapter mAdapter;
+    private IbuyRecyclerViewAdapter mAdapter;
 
 
     public IbuyFragment() {
@@ -68,17 +69,17 @@ public class IbuyFragment extends Fragment {
         // Inflate the layout for this fragment
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_ibuy, container, false);
-        mRecyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerView)view.findViewById(R.id.recycler_view_buy);
         //创建默认的线性LayoutManager
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
         //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
         mRecyclerView.setHasFixedSize(true);
         //创建并设置Adapter
-        mAdapter = new IboxRecyclerViewAdapter(getActivity());
+        mAdapter = new IbuyRecyclerViewAdapter(getActivity());
         mRecyclerView.setAdapter(mAdapter);
 
-        mAdapter.setOnItemClickListener(new IboxRecyclerViewAdapter.OnItemClickListener() {
+        mAdapter.setOnItemClickListener(new IbuyRecyclerViewAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
                 Toast.makeText(getActivity(), "Click", Toast.LENGTH_SHORT).show();
