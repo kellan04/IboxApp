@@ -15,13 +15,43 @@ public class MyScrollingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_scrolling);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.scrolling_toolbar);
-        setSupportActionBar(toolbar);
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        toolBarLayout.setTitle(getTitle());
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        int key = 0;
+        //接收时
+        if (getIntent() != null) {
+            key = getIntent().getIntExtra("key", 0);
+        }
+        if (key == 1) {
+            initBox();
+        } else if (key == 3) {
+            initBuy();
+        }
+
+
+    }
+
+    private void initBox() {
+        setContentView(R.layout.activity_box_scrolling);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.box_scrolling_toolbar);
+        setSupportActionBar(toolbar);
+        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.box_toolbar_layout);
+        toolBarLayout.setTitle(getTitle());
+        /*fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });*/
+    }
+
+    private void initBuy() {
+        setContentView(R.layout.activity_buy_scrolling);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.buy_scrolling_toolbar);
+        setSupportActionBar(toolbar);
+        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.buy_toolbar_layout);
+        toolBarLayout.setTitle(getTitle());
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_buy);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -7,11 +7,11 @@
         <item
             android:id="@+id/navigation_item_followed_users"
             android:icon="@mipmap/ic_person_add_black_36dp"
-            android:title="@string/navigation_followed_users" />
+            android:title="@string/navigation_userinfo" />
         <item
             android:id="@+id/navigation_item_followed_channel"
             android:icon="@mipmap/ic_public_black_36dp"
-            android:title="@string/navigation_followed_channels" />
+            android:title="@string/navigation_photos" />
         <item
             android:id="@+id/navigation_item_collection"
             android:icon="@mipmap/ic_bookmark_black_36dp"
@@ -19,7 +19,7 @@
         <item
             android:id="@+id/navigation_item_favor"
             android:icon="@mipmap/ic_favorite_black_36dp"
-            android:title="@string/navigation_favor" />
+            android:title="@string/navigation_trade" />
         <item
             android:id="@+id/navigation_item_sys_set"
             android:icon="@mipmap/ic_build_black_36dp"

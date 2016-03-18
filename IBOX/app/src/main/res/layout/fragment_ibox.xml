@@ -13,7 +13,6 @@
         android:layout_height="match_parent" >
 
         <android.support.v7.widget.RecyclerView
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/recycler_view_box"
@@ -30,30 +29,31 @@
             fab:fab_labelStyle="@style/menu_labels_style"
             app:layout_behavior="com.iboxapp.ibox.widget.ScrollAwareFABBehavior"
             android:layout_marginBottom="10dp"
-            android:layout_gravity="right|bottom">
+            android:layout_gravity="right|bottom" >
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/action_a"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fab_colorNormal="@color/white_fab"
-                fab:fab_title="Action A"
+                fab:fab_title="筛选"
                 fab:fab_colorPressed="@color/white_pressed_fab"
-                fab:fab_size="mini" />
+                fab:fab_size="mini"
+                fab:fab_icon="@mipmap/ic_find_replace_black_24dp" />
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/action_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fab_colorNormal="@color/white_fab"
-                fab:fab_title="Action B"
+                fab:fab_title="编辑"
                 fab:fab_colorPressed="@color/white_pressed_fab"
-                fab:fab_size="mini" />
+                fab:fab_size="mini"
+                fab:fab_icon="@mipmap/ic_edit_black_24dp"/>
 
         </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     </android.support.design.widget.CoordinatorLayout>
-
 
 
 </FrameLayout>

@@ -11,18 +11,27 @@
     <string name="hint_password">请输入密码</string>
     <string name="login_button_forget_password">忘记用户名或密码？</string>
     <string name="forget_password">忘记密码</string>
-    <string name="login">登录</string>
+    <string name="login">登 录</string>
     <string name="new_register">新用户注册</string>
     <string name="text_error_phone_null">号码不能为空</string>
     <string name="text_error_password_null">密码不能为空</string>
     <string name="error_login_error">登陆失败，请确认网络和用户名密码后重试</string>
 
+    <!-- Strings related to register -->
+    <string name="register">注 册</string>
+    <string name="hint_password2">请再次输入密码</string>
+    <string name="return_login">返回登录</string>
+
+    <!-- Strings related to forget_password -->
+    <string name="get_code">获取验证码</string>
+    <string name="hint_code">请输入验证码</string>
+    <string name="modify_password">确认修改</string>
+
     <!-- Strings related to NavigationView -->
     <string name="navigation_userinfo">用户信息</string>
     <string name="navigation_collection">收藏</string>
-    <string name="navigation_favor">偏好设置</string>
-    <string name="navigation_followed_users">关注人列表</string>
-    <string name="navigation_followed_channels">关注频道列表</string>
+    <string name="navigation_photos">照片</string>
+    <string name="navigation_trade">交易记录</string>
     <string name="navigation_sys_set">系统设置</string>
     <string name="navigation_about">关于</string>
     <string name="drawer_open">Open</string>

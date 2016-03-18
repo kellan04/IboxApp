@@ -13,12 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <ImageView
-                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/image_card_box"
                 android:src="@drawable/test"
                 android:scaleType="centerCrop"
@@ -30,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|bottom"
-                android:gravity="center_horizontal"
+                android:gravity="center_vertical"
                 android:textStyle="bold"
                 android:textSize="25sp"
                 android:text="My super text"
