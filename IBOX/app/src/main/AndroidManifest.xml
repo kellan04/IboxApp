@@ -16,15 +16,35 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.RegisterActivity" />
-        <activity android:name=".ui.ForgetPasswordActivity" />
-        <activity android:name=".ui.ForgetPassword2Activity" />
-        <activity android:name=".ui.DrawerActivity" />
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:parentActivityName=".ui.LoginActivity" />
+        <activity
+            android:name=".ui.ForgetPasswordActivity"
+            android:parentActivityName=".ui.LoginActivity" />
+        <activity
+            android:name=".ui.ForgetPassword2Activity"
+            android:parentActivityName=".ui.ForgetPasswordActivity" />
         <activity
             android:name=".ui.MyScrollingActivity"
             android:label="@string/title_activity_my_scrolling"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ui.MessageActivity"></activity>
+
+        <activity android:name=".ui.MessageActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.SettingUserInfoActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.SettingSystemActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.SettingPhotosActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.SettingCollectActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.SettingTradeActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ui.SettingAboutActivity"
+            android:parentActivityName=".MainActivity" />
+
     </application>
 
 </manifest>

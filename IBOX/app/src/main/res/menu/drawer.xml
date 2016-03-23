@@ -5,19 +5,19 @@
     <group android:checkableBehavior="single">
 
         <item
-            android:id="@+id/navigation_item_followed_users"
-            android:icon="@mipmap/ic_person_add_black_36dp"
+            android:id="@+id/navigation_item_userinfo"
+            android:icon="@mipmap/ic_account_circle_black_36dp"
             android:title="@string/navigation_userinfo" />
         <item
-            android:id="@+id/navigation_item_followed_channel"
-            android:icon="@mipmap/ic_public_black_36dp"
+            android:id="@+id/navigation_item_photos"
+            android:icon="@mipmap/ic_camera_alt_black_36dp"
             android:title="@string/navigation_photos" />
         <item
             android:id="@+id/navigation_item_collection"
             android:icon="@mipmap/ic_bookmark_black_36dp"
             android:title="@string/navigation_collection" />
         <item
-            android:id="@+id/navigation_item_favor"
+            android:id="@+id/navigation_item_trade"
             android:icon="@mipmap/ic_favorite_black_36dp"
             android:title="@string/navigation_trade" />
         <item

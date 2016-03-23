@@ -1,10 +1,8 @@
 package com.iboxapp.ibox;
 
-import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.LayoutInflaterCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -18,10 +16,13 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.iboxapp.ibox.adapter.MyPagerAdapter;
-import com.iboxapp.ibox.ui.DrawerActivity;
 import com.iboxapp.ibox.ui.MessageActivity;
-import com.mikepenz.iconics.context.IconicsContextWrapper;
-import com.mikepenz.iconics.context.IconicsLayoutInflater;
+import com.iboxapp.ibox.ui.SettingAboutActivity;
+import com.iboxapp.ibox.ui.SettingCollectActivity;
+import com.iboxapp.ibox.ui.SettingPhotosActivity;
+import com.iboxapp.ibox.ui.SettingSystemActivity;
+import com.iboxapp.ibox.ui.SettingTradeActivity;
+import com.iboxapp.ibox.ui.SettingUserInfoActivity;
 
 public class MainActivity extends AppCompatActivity implements BackHandledFragment.BackHandledInterface{
 
@@ -103,16 +104,24 @@ public class MainActivity extends AppCompatActivity implements BackHandledFragme
                     @Override
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         switch (menuItem.getItemId()) {
+                            case R.id.navigation_item_userinfo:
+                                switchToUserInfo();
+                                break;
+                            case R.id.navigation_item_photos:
+                                switchToPhotos();
+                                break;
                             case R.id.navigation_item_collection:
                                 switchToCollection();
                                 break;
-//                            case R.id.navigation_item_blog:
-//                                switchToBlog();
-//                                break;
-//                            case R.id.navigation_item_about:
-//                                switchToAbout();
-//                                break;
-
+                            case R.id.navigation_item_trade:
+                                switchToTrade();
+                                break;
+                            case R.id.navigation_item_sys_set:
+                                switchToSystemSet();
+                                break;
+                            case R.id.navigation_item_about:
+                                switchToAbout();
+                                break;
                         }
                         menuItem.setChecked(true);
                         mDrawerLayout.closeDrawers();
@@ -122,15 +131,34 @@ public class MainActivity extends AppCompatActivity implements BackHandledFragme
     }
 
     private void switchToUserInfo() {
-        Intent intent = new Intent(this, DrawerActivity.class);
-        intent.putExtra("UserInfo", R.id.navigation_item_collection);
+        Intent intent = new Intent(this, SettingUserInfoActivity.class);
         this.startActivity(intent);
 
     }
 
+    private void switchToPhotos() {
+        Intent intent = new Intent(this, SettingPhotosActivity.class);
+        this.startActivity(intent);
+    }
+
     private void switchToCollection() {
-        Intent intent = new Intent(this, DrawerActivity.class);
+        Intent intent = new Intent(this, SettingCollectActivity.class);
         intent.putExtra("UserInfo", R.id.navigation_item_collection);
+        this.startActivity(intent);
+    }
+
+    private void switchToTrade() {
+        Intent intent = new Intent(this, SettingTradeActivity.class);
+        this.startActivity(intent);
+    }
+
+    private void switchToSystemSet() {
+        Intent intent = new Intent(this, SettingSystemActivity.class);
+        this.startActivity(intent);
+    }
+
+    private void switchToAbout() {
+        Intent intent = new Intent(this, SettingAboutActivity.class);
         this.startActivity(intent);
     }
 

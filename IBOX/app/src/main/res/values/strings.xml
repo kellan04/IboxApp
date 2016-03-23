@@ -11,6 +11,7 @@
     <string name="hint_password">请输入密码</string>
     <string name="login_button_forget_password">忘记用户名或密码？</string>
     <string name="forget_password">忘记密码</string>
+    <string name="update_password">确认更改密码</string>
     <string name="login">登 录</string>
     <string name="new_register">新用户注册</string>
     <string name="text_error_phone_null">号码不能为空</string>
@@ -28,7 +29,7 @@
     <string name="modify_password">确认修改</string>
 
     <!-- Strings related to NavigationView -->
-    <string name="navigation_userinfo">用户信息</string>
+    <string name="navigation_userinfo">个人信息</string>
     <string name="navigation_collection">收藏</string>
     <string name="navigation_photos">照片</string>
     <string name="navigation_trade">交易记录</string>

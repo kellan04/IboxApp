@@ -3,6 +3,7 @@ package com.iboxapp.ibox.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -18,11 +19,17 @@ public class ForgetPasswordActivity extends AppCompatActivity {
     private EditText  code;
     private Button get_code;
     private Button forget_password;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forget_password);
+
+        mToolbar = (Toolbar) findViewById(R.id.simple_toolbar);
+        mToolbar.setTitle(getResources().getString(R.string.forget_password));
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         phone = (EditText)findViewById(R.id.edit_forget_phoneNum);
         code = (EditText)findViewById(R.id.edit_code);

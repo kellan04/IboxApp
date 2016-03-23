@@ -7,4 +7,8 @@
     <dimen name="text_margin">16dp</dimen>
 
     <dimen name="appbar_main">160dp</dimen>
+
+    <dimen name="text_height">60dp</dimen>
+    <dimen name="text_underline1">2dp</dimen>
+    <dimen name="text_underline2">13dp</dimen>
 </resources>

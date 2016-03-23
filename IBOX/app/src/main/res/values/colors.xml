@@ -6,6 +6,8 @@
     <color name="colorAccent2">#FFC107</color>
 
     <color name="white">#FFFFFF</color>
+    <color name="black">#010101</color>
+
     <color name="circle_textview_red">#CD4450</color>
     <color name="cursorTextColor">#B6B6B6</color>
     <color name="colorButton">#1976D2</color>
