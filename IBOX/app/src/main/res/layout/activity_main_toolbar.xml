@@ -28,6 +28,6 @@
         app:tabBackground="?attr/colorPrimary"
         app:tabSelectedTextColor="@color/white"
         app:tabTextColor="@color/cursorTextColor"
-        android:fillViewport="false" />
-
+        android:fillViewport="false"
+    app:tabIndicatorColor="@color/colorAccent2"/>
 </android.support.design.widget.AppBarLayout>

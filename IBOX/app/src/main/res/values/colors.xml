@@ -3,15 +3,20 @@
     <color name="colorPrimary">#F44336</color>
     <color name="colorPrimaryDark">#D32F2F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent2">#FFC107</color>
 
     <color name="white">#FFFFFF</color>
+    <color name="circle_textview_red">#CD4450</color>
     <color name="cursorTextColor">#B6B6B6</color>
-    <color name="colorButton">#FF4081</color>
-    <color name="colorTextView">#03A9F4</color>
+    <color name="colorButton">#1976D2</color>
+    <color name="colorButton_login">#F44336</color>
+    <color name="colorButton_register">#E91E63</color>
+    <color name="colorTextView">#fafafa</color>
+    <color name="colorTextView2">#1976D2</color>
 
     <color name="white_fab">#fafafa</color>
     <color name="white_pressed_fab">#f1f1f1</color>
-    <color name="pink_fab">#e91e63</color>
+    <color name="pink_fab">#E91E63</color>
     <color name="pink_pressed_fab">#ec407a</color>
     <color name="half_black_fab">#808080</color>
     <color name="half_white_fab">#FFFFFF</color>
@@ -19,4 +24,6 @@
     <color name="backgroundk_fab">#e5e5e5</color>
     <color name="blue_semi_transparent_fab">#805677fc</color>
     <color name="blue_semi_transparent_pressed_fab">#80738ffe</color>
+
+
 </resources>

@@ -86,6 +86,7 @@ public class IboxFragment extends Fragment {
                 Toast.makeText(getActivity(), "Click", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(getActivity(), MyScrollingActivity.class);
+                intent.putExtra("key", 1);
                 getActivity().startActivity(intent);
             }
         });

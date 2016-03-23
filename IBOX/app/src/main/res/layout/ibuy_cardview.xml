@@ -6,7 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    card_view:cardCornerRadius="4dp">
+    card_view:cardCornerRadius="4dp"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,13 +18,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="#ffffff" >
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_launcher" />
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/image_button_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_colorNormal="@color/white_fab"
+                fab:fab_colorPressed="@color/white_pressed_fab"
+                fab:fab_size="mini"
+                fab:fab_icon="@mipmap/ic_launcher"/>
 
             <TextView
                 android:id="@+id/text_view_username"
@@ -66,11 +72,11 @@
         </LinearLayout>
 
 
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+            <ImageView
                 android:id="@+id/image_card_buy"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
@@ -82,15 +88,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:layout_gravity="bottom"
-                android:background="#e0e2d4d4"
+                android:layout_gravity="center_horizontal|bottom"
+                android:gravity="center_vertical"
+                android:background="#b0ffffff"
                 android:text="Sns x Reebok Insta Pump.."
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
 
         </FrameLayout>
-
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -114,11 +120,12 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="联系卖家"
-                android:id="@+id/button"
-                android:textColor="#fafafa"
+                android:textSize="15sp"
+                android:id="@+id/button_connect"
+                android:textColor="@color/colorTextView"
                 android:textStyle="bold"
                 android:layout_alignParentRight="true"
-                android:background="#363674"/>
+                android:background="@color/colorButton"/>
 
 
         </RelativeLayout>

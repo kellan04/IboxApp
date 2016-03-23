@@ -1,11 +1,21 @@
 package com.iboxapp.ibox;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
+import com.iboxapp.ibox.adapter.IshowRecyclerViewAdapter;
+import com.iboxapp.ibox.ui.MyScrollingActivity;
+
 
 
 /**
@@ -21,6 +31,9 @@ public class IshowFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
 
+    private RecyclerView mRecyclerView;
+    private LinearLayoutManager mLayoutManager;
+    private IshowRecyclerViewAdapter mAdapter;
 
     public IshowFragment() {
         // Required empty public constructor
@@ -54,7 +67,34 @@ public class IshowFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ishow, container, false);
+        View view = inflater.inflate(R.layout.fragment_ishow, container, false);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view_show);
+        //创建默认的线性LayoutManager
+        mLayoutManager = new LinearLayoutManager(getActivity());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        //添加头部
+        RecyclerViewHeader header = (RecyclerViewHeader) view.findViewById(R.id.show_recyclerview_header);
+        header.attachTo(mRecyclerView, true);
+        //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
+        mRecyclerView.setHasFixedSize(true);
+        //创建并设置Adapter
+        mAdapter = new IshowRecyclerViewAdapter(getActivity());
+        mRecyclerView.setAdapter(mAdapter);
+
+        mAdapter.setOnItemClickListener(new IshowRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Toast.makeText(getActivity(), "Click", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getActivity(), MyScrollingActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        // 设置item动画
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        return view;
     }
 
 }

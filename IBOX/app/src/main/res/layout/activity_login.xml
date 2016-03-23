@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.android.mddemo.LoginActivity"
     android:orientation="vertical">
 
     <ProgressBar
@@ -57,7 +55,7 @@
         android:text="@string/login"
         android:textSize="22dp"
         android:textAppearance="?android:attr/textAppearanceLargeInverse"
-        android:background="@color/colorButton"
+        android:background="@color/colorButton_login"
         android:id="@+id/login_button"
         android:layout_gravity="center_horizontal" />
 
@@ -72,7 +70,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/forget_password"
-            android:textColor="@color/colorTextView"
+            android:textColor="@color/colorTextView2"
             android:id="@+id/textview_forgetPassword"
             android:clickable="true"
             android:layout_alignParentTop="true"
@@ -84,7 +82,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="@string/new_register"
-            android:textColor="@color/colorTextView"
+            android:textColor="@color/colorTextView2"
             android:id="@+id/textview_register"
             android:clickable="true"
             android:layout_alignParentTop="true"
