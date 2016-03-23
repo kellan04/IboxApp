@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
 
-    private List<Bean> beans;
+    public List<Bean> beans;
 
     public MessageRecyclerViewAdapter(List<Bean> beans) {
         super();

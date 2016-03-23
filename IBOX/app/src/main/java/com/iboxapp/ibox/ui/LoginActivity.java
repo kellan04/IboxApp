@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(phone.getText().toString().equals(null) || password.getText().toString().equals(null)){
+                if(phone.getText().toString().trim().length() == 0 || password.getText().toString().trim().length() == 0) {
                     Toast toast = Toast.makeText(getApplicationContext(), "手机号或密码不能为空", Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
