@@ -27,5 +27,10 @@
     <color name="blue_semi_transparent_fab">#805677fc</color>
     <color name="blue_semi_transparent_pressed_fab">#80738ffe</color>
 
+    <color name="colorButton_unsell">#CBCBCB</color>
+    <color name="colorTextView_unsell">#CC3300</color>
+    <color name="colorButton_modify_goods">#2194F8</color>
+    <color name="colorTextView_modify_goods">#FFFFFF</color>
+
 
 </resources>

@@ -5,12 +5,15 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
 import com.iboxapp.ibox.R;
 import com.iboxapp.ibox.adapter.MessageRecyclerViewAdapter;
 import com.iboxapp.ibox.tool.Bean;
+import com.iboxapp.ibox.widget.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,22 +22,25 @@ import io.github.codefalling.recyclerviewswipedismiss.SwipeDismissRecyclerViewTo
 public class MessageActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
+    private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_messgae);
 
+        mToolbar = (Toolbar) findViewById(R.id.simple_toolbar);
+        mToolbar.setTitle(getResources().getString(R.string.message_title));
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         // initData();
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mRecyclerView = (RecyclerView) findViewById(R.id.messgae_recyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setHasFixedSize(true);
 
-
-
         //初始化数据
         List<Bean> myDataset = new ArrayList<Bean>();
-
         myDataset.add(new Bean(Bean.X_TYPE, "user1"));
         myDataset.add(new Bean(Bean.X_TYPE, "user2"));
         myDataset.add(new Bean(Bean.X_TYPE, "user3"));
@@ -45,10 +51,13 @@ public class MessageActivity extends AppCompatActivity {
         myDataset.add(new Bean(Bean.X_TYPE, "user8"));
         myDataset.add(new Bean(Bean.X_TYPE, "user9"));
         myDataset.add(new Bean(Bean.X_TYPE, "user10"));
+
         //创建Adapter
         MessageRecyclerViewAdapter mAdapter = new MessageRecyclerViewAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        //添加分割线
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
 
         makeDismiss(mRecyclerView, mAdapter);
     }

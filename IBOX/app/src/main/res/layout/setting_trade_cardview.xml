@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_item_buy"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="4dp"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/image_card_trade"
+                android:src="@drawable/test"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="绝对限量 Vans x ..."
+                android:layout_marginLeft="100dp"
+                android:textSize="24sp"
+                android:id="@+id/trade_textView1"
+                android:layout_marginTop="3dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥ 100"
+                android:layout_marginLeft="100dp"
+                android:textSize="20sp"
+                android:textColor="#ff0000"
+                android:id="@+id/trade_textView2"
+                android:layout_marginTop="3dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="交易时间：2016-3-23\n交易类型：买进\n买家：张三"
+                android:layout_marginLeft="100dp"
+                android:textSize="18sp"
+                android:id="@+id/trade_textVie3"
+                android:layout_marginTop="3dp"/>
+
+
+        </LinearLayout>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/image_button_user_trade"
+            fab:fab_colorNormal="@color/white_fab"
+            fab:fab_colorPressed="@color/white_pressed_fab"
+            fab:fab_size="normal"
+            fab:fab_icon="@mipmap/ic_launcher"
+            android:layout_marginTop="130dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+
+
+</android.support.v7.widget.CardView>

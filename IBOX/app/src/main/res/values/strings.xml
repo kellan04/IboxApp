@@ -38,8 +38,34 @@
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
 
+    <!-- Strings related to Message -->
+    <string name="message_title">消息</string>
+
+    <!-- Strings related to Edit Things -->
+    <string name="edit_things_title">添加物品</string>
 
     <string name="press_again_exit_app">再按一次退出程序</string>
+
+    <!-- Strings related to show_goods -->
+    <string name="goods_title">高端无线蓝牙耳机</string>
+    <string name="unsell">未出售</string>
+    <string name="sell">已出售</string>
+    <string name="modify_goods">修改</string>
+    <string name="goods_num">数量</string>
+    <string name="goods_condition">成色</string>
+    <string name="goods_addr">所在地</string>
+    <string name="data_addr">杭州</string>
+    <string name="goods_intime">入手时间</string>
+    <string name="data_intime">2015-12-12</string>
+    <string name="goods_new_condition">全新</string>
+    <string name="goods_description">商品描述:</string>
+    <string name="data_description">全新国行仅拆封，带防伪码，大昌行货，送给女朋友的，她听了不到半天就收起来了，嫌弃耳机太大！配件包装片纸不少，佩戴舒适度，音质，做工均比H6上一个层次，12月12日购买，要的加我QQ，309714528，价格2350</string>
+    <string name="goods_comment">评论:</string>
+    <string name="data_comment_num">2</string>
+    <string name="more_comment">查看更多评论</string>
+    <string name="comment_name">小美</string>
+    <string name="comment_content">包邮350入手</string>
+    <string name="comment_time">45分钟前</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

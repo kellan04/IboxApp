@@ -7,12 +7,15 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.iboxapp.ibox.adapter.IboxRecyclerViewAdapter;
+import com.iboxapp.ibox.ui.EditThingsActivity;
+import com.iboxapp.ibox.ui.LoginActivity;
 import com.iboxapp.ibox.ui.MyScrollingActivity;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
@@ -35,7 +38,8 @@ public class IboxFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLayoutManager;
     private IboxRecyclerViewAdapter mAdapter;
-    private FloatingActionsMenu menuMultipleActions;
+    private FloatingActionsMenu menuMultipleButton;
+    private FloatingActionButton menuEditButton;
 
     public IboxFragment() {
         // Required empty public constructor
@@ -101,7 +105,16 @@ public class IboxFragment extends Fragment {
 
     private void initfab(View view) {
 
-        menuMultipleActions = (FloatingActionsMenu) view.findViewById(R.id.multiple_actions);
+        menuMultipleButton = (FloatingActionsMenu) view.findViewById(R.id.multiple_actions);
+        menuEditButton = (FloatingActionButton) view.findViewById(R.id.action_b);
+        menuEditButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                getActivity().startActivity(new Intent(getActivity(), EditThingsActivity.class));
+
+            }
+        });
     }
 
 }

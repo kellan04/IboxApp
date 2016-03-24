@@ -32,25 +32,22 @@ public class MyScrollingActivity extends AppCompatActivity {
 
     private void initBox() {
         setContentView(R.layout.activity_box_scrolling);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.box_scrolling_toolbar);
-        setSupportActionBar(toolbar);
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.box_scrolling_toolbar);
+        mToolbar.setTitle(getResources().getString(R.string.goods_title));
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.box_toolbar_layout);
-        toolBarLayout.setTitle(getTitle());
-        /*fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
     private void initBuy() {
         setContentView(R.layout.activity_buy_scrolling);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.buy_scrolling_toolbar);
-        setSupportActionBar(toolbar);
+        Toolbar mToolbar = (Toolbar) findViewById(R.id.buy_scrolling_toolbar);
+        mToolbar.setTitle(getResources().getString(R.string.goods_title));
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.buy_toolbar_layout);
-        toolBarLayout.setTitle(getTitle());
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_buy);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

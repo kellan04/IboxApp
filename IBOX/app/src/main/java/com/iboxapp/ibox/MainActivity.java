@@ -217,8 +217,8 @@ public class MainActivity extends AppCompatActivity implements BackHandledFragme
         switch (item.getItemId()) {
             case R.id.toolbar_message:
                 Toast.makeText(MainActivity.this, "toolbar_message", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, MessageActivity.class);
-                this.startActivity(intent);
+               /* Intent intent = new Intent(this, MessageActivity.class);
+                this.startActivity(intent);*/
                 break;
             case R.id.toolbar_search:
                 Toast.makeText(MainActivity.this, "toolbar_search", Toast.LENGTH_SHORT).show();

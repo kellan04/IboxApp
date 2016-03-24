@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <include
+        android:id="@+id/back_toolbar"
+        layout="@layout/simple_toolbar" />
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:id="@+id/imageView"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/goods"/>
+            <ImageButton
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:id="@+id/imageButton"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView"
+                android:layout_toEndOf="@+id/imageView"
+                android:src="@drawable/add"
+                android:scaleType="centerInside"/>
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:text="给出售的物品加个标题"
+                android:id="@+id/textView"
+                android:layout_below="@+id/imageView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/textView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView android:id="@+id/Text1"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:text="物品名称："
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </TextView>
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:id="@+id/editText1"
+                    android:hint="必填"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toRightOf="@+id/Text1"
+                    android:layout_toEndOf="@+id/Text1" />
+
+                <TextView android:id="@+id/Text3"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:text="物品成色："
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_below="@+id/Text1"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </TextView>
+                <Spinner android:id="@+id/Spinner01"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/Text1"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toRightOf="@+id/Text1"
+                    android:layout_toEndOf="@+id/Text1">
+                </Spinner>
+
+                <TextView android:id="@+id/Text2"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:text="物品价格："
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_below="@+id/Text3"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </TextView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText"
+                    android:hint="必填"
+                    android:layout_below="@+id/Text3"
+                    android:layout_toRightOf="@+id/Text2"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView android:id="@+id/Text4"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:text="物品数量："
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_below="@+id/Text2"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </TextView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText2"
+                    android:hint="必填"
+                    android:layout_below="@+id/Text2"
+                    android:layout_toRightOf="@+id/Text2"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView android:id="@+id/Text5"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:text="入手时间："
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_below="@+id/Text4"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </TextView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText3"
+                    android:hint="必填"
+                    android:layout_alignBottom="@+id/Text5"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toRightOf="@+id/Text5"
+                    android:layout_toEndOf="@+id/Text5" />
+
+                <TextView android:id="@+id/Text6"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:text="所在地："
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_below="@+id/Text5"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </TextView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText4"
+                    android:hint="必填"
+                    android:layout_below="@+id/editText3"
+                    android:layout_toRightOf="@+id/Text6"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView android:id="@+id/Text7"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:text="联系方式："
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_below="@+id/Text6"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </TextView>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText5"
+                    android:hint="必填"
+                    android:layout_below="@+id/editText4"
+                    android:layout_toRightOf="@+id/Text7"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView android:id="@+id/Text8"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="详细信息："
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:layout_below="@+id/Text7"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true">
+                </TextView>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/editText7"
+                    android:hint="message"
+                    android:layout_below="@+id/Text8"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+</LinearLayout>
