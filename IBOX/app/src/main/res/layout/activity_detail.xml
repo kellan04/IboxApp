@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <include
+        android:id="@+id/back_toolbar"
+        layout="@layout/simple_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_gravity="center_horizontal" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="活动详情"
+        android:id="@+id/textView19"
+        android:layout_gravity="center_horizontal"
+        android:textSize="40sp"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView5"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/test" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:layout_margin="10dp"
+                android:text="\t\t\t\t活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 "
+                android:id="@+id/textView20" />
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
+
