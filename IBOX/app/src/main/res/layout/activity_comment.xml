@@ -10,13 +10,14 @@
         layout="@layout/simple_toolbar" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/messgae_recyclerView"
+        android:id="@+id/recycler_view_comment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbars="vertical"
         android:layout_below="@+id/back_toolbar"
-        tools:listitem="@layout/message_item"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        tools:listitem="@layout/comment_item"/>
 
+
+    <!--<include layout="@layout/content_comment" />-->
 
 </RelativeLayout>

@@ -5,57 +5,62 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
 
 import com.iboxapp.ibox.R;
-import com.iboxapp.ibox.adapter.MessageRecyclerViewAdapter;
+import com.iboxapp.ibox.adapter.CommentRecyclerViewAdapter;
 import com.iboxapp.ibox.tool.Bean;
 import com.iboxapp.ibox.widget.DividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import io.github.codefalling.recyclerviewswipedismiss.SwipeDismissRecyclerViewTouchListener;
 
-public class MessageActivity extends AppCompatActivity {
+public class CommentActivity extends AppCompatActivity {
 
-    private RecyclerView mRecyclerView;
-    private Toolbar mToolbar;
-
+    private Toolbar toolbar;
+    private RecyclerView recyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_messgae);
-
-        mToolbar = (Toolbar) findViewById(R.id.simple_toolbar);
-        mToolbar.setTitle(getResources().getString(R.string.message_title));
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setContentView(R.layout.activity_comment);
 
         // initData();
-        mRecyclerView = (RecyclerView) findViewById(R.id.messgae_recyclerView);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerView.setHasFixedSize(true);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_comment);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
+
+        toolbar = (Toolbar) findViewById(R.id.back_toolbar);
+        toolbar.setTitle("评论");
+        setSupportActionBar(toolbar);
 
         //初始化数据
         List<Bean> myDataset = new ArrayList<Bean>();
-        myDataset.add(new Bean(Bean.Y_TYPE, "user1"));
-        myDataset.add(new Bean(Bean.Y_TYPE, "user2"));
-        myDataset.add(new Bean(Bean.Y_TYPE, "user3"));
+        myDataset.add(new Bean(Bean.X_TYPE, "评论1"));
+        myDataset.add(new Bean(Bean.X_TYPE, "评论2"));
+        myDataset.add(new Bean(Bean.X_TYPE, "评论3"));
+        myDataset.add(new Bean(Bean.X_TYPE, "评论4"));
+        myDataset.add(new Bean(Bean.X_TYPE, "评论5"));
+        myDataset.add(new Bean(Bean.X_TYPE, "评论6"));
+        myDataset.add(new Bean(Bean.X_TYPE, "评论7"));
+        myDataset.add(new Bean(Bean.X_TYPE, "评论8"));
+        myDataset.add(new Bean(Bean.X_TYPE, "评论9"));
+        myDataset.add(new Bean(Bean.X_TYPE, "评论10"));
 
         //创建Adapter
-        MessageRecyclerViewAdapter mAdapter = new MessageRecyclerViewAdapter(myDataset);
-        mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        CommentRecyclerViewAdapter mAdapter = new CommentRecyclerViewAdapter(myDataset);
+        recyclerView.setAdapter(mAdapter);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
         //添加分割线
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
 
-        makeDismiss(mRecyclerView, mAdapter);
+        makeDismiss(recyclerView, mAdapter);
     }
 
-    private void makeDismiss(final RecyclerView mRecyclerView, final MessageRecyclerViewAdapter mAdapter) {
+    private void makeDismiss(final RecyclerView mRecyclerView, final CommentRecyclerViewAdapter mAdapter) {
         SwipeDismissRecyclerViewTouchListener listener = new SwipeDismissRecyclerViewTouchListener.Builder(
                 mRecyclerView,
                 new SwipeDismissRecyclerViewTouchListener.DismissCallbacks() {

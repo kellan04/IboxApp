@@ -28,31 +28,17 @@
         <activity
             android:name=".ui.MyScrollingActivity"
             android:label="@string/title_activity_my_scrolling"
-            android:theme="@style/AppTheme"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ui.MessageActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ui.SettingUserInfoActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ui.SettingSystemActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ui.SettingPhotosActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ui.SettingCollectActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ui.SettingTradeActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ui.SettingAboutActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".ui.EditThingsActivity"
-            android:parentActivityName=".MainActivity" />
+            android:theme="@style/AppTheme" />
+        <activity android:name=".ui.MessageActivity" />
+        <activity android:name=".ui.SettingUserInfoActivity" />
+        <activity android:name=".ui.SettingSystemActivity" />
+        <activity android:name=".ui.SettingPhotosActivity" />
+        <activity android:name=".ui.SettingCollectActivity" />
+        <activity android:name=".ui.SettingTradeActivity" />
+        <activity android:name=".ui.SettingAboutActivity" />
+        <activity android:name=".ui.EditThingsActivity" />
+        <activity android:name=".ui.CommentActivity" />
+        <activity android:name=".ui.AddCommentActivity" />
     </application>
 
 </manifest>

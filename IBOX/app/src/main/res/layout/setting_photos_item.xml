@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Goods"
+        android:textSize="18sp"
+        android:id="@+id/photos_goods_name"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="10dp"/>
+
+    <ImageView
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:background="#B6B6B6"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/collect_dividing_line"
+        android:layout_below="@+id/photos_goods_name"
+        android:layout_marginLeft="10dp"/>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/imageView6"
+        android:src="@drawable/test"
+        android:layout_alignTop="@+id/imageView7"
+        android:layout_toLeftOf="@+id/imageView7"
+        android:layout_toStartOf="@+id/imageView7" />
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/imageView7"
+        android:src="@drawable/test"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/collect_dividing_line" />
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:id="@+id/imageView8"
+        android:src="@drawable/test"
+        android:layout_alignTop="@+id/imageView7"
+        android:layout_toRightOf="@+id/imageView7"
+        android:layout_toEndOf="@+id/imageView7" />
+</RelativeLayout>

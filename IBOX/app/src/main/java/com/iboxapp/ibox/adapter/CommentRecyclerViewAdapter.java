@@ -1,12 +1,10 @@
 package com.iboxapp.ibox.adapter;
 
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.iboxapp.ibox.R;
@@ -15,13 +13,13 @@ import com.iboxapp.ibox.tool.Bean;
 import java.util.List;
 
 /**
- * Created by gongchen on 2016/3/16.
+ * Created by gongchen on 2016/3/29.
  */
-public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class CommentRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     public List<Bean> beans;
 
-    public MessageRecyclerViewAdapter(List<Bean> beans) {
+    public CommentRecyclerViewAdapter(List<Bean> beans) {
         super();
         this.beans = beans;
     }
@@ -34,9 +32,9 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>
      */
     public class SystemViewHoler extends RecyclerView.ViewHolder {
         public TextView textView_name;
-       /* public TextView textView_content;
-        public TextView textView_time;
-        public TextView textView_amount;*/
+        /* public TextView textView_content;
+         public TextView textView_time;
+         public TextView textView_amount;*/
         public de.hdodenhof.circleimageview.CircleImageView Imageview;
         public Button button;
 
@@ -68,11 +66,11 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>
 
         public UsersViewHoler(View view) {
             super(view);
-            this.textView_name = (TextView) view.findViewById(R.id.message_text_username);
+//            this.textView_name = (TextView) view.findViewById(R.id.message_text_username);
             /*this.textView_content = (TextView) view.findViewById(R.id.message_text_content);
             this.textView_time = (TextView) view.findViewById(R.id.message_text_time);
             this.textView_amount = (TextView) view.findViewById(R.id.message_text_amount);*/
-            this.Imageview = (de.hdodenhof.circleimageview.CircleImageView) view.findViewById(R.id.myiamge);
+//            this.Imageview = (de.hdodenhof.circleimageview.CircleImageView) view.findViewById(R.id.myiamge);
 //            this.button = (Button) view.findViewById(R.id.mybutton);
         }
     }
@@ -96,20 +94,25 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>
      * 创建VIewHolder
      */
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewtype) {
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewtype) {
         // TODO Auto-generated method stub
         View v = null;
-        ViewHolder holer = null;
+        RecyclerView.ViewHolder holer = null;
         switch (viewtype) {
             case Bean.X_TYPE:
                 v = LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.ishow_item, null);
+                        R.layout.comment_item, null);
                 holer = new SystemViewHoler(v);
                 break;
             case Bean.Y_TYPE:
                 v = LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.message_item, null);
+                        R.layout.comment_item, null);
                 holer = new UsersViewHoler(v);
+                break;
+            case Bean.Z_TYPE:
+                v = LayoutInflater.from(parent.getContext()).inflate(
+                        R.layout.comment_item, null);
+
                 break;
         }
 
@@ -120,7 +123,7 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>
      * 绑定viewholder
      */
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         // TODO Auto-generated method stub
         switch (getItemViewType(position)) {
             case Bean.X_TYPE:
@@ -135,6 +138,10 @@ public class MessageRecyclerViewAdapter extends RecyclerView.Adapter<ViewHolder>
             case Bean.Y_TYPE:
 //                ButtonHolder buttonHolder = (ButtonHolder) holder;
 //                buttonHolder.button.setText(beans.get(position).getText());
+                break;
+            case Bean.Z_TYPE:
+//                ImageHoler imageHoler = (ImageHoler) holder;
+//                imageHoler.Imageview.setImageResource(android.R.drawable.checkbox_on_background);
                 break;
         }
     }

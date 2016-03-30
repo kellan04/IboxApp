@@ -10,6 +10,7 @@
 
     <color name="circle_textview_red">#CD4450</color>
     <color name="cursorTextColor">#B6B6B6</color>
+    <color name="cursorTextColor_Dark">#727272</color>
     <color name="colorButton">#1976D2</color>
     <color name="colorButton_login">#F44336</color>
     <color name="colorButton_register">#E91E63</color>

@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.iboxapp.ibox.adapter.IshowRecyclerViewAdapter;
 import com.iboxapp.ibox.ui.MyScrollingActivity;
-
+import com.iboxapp.ibox.widget.DividerItemDecoration;
 
 
 /**
@@ -80,6 +80,7 @@ public class IshowFragment extends Fragment {
         //创建并设置Adapter
         mAdapter = new IshowRecyclerViewAdapter(getActivity());
         mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(getActivity(), DividerItemDecoration.VERTICAL_LIST));
 
         mAdapter.setOnItemClickListener(new IshowRecyclerViewAdapter.OnItemClickListener() {
             @Override

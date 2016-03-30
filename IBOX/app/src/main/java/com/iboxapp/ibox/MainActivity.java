@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements BackHandledFragme
         setupDrawerContent(mNavigationView);
 
         //profile
-        setUpProfile();
+        /*setUpProfile();*/
 
 
     }
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity implements BackHandledFragme
         this.startActivity(intent);
     }
 
-    private void setUpProfile() {
+    /*private void setUpProfile() {
         findViewById(R.id.profile_image).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity implements BackHandledFragme
                 mNavigationView.getMenu().getItem(1).setChecked(true);
             }
         });
-    }
+    }*/
 
     @Override
     public void setSelectedFragment(BackHandledFragment backHandledFragment) {
@@ -217,8 +217,8 @@ public class MainActivity extends AppCompatActivity implements BackHandledFragme
         switch (item.getItemId()) {
             case R.id.toolbar_message:
                 Toast.makeText(MainActivity.this, "toolbar_message", Toast.LENGTH_SHORT).show();
-               /* Intent intent = new Intent(this, MessageActivity.class);
-                this.startActivity(intent);*/
+                Intent intent = new Intent(this, MessageActivity.class);
+                this.startActivity(intent);
                 break;
             case R.id.toolbar_search:
                 Toast.makeText(MainActivity.this, "toolbar_search", Toast.LENGTH_SHORT).show();
