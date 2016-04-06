@@ -1,4 +1,4 @@
-package com.iboxapp.ibox;
+package com.iboxapp.ibox.module;
 
 /**
  * 一个消息的JavaBean

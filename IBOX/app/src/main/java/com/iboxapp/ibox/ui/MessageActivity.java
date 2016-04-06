@@ -1,5 +1,6 @@
 package com.iboxapp.ibox.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -11,8 +12,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.iboxapp.ibox.R;
+import com.iboxapp.ibox.adapter.IbuyRecyclerViewAdapter;
 import com.iboxapp.ibox.adapter.MessageRecyclerViewAdapter;
-import com.iboxapp.ibox.tool.Bean;
+import com.iboxapp.ibox.module.Bean;
 import com.iboxapp.ibox.widget.DividerItemDecoration;
 
 import java.util.ArrayList;
@@ -40,19 +42,38 @@ public class MessageActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
 
         //初始化数据
-        List<Bean> myDataset = new ArrayList<Bean>();
+        final List<Bean> myDataset = new ArrayList<Bean>();
         myDataset.add(new Bean(Bean.Y_TYPE, "user1"));
         myDataset.add(new Bean(Bean.Y_TYPE, "user2"));
-        myDataset.add(new Bean(Bean.Y_TYPE, "user3"));
+        myDataset.add(new Bean(Bean.X_TYPE, "user3"));
+        myDataset.add(new Bean(Bean.X_TYPE, "user4"));
 
         //创建Adapter
         MessageRecyclerViewAdapter mAdapter = new MessageRecyclerViewAdapter(myDataset);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         //添加分割线
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST));
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST));
 
         makeDismiss(mRecyclerView, mAdapter);
+
+        mAdapter.setOnItemClickListener(new MessageRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_SHORT).show();
+                if (myDataset.get(position).getType() == Bean.X_TYPE) {
+                    Intent intent = new Intent(MessageActivity.this, ChatSysActivity.class);
+                    intent.putExtra("key", 3);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(MessageActivity.this, ChatActivity.class);
+                    intent.putExtra("key", 3);
+                    startActivity(intent);
+                }
+            }
+        });
+
+
     }
 
     private void makeDismiss(final RecyclerView mRecyclerView, final MessageRecyclerViewAdapter mAdapter) {

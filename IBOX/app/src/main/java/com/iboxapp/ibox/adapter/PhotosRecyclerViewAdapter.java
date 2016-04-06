@@ -13,40 +13,39 @@ import android.widget.TextView;
 import com.iboxapp.ibox.R;
 
 /**
- * Created by gongchen on 2016/3/30.
+ * Created by gongchen on 2016/4/6.
  */
-public class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseRecyclerViewAdapter.ViewHolder> {
-
+public class PhotosRecyclerViewAdapter extends RecyclerView.Adapter<PhotosRecyclerViewAdapter.ViewHolder> {
     private final LayoutInflater mLayoutInflater;
     private final Context mContext;
-    private String[] titles;
+    private String[] datas;
     private OnItemClickListener mOnItemClickListener;
 
-    public BaseRecyclerViewAdapter(Context context,String[] titles){
-        this.titles = titles;
-        this.mContext = context;
+    public PhotosRecyclerViewAdapter(Context context) {
+        mContext = context;
         mLayoutInflater = LayoutInflater.from(context);
+        datas = context.getResources().getStringArray(R.array.datas);
     }
 
     //创建新View，被LayoutManager所调用
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View view = mLayoutInflater.inflate(R.layout.popular_item,viewGroup,false);
+        View view = mLayoutInflater.inflate(R.layout.setting_photos_item,viewGroup,false);
         ViewHolder vh = new ViewHolder(view);
         return vh;
     }
 
     //自定义的ViewHolder，持有每个Item的的所有界面元素
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public CardView mCardView;
+//        public CardView mCardView;
         public TextView mTextView;
-//        public ImageView mImageView;
+        public ImageView mImageView;
 
         public ViewHolder(View view){
             super(view);
-            mCardView = (CardView) view.findViewById(R.id.cv_item_popular);
-            mTextView = (TextView) view.findViewById(R.id.text_remen);
-//            mImageView = (ImageView) view.findViewById(R.id.imageView6);
+//            mCardView = (CardView) view.findViewById(R.id.cv_item_buy);
+            mTextView = (TextView) view.findViewById(R.id.photos_goods_name);
+            mImageView = (ImageView) view.findViewById(R.id.imageView6);
 
 
         }
@@ -64,9 +63,9 @@ public class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseRecyclerVi
              * 目的是减少对象的创建，如果已经为view设置了click监听事件,就不用重复设置了
              * 不然每次调用onBindViewHolder方法，都会创建两个监听事件对象，增加了内存的开销
              */
-            if(!viewHolder.mCardView.hasOnClickListeners()) {
+            if(!viewHolder.mImageView.hasOnClickListeners()) {
                 Log.e("ListAdapter", "setOnClickListener");
-                viewHolder.mCardView.setOnClickListener(new View.OnClickListener() {
+                viewHolder.mImageView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         int pos = viewHolder.getPosition();
@@ -80,7 +79,7 @@ public class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseRecyclerVi
     //获取数据的数量
     @Override
     public int getItemCount() {
-        return titles == null ? 0 : titles.length;
+        return datas.length;
     }
 
     /**

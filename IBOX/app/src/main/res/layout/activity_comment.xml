@@ -15,7 +15,7 @@
         android:layout_height="match_parent"
         android:scrollbars="vertical"
         android:layout_below="@+id/back_toolbar"
-        tools:listitem="@layout/comment_item"/>
+        tools:listitem="@layout/comments_item"/>
 
 
     <!--<include layout="@layout/content_comment" />-->

@@ -1,148 +1,105 @@
 package com.iboxapp.ibox.adapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.iboxapp.ibox.R;
-import com.iboxapp.ibox.tool.Bean;
+import com.iboxapp.ibox.module.CommentInfo;
 
 import java.util.List;
 
 /**
  * Created by gongchen on 2016/3/29.
  */
-public class CommentRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class CommentRecyclerViewAdapter extends RecyclerView.Adapter<CommentRecyclerViewAdapter.ViewHolder> {
 
-    public List<Bean> beans;
+    public List<CommentInfo> beans;
+    private OnItemClickListener mOnItemClickListener;
+    private final LayoutInflater mLayoutInflater;
+    private final Context mContext;
 
-    public CommentRecyclerViewAdapter(List<Bean> beans) {
-        super();
+    public CommentRecyclerViewAdapter(Context context, List<CommentInfo> beans) {
+        mContext = context;
+        mLayoutInflater = LayoutInflater.from(context);
         this.beans = beans;
     }
 
-    /**
-     * 内部SystemViewHoler
-     *
-     * @author edsheng
-     *
-     */
-    public class SystemViewHoler extends RecyclerView.ViewHolder {
-        public TextView textView_name;
-        /* public TextView textView_content;
-         public TextView textView_time;
-         public TextView textView_amount;*/
-        public de.hdodenhof.circleimageview.CircleImageView Imageview;
-        public Button button;
+    //创建新View，被LayoutManager所调用
+    @Override
+    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+        View view = mLayoutInflater.inflate(R.layout.comments_item,viewGroup,false);
+        ViewHolder vh = new ViewHolder(view);
+        return vh;
+    }
+    //将数据与界面进行绑定的操作
+    @Override
+    public void onBindViewHolder(final ViewHolder viewHolder, int position) {
+        viewHolder.mTextViewUsername.setText(beans.get(position).getName());
+        viewHolder.mTextViewContent.setText(beans.get(position).getComments());
+        viewHolder.mTextViewTime.setText(beans.get(position).getDate());
+        //将数据保存在itemView的Tag中，以便点击时进行获取
+        viewHolder.mLinearLayout.setTag(beans.get(position).getName());
+        if(mOnItemClickListener != null) {
+            /**
+             * 这里加了判断，itemViewHolder.itemView.hasOnClickListeners()
+             * 目的是减少对象的创建，如果已经为view设置了click监听事件,就不用重复设置了
+             * 不然每次调用onBindViewHolder方法，都会创建两个监听事件对象，增加了内存的开销
+             */
+            if(!viewHolder.mLinearLayout.hasOnClickListeners()) {
+                Log.e("ListAdapter", "setOnClickListener");
+                viewHolder.mLinearLayout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int pos = viewHolder.getPosition();
+                        mOnItemClickListener.onItemClick(v, pos);
+                    }
+                });
 
-        public SystemViewHoler(View view) {
-            super(view);
-//            this.textView_name = (TextView) view.findViewById(R.id.message_text_username);
-            /*this.textView_content = (TextView) view.findViewById(R.id.message_text_content);
-            this.textView_time = (TextView) view.findViewById(R.id.message_text_time);
-            this.textView_amount = (TextView) view.findViewById(R.id.message_text_amount);*/
-
-//            this.Imageview = (de.hdodenhof.circleimageview.CircleImageView) view.findViewById(R.id.myiamge);
-//            this.button = (Button) view.findViewById(R.id.mybutton);
+            }
         }
     }
-
-    /**
-     * UsersViewHoler
-     *
-     * @author edsheng
-     *
-     */
-    public class UsersViewHoler extends RecyclerView.ViewHolder {
-        public TextView textView_name;
-        /*public TextView textView_content;
-        public TextView textView_time;
-        public TextView textView_amount;*/
-        public de.hdodenhof.circleimageview.CircleImageView Imageview;
-        public Button button;
-
-        public UsersViewHoler(View view) {
-            super(view);
-//            this.textView_name = (TextView) view.findViewById(R.id.message_text_username);
-            /*this.textView_content = (TextView) view.findViewById(R.id.message_text_content);
-            this.textView_time = (TextView) view.findViewById(R.id.message_text_time);
-            this.textView_amount = (TextView) view.findViewById(R.id.message_text_amount);*/
-//            this.Imageview = (de.hdodenhof.circleimageview.CircleImageView) view.findViewById(R.id.myiamge);
-//            this.button = (Button) view.findViewById(R.id.mybutton);
-        }
-    }
-
+    //获取数据的数量
     @Override
     public int getItemCount() {
-        // TODO Auto-generated method stub
         return beans.size();
     }
 
-    /**
-     * 获取消息的类型
-     */
-    @Override
-    public int getItemViewType(int position) {
-        // TODO Auto-generated method stub
-        return beans.get(position).getType();
+    //自定义的ViewHolder，持有每个Item的的所有界面元素
+    public static class ViewHolder extends RecyclerView.ViewHolder {
+        public LinearLayout mLinearLayout;
+        public TextView mTextViewUsername;
+        public TextView mTextViewContent;
+        public TextView mTextViewTime;
+        public ImageView mImageView;
+
+        public ViewHolder(View view){
+            super(view);
+            mLinearLayout = (LinearLayout) view.findViewById(R.id.comment_item);
+            mTextViewUsername = (TextView) mLinearLayout.findViewById(R.id.comment_text_username);
+            mTextViewContent = (TextView) mLinearLayout.findViewById(R.id.comment_text_content);
+            mTextViewTime = (TextView) mLinearLayout.findViewById(R.id.comment_text_time);
+            mImageView = (ImageView) mLinearLayout.findViewById(R.id.user_image);
+
+
+        }
     }
 
     /**
-     * 创建VIewHolder
+     * 处理item的点击事件
      */
-    @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewtype) {
-        // TODO Auto-generated method stub
-        View v = null;
-        RecyclerView.ViewHolder holer = null;
-        switch (viewtype) {
-            case Bean.X_TYPE:
-                v = LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.comment_item, null);
-                holer = new SystemViewHoler(v);
-                break;
-            case Bean.Y_TYPE:
-                v = LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.comment_item, null);
-                holer = new UsersViewHoler(v);
-                break;
-            case Bean.Z_TYPE:
-                v = LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.comment_item, null);
-
-                break;
-        }
-
-        return holer;
+    public interface OnItemClickListener {
+        public void onItemClick(View view, int position);
     }
 
-    /**
-     * 绑定viewholder
-     */
-    @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        // TODO Auto-generated method stub
-        switch (getItemViewType(position)) {
-            case Bean.X_TYPE:
-                SystemViewHoler holer = (SystemViewHoler) holder;
-//                holer.textView_name.setText(beans.get(position).getText());
-                /*holer.textView_content.setText("new messages");
-                holer.textView_time.setText("8:39");
-                holer.textView_amount.setText("1");*/
-//                holer.button.setText(beans.get(position).getText());
-//                holer.Imageview.setImageResource(R.mipmap.ic_launcher);
-                break;
-            case Bean.Y_TYPE:
-//                ButtonHolder buttonHolder = (ButtonHolder) holder;
-//                buttonHolder.button.setText(beans.get(position).getText());
-                break;
-            case Bean.Z_TYPE:
-//                ImageHoler imageHoler = (ImageHoler) holder;
-//                imageHoler.Imageview.setImageResource(android.R.drawable.checkbox_on_background);
-                break;
-        }
+    //添加点击事件
+    public void setOnItemClickListener(OnItemClickListener mOnItemClickListener) {
+        this.mOnItemClickListener = mOnItemClickListener;
     }
 }

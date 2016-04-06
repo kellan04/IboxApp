@@ -3,6 +3,7 @@ package com.iboxapp.ibox;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,10 +11,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.iboxapp.ibox.adapter.IshowRecyclerViewAdapter;
+import com.iboxapp.ibox.ui.FindActivity;
 import com.iboxapp.ibox.ui.MyScrollingActivity;
 import com.iboxapp.ibox.widget.DividerItemDecoration;
 
@@ -34,6 +37,7 @@ public class IshowFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLayoutManager;
     private IshowRecyclerViewAdapter mAdapter;
+    private ImageButton mImageButtonFind;
 
     public IshowFragment() {
         // Required empty public constructor
@@ -94,6 +98,15 @@ public class IshowFragment extends Fragment {
 
         // 设置item动画
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        mImageButtonFind = (ImageButton) view.findViewById(R.id.imageButton_find);
+        mImageButtonFind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), FindActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
 
         return view;
     }

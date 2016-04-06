@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.iboxapp.ibox.ChatMsgEntity;
+import com.iboxapp.ibox.module.ChatMsgEntity;
 import com.iboxapp.ibox.R;
 
 

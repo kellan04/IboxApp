@@ -1,23 +1,20 @@
 package com.iboxapp.ibox.ui;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
-import android.widget.Toast;
+
 
 import com.iboxapp.ibox.R;
-import com.iboxapp.ibox.adapter.BaseRecyclerViewAdapter;
-import com.iboxapp.ibox.adapter.CollectRecyclerViewAdapter;
+import com.iboxapp.ibox.adapter.PhotosRecyclerViewAdapter;
 
 public class SettingPhotosActivity extends AppCompatActivity {
 
     private RecyclerView mRecyclerView;
-    private BaseRecyclerViewAdapter mAdapter;
+    private PhotosRecyclerViewAdapter mAdapter;
     private Toolbar mToolbar;
 
     @Override
@@ -36,7 +33,7 @@ public class SettingPhotosActivity extends AppCompatActivity {
         mRecyclerView.setHasFixedSize(true);
 
         //创建Adapter
-        mAdapter = new BaseRecyclerViewAdapter(this);
+        mAdapter = new PhotosRecyclerViewAdapter(this);
         mRecyclerView.setAdapter(mAdapter);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         /*mAdapter.setOnItemClickListener(new BaseRecyclerViewAdapter.OnItemClickListener() {

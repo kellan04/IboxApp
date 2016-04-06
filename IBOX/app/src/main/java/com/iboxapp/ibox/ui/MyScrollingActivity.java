@@ -1,16 +1,25 @@
 package com.iboxapp.ibox.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.iboxapp.ibox.MainActivity;
 import com.iboxapp.ibox.R;
 
 public class MyScrollingActivity extends AppCompatActivity {
+
+    private Toolbar mToolbar;
+    private CollapsingToolbarLayout toolBarLayout;
+    private Button mMoreCommentButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,21 +41,33 @@ public class MyScrollingActivity extends AppCompatActivity {
 
     private void initBox() {
         setContentView(R.layout.activity_box_scrolling);
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.box_scrolling_toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.box_scrolling_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.box_toolbar_layout);
+        toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.box_toolbar_layout);
         toolBarLayout.setTitle(getResources().getString(R.string.goods_title));
+        mMoreCommentButton = (Button) findViewById(R.id.more_comment_button);
+        mMoreCommentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getApplicationContext(), "more comments", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+
+                startActivity(new Intent(MyScrollingActivity.this, CommentActivity.class));
+
+            }
+        });
     }
 
     private void initBuy() {
         setContentView(R.layout.activity_buy_scrolling);
-        Toolbar mToolbar = (Toolbar) findViewById(R.id.buy_scrolling_toolbar);
+        mToolbar = (Toolbar) findViewById(R.id.buy_scrolling_toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.buy_toolbar_layout);
+        toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.buy_toolbar_layout);
         toolBarLayout.setTitle(getResources().getString(R.string.goods_title));
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_buy);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +75,20 @@ public class MyScrollingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        mMoreCommentButton = (Button) findViewById(R.id.more_comment_button);
+        mMoreCommentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getApplicationContext(), "more comments", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+
+                //先调用接口判断，验证码是否正确。根据返回信息，toast出不同的信息，并跳转
+                startActivity(new Intent(MyScrollingActivity.this, CommentActivity.class));
+
             }
         });
     }

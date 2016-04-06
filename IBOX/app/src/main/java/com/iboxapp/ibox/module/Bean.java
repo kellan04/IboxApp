@@ -1,4 +1,4 @@
-package com.iboxapp.ibox.tool;
+package com.iboxapp.ibox.module;
 
 /**
  * Created by gongchen on 2016/3/16.

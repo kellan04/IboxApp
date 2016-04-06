@@ -39,6 +39,10 @@
         <activity android:name=".ui.EditThingsActivity" />
         <activity android:name=".ui.CommentActivity" />
         <activity android:name=".ui.AddCommentActivity" />
+        <activity android:name=".ui.ChatActivity" />
+        <activity android:name=".ui.ChatSysActivity" />
+        <activity android:name=".ui.FindActivity" />
+        <activity android:name=".ui.MultiCategoryActivity"></activity>
     </application>
 
 </manifest>

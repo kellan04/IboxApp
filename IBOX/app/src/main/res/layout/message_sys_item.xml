@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="wrap_content"
+    android:id="@+id/msg_sys_item">
 
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_margin="10dp"
         android:id="@+id/imageView2"
-        android:src="@android:drawable/btn_star_big_on" />
+        android:src="@drawable/box_icon_300x300" />
 
     <RelativeLayout
         android:layout_width="224dp"
@@ -29,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Thank you. You&apos;ve made a purchase fr Thank you. You&apos;ve made a purchase fr... Thank you. You&apos;ve made a purchase fr......"
+            android:text="Thank you. You&apos;ve made a purchase fr Thank you. You&apos;"
             android:id="@+id/textView3"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
@@ -54,8 +55,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="11111"
+            android:layout_marginTop="10dp"
+            android:text="11"
             android:textColor="#000000"
             android:id="@+id/textView5"
             android:layout_below="@+id/textView4"
@@ -63,11 +64,6 @@
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Switch"
-        android:id="@+id/switch1" />
 
 
 </LinearLayout>
