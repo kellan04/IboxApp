@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,7 @@ public class IshowFragment extends Fragment {
     private LinearLayoutManager mLayoutManager;
     private IshowRecyclerViewAdapter mAdapter;
     private ImageButton mImageButtonFind;
+
 
     public IshowFragment() {
         // Required empty public constructor
@@ -99,10 +101,13 @@ public class IshowFragment extends Fragment {
         // 设置item动画
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
+
         mImageButtonFind = (ImageButton) view.findViewById(R.id.imageButton_find);
         mImageButtonFind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(getActivity(), "Click", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(getActivity(), FindActivity.class);
                 getActivity().startActivity(intent);
             }

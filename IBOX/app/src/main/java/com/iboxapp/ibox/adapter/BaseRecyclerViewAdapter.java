@@ -45,7 +45,7 @@ public class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseRecyclerVi
         public ViewHolder(View view){
             super(view);
             mCardView = (CardView) view.findViewById(R.id.cv_item_popular);
-            mTextView = (TextView) view.findViewById(R.id.text_remen);
+            mTextView = (TextView) view.findViewById(R.id.popular_detail);
 //            mImageView = (ImageView) view.findViewById(R.id.imageView6);
 
 
@@ -55,7 +55,7 @@ public class BaseRecyclerViewAdapter extends RecyclerView.Adapter<BaseRecyclerVi
     //将数据与界面进行绑定的操作
     @Override
     public void onBindViewHolder(final ViewHolder viewHolder, int position) {
-//        viewHolder.mTextView.setText(datas[position]);
+        viewHolder.mTextView.setText(titles[position]);
         //将数据保存在itemView的Tag中，以便点击时进行获取
 //        viewHolder.mCardView.setTag(datas[position]);
         if(mOnItemClickListener != null) {
