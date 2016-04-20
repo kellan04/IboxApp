@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -19,6 +20,7 @@ import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.iboxapp.ibox.adapter.IshowRecyclerViewAdapter;
 import com.iboxapp.ibox.ui.FindActivity;
 import com.iboxapp.ibox.ui.MyScrollingActivity;
+import com.iboxapp.ibox.ui.TopThingsActivity;
 import com.iboxapp.ibox.widget.DividerItemDecoration;
 
 
@@ -38,7 +40,8 @@ public class IshowFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private LinearLayoutManager mLayoutManager;
     private IshowRecyclerViewAdapter mAdapter;
-    private ImageButton mImageButtonFind;
+    private Button mButtonFind;
+    private Button mButtonSelection;
 
 
     public IshowFragment() {
@@ -102,13 +105,25 @@ public class IshowFragment extends Fragment {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
 
 
-        mImageButtonFind = (ImageButton) view.findViewById(R.id.imageButton_find);
-        mImageButtonFind.setOnClickListener(new View.OnClickListener() {
+        mButtonFind = (Button) view.findViewById(R.id.imageButton_find);
+        mButtonSelection = (Button) view.findViewById(R.id.imageButton_selection);
+
+        mButtonFind.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Click", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(getActivity(), FindActivity.class);
+                getActivity().startActivity(intent);
+            }
+        });
+
+        mButtonSelection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), "Click", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getActivity(), TopThingsActivity.class);
                 getActivity().startActivity(intent);
             }
         });

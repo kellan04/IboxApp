@@ -42,7 +42,8 @@
         <activity android:name=".ui.ChatActivity" />
         <activity android:name=".ui.ChatSysActivity" />
         <activity android:name=".ui.FindActivity" />
-        <activity android:name=".ui.MultiCategoryActivity"></activity>
+        <activity android:name=".ui.MultiCategoryActivity" />
+        <activity android:name=".ui.TopThingsActivity"></activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@
 
     <dimen name="appbar_main">160dp</dimen>
 
+    <dimen name="text_padding">20dp</dimen>
     <dimen name="text_height">60dp</dimen>
     <dimen name="text_underline1">2dp</dimen>
     <dimen name="text_underline2">13dp</dimen>

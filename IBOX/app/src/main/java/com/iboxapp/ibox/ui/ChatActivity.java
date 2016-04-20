@@ -47,9 +47,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
         mEditTextContent = (EditText) findViewById(R.id.et_sendmessage);
     }
 
-    private String[] msgArray = new String[] { "有大吗", "有！你呢？", "我也有", "那上吧",
-            "打啊！你放大啊！", "你TM咋不放大呢？留大抢人头啊？CAO！你个菜B", "2B不解释", "尼滚...",
-            "今晚去网吧包夜吧？", "有毛片吗？", "种子一大堆啊~还怕没片？", "OK,搞起！！" };
+    private String[] msgArray = new String[] { "可以大刀吗？", "不议价不议价", "包邮呢？", "这个可以有"};
 
     private String[] dataArray = new String[] { "2012-09-22 18:00:02",
             "2012-09-22 18:10:22", "2012-09-22 18:11:24",

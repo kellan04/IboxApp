@@ -12,21 +12,20 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@mipmap/ic_launcher"
-        app:civ_border_width="2dp"
-        app:civ_border_color="#FFFFFF"
-        android:layout_marginLeft="10dp"
+        android:layout_margin="10dp"
         android:layout_gravity="center" />
 
 
 
     <RelativeLayout
-        android:layout_width="224dp"
+        android:layout_width="220dp"
         android:layout_height="match_parent">
 
         <TextView
             android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="user"
             android:textStyle="bold"
             android:id="@+id/message_text_username"
@@ -53,15 +52,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="10:30"
             android:id="@+id/message_text_time"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="65dp"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -72,7 +71,8 @@
             android:id="@+id/message_text_amount"
             android:layout_below="@+id/message_text_time"
             android:background="@drawable/circle_textview"
-            android:layout_marginLeft="65dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_centerHorizontal="true" />
     </RelativeLayout>
 

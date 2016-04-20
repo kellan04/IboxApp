@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/back_toolbar"
+        layout="@layout/simple_toolbar" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader
+            android:id="@+id/top_things_recyclerview_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_margin="20dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageView_top10"
+                    android:src="@drawable/test3"
+                    android:layout_margin="10dp"/>
+            </LinearLayout>
+        </com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view_top_things"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

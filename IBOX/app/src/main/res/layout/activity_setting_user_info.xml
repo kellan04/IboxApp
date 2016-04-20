@@ -31,13 +31,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="   头像"
+                    android:text="@string/user_head"
+                    android:textSize="25sp"
+                    android:padding="20dp"
                     android:id="@+id/textView3"
                     android:layout_centerVertical="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:textSize="25sp" />
-
+                    android:layout_alignParentStart="true" />
                 <ImageButton
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
@@ -48,74 +48,196 @@
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentBottom="true" />
-
             </RelativeLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline2" />
 
-            <EditText
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_height"
-                android:inputType="textPersonName"
-                android:text="   昵称"
-                android:ems="10"
-                android:id="@+id/editText"
-                android:hint="Nick Name"/>
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:text="@string/user_nickname"
+                    android:textSize="20sp"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:paddingRight="@dimen/text_padding"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView22" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:inputType="textPersonName"
+                    android:background="@null"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toRightOf="@+id/textView22"
+                    android:layout_toEndOf="@+id/textView22"/>
+            </RelativeLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline1" />
 
-
-            <EditText
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_height"
-                android:inputType="number"
-                android:text="   账号"
-                android:ems="10"
-                android:id="@+id/editText2" />
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:text="@string/user_id"
+                    android:textSize="20sp"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:paddingRight="@dimen/text_padding"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView23" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:inputType="number"
+                    android:background="@null"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toRightOf="@+id/textView23"
+                    android:layout_toEndOf="@+id/textView23" />
+            </RelativeLayout>
 
-            <EditText
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_height"
-                android:inputType="textPostalAddress"
-                android:text="   地址"
-                android:ems="10"
-                android:id="@+id/editText3" />
+                android:layout_height="@dimen/text_underline1" />
 
-            <EditText
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_height"
-                android:inputType="text"
-                android:text="   性别"
-                android:ems="10"
-                android:id="@+id/editText4" />
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:text="@string/user_gender"
+                    android:textSize="20sp"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:paddingRight="@dimen/text_padding"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView24" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:background="@null"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toRightOf="@+id/textView24"
+                    android:layout_toEndOf="@+id/textView24" />
+            </RelativeLayout>
 
-            <EditText
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline2" />
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_height"
-                android:inputType="text"
-                android:text="   职业"
-                android:ems="10"
-                android:id="@+id/editText5" />
-            <EditText
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:text="@string/user_prof"
+                    android:textSize="20sp"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:paddingRight="@dimen/text_padding"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView25" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:background="@null"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toRightOf="@+id/textView25"
+                    android:layout_toEndOf="@+id/textView25" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline1" />
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_height"
-                android:inputType="text"
-                android:text="   个性签名"
-                android:ems="10"
-                android:id="@+id/editText6" />
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:text="@string/user_address"
+                    android:textSize="20sp"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:paddingRight="@dimen/text_padding"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView26" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:background="@null"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toRightOf="@+id/textView26"
+                    android:layout_toEndOf="@+id/textView26" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline2" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_height"
+                android:background="@color/white" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:text="@string/user_sign"
+                    android:textSize="20sp"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:paddingRight="@dimen/text_padding"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView27" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:background="@null"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_toRightOf="@+id/textView27"
+                    android:layout_toEndOf="@+id/textView27" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline2" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="    确  定    "
+                android:text="@string/make_sure"
                 android:textSize="@dimen/abc_text_size_title_material"
                 android:id="@+id/button"
                 android:layout_gravity="center"
                 android:background="@color/colorPrimary"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:layout_margin="20dp" />
 
         </LinearLayout>
     </ScrollView>
-
 
 
 </LinearLayout>

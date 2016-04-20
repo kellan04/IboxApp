@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -55,7 +56,16 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<IbuyRecyclerVi
                         mOnItemClickListener.onItemClick(v, pos);
                     }
                 });
-
+            }
+            if(!viewHolder.mButton.hasOnClickListeners()) {
+                Log.e("ListAdapter", "setOnClickListener");
+                viewHolder.mButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int pos = viewHolder.getPosition();
+                        mOnItemClickListener.onItemButtonClick(v, pos);
+                    }
+                });
             }
         }
     }
@@ -70,12 +80,14 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<IbuyRecyclerVi
         public CardView mCardView;
         public TextView mTextView;
         public ImageView mImageView;
+        public Button mButton;
 
         public ViewHolder(View view){
             super(view);
             mCardView = (CardView) view.findViewById(R.id.cv_item_buy);
             mTextView = (TextView) mCardView.findViewById(R.id.text_card_buy);
             mImageView = (ImageView) mCardView.findViewById(R.id.image_card_buy);
+            mButton = (Button) mCardView.findViewById(R.id.button_connect);
 
 
         }
@@ -86,6 +98,7 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<IbuyRecyclerVi
      */
     public interface OnItemClickListener {
         public void onItemClick(View view, int position);
+        public void onItemButtonClick(View view, int position);
     }
 
     //添加点击事件

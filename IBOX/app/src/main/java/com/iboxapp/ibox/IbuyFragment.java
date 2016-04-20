@@ -88,6 +88,11 @@ public class IbuyFragment extends Fragment {
                 intent.putExtra("key", 3);
                 getActivity().startActivity(intent);
             }
+
+            @Override
+            public void onItemButtonClick(View view, int position) {
+                Toast.makeText(getActivity(), "Click Button", Toast.LENGTH_SHORT).show();
+            }
         });
 
         // 设置item动画

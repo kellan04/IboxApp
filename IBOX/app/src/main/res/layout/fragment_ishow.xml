@@ -51,21 +51,25 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal">
 
-                    <ImageButton
+                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:id="@+id/imageButton_find"
                         android:layout_weight="1"
-                        android:background="@color/white"
-                        android:src="@drawable/ic_launcher" />
+                        android:background="@drawable/test2"
+                        android:scaleType="centerCrop"
+                        android:text="发现"
+                        android:textSize="30sp"/>
 
-                    <ImageButton
+                    <Button
                         android:layout_width="match_parent"
                         android:layout_height="120dp"
                         android:id="@+id/imageButton_selection"
                         android:layout_weight="1"
-                        android:background="@color/white"
-                        android:src="@drawable/ic_launcher" />
+                        android:background="@drawable/test2"
+                        android:scaleType="centerCrop"
+                        android:text="精选"
+                        android:textSize="30sp"/>
                 </LinearLayout>
 
                 <TextView

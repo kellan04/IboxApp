@@ -4,6 +4,7 @@
     <!-- Strings related to activity -->
     <string name="app_main_title">IBOX</string>
     <string name="make_sure">确认</string>
+    <string name="back">返回</string>
     <string name="press_again_exit_app">再按一次退出程序</string>
 
     <!-- Strings related to login -->
@@ -71,6 +72,25 @@
     <string name="comment_name">小美</string>
     <string name="comment_content">包邮350入手</string>
     <string name="comment_time">45分钟前</string>
+
+    <!-- Strings related to user info -->
+    <string name="user_head">头像</string>
+    <string name="user_nickname">昵称</string>
+    <string name="user_id">账号</string>
+    <string name="user_address">地址</string>
+    <string name="user_gender">性别</string>
+    <string name="user_prof"> 职业</string>
+    <string name="user_sign">个性签名</string>
+    <string name="user_ensure">确定</string>
+
+    <!-- Strings related to system setting -->
+    <string name="system_message">接收新消息</string>
+    <string name="system_sound">声音</string>
+    <string name="system_shake">震动</string>
+    <string name="system_help">帮助与反馈</string>
+    <string name="system_about">关于iBox</string>
+    <string name="system_clear">清除缓存</string>
+    <string name="system_quit">退出登录</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

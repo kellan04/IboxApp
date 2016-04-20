@@ -1,6 +1,9 @@
 package com.iboxapp.ibox.ui;
 
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +12,8 @@ import android.widget.Button;
 
 import com.iboxapp.ibox.IshowFragment;
 import com.iboxapp.ibox.R;
+
+import java.io.InputStream;
 
 public class FindActivity extends AppCompatActivity {
 
@@ -20,8 +25,9 @@ public class FindActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find);
 
-        Log.i(FindActivity.ACTIVITY_TAG, "This is Information1");
-        mButton = (Button) findViewById(R.id.Button9);
+        initButton();
+
+
         Log.i(FindActivity.ACTIVITY_TAG, "This is Information2");
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,5 +37,26 @@ public class FindActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void initButton() {
+        mButton = (Button) findViewById(R.id.Button9);
+    }
+
+    /**
+     * 以最省内存的方式读取本地资源的图片
+     * @param context
+     * @param resId
+     * @return
+     */
+    public static Bitmap readBitMap(Context context, int resId){
+
+        BitmapFactory.Options opt = new BitmapFactory.Options();
+        opt.inPreferredConfig = Bitmap.Config.RGB_565;
+        opt.inPurgeable = true;
+        opt.inInputShareable = true;
+        //获取资源图片
+        InputStream is = context.getResources().openRawResource(resId);
+        return BitmapFactory.decodeStream(is, null, opt);
     }
 }
