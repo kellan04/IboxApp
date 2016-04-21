@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.iboxapp.ibox.adapter.IboxRecyclerViewAdapter;
 import com.iboxapp.ibox.adapter.IbuyRecyclerViewAdapter;
+import com.iboxapp.ibox.ui.LogisticInfoActivity;
 import com.iboxapp.ibox.ui.MyScrollingActivity;
 
 
@@ -92,6 +93,10 @@ public class IbuyFragment extends Fragment {
             @Override
             public void onItemButtonClick(View view, int position) {
                 Toast.makeText(getActivity(), "Click Button", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getActivity(), LogisticInfoActivity.class);
+                intent.putExtra("key", 3);
+                getActivity().startActivity(intent);
             }
         });
 

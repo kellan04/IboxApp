@@ -92,6 +92,22 @@
     <string name="system_clear">清除缓存</string>
     <string name="system_quit">退出登录</string>
 
+    <!-- Strings related to logistic_info -->
+    <string name="logistic_info">物流信息</string>
+    <string name="logistic_static">物 流 状 态 :</string>
+    <string name="logistic_source">承 运 来 源 :</string>
+    <string name="logistic_number">运 单 编 号 :</string>
+    <string name="logistic_phone">官 方 电 话 :</string>
+
+    <!-- Strings related to logistic_info——item -->
+    <string name="logistic_info1">货物已出仓</string>
+    <string name="logistic_info2">【南京市】box快递 江苏南京浦口公司已揽件</string>
+    <string name="logistic_info3">【南京市】江苏南京浦口公司已发出</string>
+    <string name="logistic_info4">【北京市】北京朝阳区公司已收入</string>
+    <string name="logistic_info5">【北京市】快件已到达北京朝阳区公司</string>
+    <string name="logistic_info6">【北京市】北京市朝阳区box快递派件员：12345678正在为您派件</string>
+
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

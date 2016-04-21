@@ -27,7 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_height"
                 android:background="@color/white"
-                android:text="   接收新消息"
+                android:text="@string/system_message"
+                android:paddingLeft="@dimen/text_padding"
                 android:id="@+id/switch1"
                 android:textSize="@dimen/abc_text_size_title_material" />
 
@@ -40,7 +41,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_height"
                 android:background="@color/white"
-                android:text="   声音"
+                android:text="@string/system_sound"
+                android:paddingLeft="@dimen/text_padding"
                 android:id="@+id/switch2"
                 android:textSize="@dimen/abc_text_size_title_material" />
 
@@ -53,7 +55,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_height"
                 android:background="@color/white"
-                android:text="   震动"
+                android:text="@string/system_shake"
+                android:paddingLeft="@dimen/text_padding"
                 android:id="@+id/switch3"
                 android:textSize="@dimen/abc_text_size_title_material" />
 
@@ -62,60 +65,87 @@
                 android:layout_height="@dimen/text_underline2"
                 android:id="@+id/textView9" />
 
-            <TextView
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_height"
-                android:background="@color/white"
-                android:text="   帮助与反馈"
-                android:gravity="center_vertical"
-                android:id="@+id/textView2"
-                android:textSize="@dimen/abc_text_size_title_material"
-                android:textColor="@color/black" />
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:background="@color/white"
+                    android:text="@string/system_help"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView2"
+                    android:textSize="@dimen/abc_text_size_title_material"
+                    android:textColor="@color/black"
+                    android:layout_weight="1.00"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_underline1"
-                android:id="@+id/textView10" />
+                <ImageButton
+                    android:layout_width="@dimen/imagebutton_smallsize"
+                    android:layout_height="@dimen/imagebutton_smallsize"
+                    android:layout_gravity="center"
+                    android:background="@mipmap/ic_chevron_right_black_18dp"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_height"
-                android:background="@color/white"
-                android:text="   关于iBox"
-                android:gravity="center_vertical"
-                android:id="@+id/textView4"
-                android:textSize="@dimen/abc_text_size_title_material"
-                android:textColor="@color/black"/>
+                <!--               <com.mikepenz.iconics.view.IconicsImageView
+                                   android:layout_width="30dp"
+                                   android:layout_height="30dp"
+                                   app:iiv_color="#C0C0C0"
+                                   app:iiv_icon="gmd-keyboard-arrow-right"
+                                   android:id="@+id/imageButton6"
+                                   android:layout_gravity="center"/>-->
+
+            </LinearLayout>
+
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_underline2"
                 android:id="@+id/textView11" />
 
-            <TextView
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_height"
-                android:background="@color/white"
-                android:text="   清除缓存"
-                android:gravity="center_vertical"
-                android:id="@+id/textView5"
-                android:textSize="@dimen/abc_text_size_title_material"
-                android:textColor="@color/black"/>
+                android:layout_height="wrap_content"
+                android:weightSum="1"
+                android:background="@color/white">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/text_height"
+                    android:background="@color/white"
+                    android:text="@string/system_clear"
+                    android:paddingLeft="@dimen/text_padding"
+                    android:gravity="center_vertical"
+                    android:id="@+id/textView5"
+                    android:textSize="@dimen/abc_text_size_title_material"
+                    android:textColor="@color/black"
+                    android:layout_weight="1.00"/>
+                <ImageButton
+                    android:layout_width="@dimen/imagebutton_smallsize"
+                    android:layout_height="@dimen/imagebutton_smallsize"
+                    android:layout_gravity="center"
+                    android:background="@mipmap/ic_chevron_right_black_18dp"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_underline2"
                 android:id="@+id/textView12" />
 
-            <TextView
+            <Button
+                style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_height"
-                android:background="@color/white"
-                android:text="   退出登录"
-                android:gravity="center_vertical"
-                android:id="@+id/textView6"
+                android:text="@string/system_quit"
                 android:textSize="@dimen/abc_text_size_title_material"
-                android:textColor="@color/black"/>
+                android:id="@+id/button"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:layout_margin="20dp"/>
+
         </LinearLayout>
     </ScrollView>
 

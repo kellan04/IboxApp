@@ -20,6 +20,7 @@ public class MyScrollingActivity extends AppCompatActivity {
     private Toolbar mToolbar;
     private CollapsingToolbarLayout toolBarLayout;
     private Button mMoreCommentButton;
+    private Button mButtonModify;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,18 @@ public class MyScrollingActivity extends AppCompatActivity {
 
                 startActivity(new Intent(MyScrollingActivity.this, CommentActivity.class));
 
+            }
+        });
+
+        mButtonModify = (Button) findViewById(R.id.modify_goods_button);
+        mButtonModify.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(MyScrollingActivity.this, EditThingsActivity.class);
+                intent.putExtra("key", 1);
+                startActivity(intent);
             }
         });
     }

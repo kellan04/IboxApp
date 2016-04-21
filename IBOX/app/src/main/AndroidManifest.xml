@@ -43,7 +43,8 @@
         <activity android:name=".ui.ChatSysActivity" />
         <activity android:name=".ui.FindActivity" />
         <activity android:name=".ui.MultiCategoryActivity" />
-        <activity android:name=".ui.TopThingsActivity"></activity>
+        <activity android:name=".ui.TopThingsActivity" />
+        <activity android:name=".ui.LogisticInfoActivity"></activity>
     </application>
 
 </manifest>

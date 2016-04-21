@@ -57,9 +57,9 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<IbuyRecyclerVi
                     }
                 });
             }
-            if(!viewHolder.mButton.hasOnClickListeners()) {
+            if(!viewHolder.mButtonLogistics.hasOnClickListeners()) {
                 Log.e("ListAdapter", "setOnClickListener");
-                viewHolder.mButton.setOnClickListener(new View.OnClickListener() {
+                viewHolder.mButtonLogistics.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         int pos = viewHolder.getPosition();
@@ -80,14 +80,18 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<IbuyRecyclerVi
         public CardView mCardView;
         public TextView mTextView;
         public ImageView mImageView;
-        public Button mButton;
+        public Button mButtonConnect;
+        public Button mButtonLogistics;
+        public Button mButtonReceipt;
 
         public ViewHolder(View view){
             super(view);
             mCardView = (CardView) view.findViewById(R.id.cv_item_buy);
             mTextView = (TextView) mCardView.findViewById(R.id.text_card_buy);
             mImageView = (ImageView) mCardView.findViewById(R.id.image_card_buy);
-            mButton = (Button) mCardView.findViewById(R.id.button_connect);
+            mButtonConnect = (Button) mCardView.findViewById(R.id.button_connect);
+            mButtonLogistics = (Button) mCardView.findViewById(R.id.button_logistics);
+            mButtonReceipt = (Button) mCardView.findViewById(R.id.button_receipt);
 
 
         }

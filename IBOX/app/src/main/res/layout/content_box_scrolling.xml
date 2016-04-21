@@ -59,7 +59,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_margin="10dp" />
 
-                <Button
+                <!--<Button
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:text="@string/unsell"
@@ -85,7 +85,19 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_below="@+id/share_button"
                     android:layout_alignLeft="@+id/text_goods_name"
-                    android:layout_alignStart="@+id/text_goods_name" />
+                    android:layout_alignStart="@+id/text_goods_name" />-->
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/modify_goods"
+                    android:textSize="20sp"
+                    android:textColor="@color/colorTextView_modify_goods"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:background="@color/colorButton_modify_goods"
+                    android:id="@+id/modify_goods_button"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/share_button" />
 
             </RelativeLayout>
 
@@ -303,7 +315,7 @@
 
 
         <Button
-            android:layout_width="140dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="@string/more_comment"
             android:textSize="15sp"
