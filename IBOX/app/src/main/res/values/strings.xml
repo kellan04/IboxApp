@@ -69,6 +69,7 @@
     <string name="goods_comment">评论:</string>
     <string name="data_comment_num">2</string>
     <string name="more_comment">查看更多评论</string>
+    <string name="add_comment">添加评论</string>
     <string name="comment_name">小美</string>
     <string name="comment_content">包邮350入手</string>
     <string name="comment_time">45分钟前</string>
@@ -99,7 +100,7 @@
     <string name="logistic_number">运 单 编 号 :</string>
     <string name="logistic_phone">官 方 电 话 :</string>
 
-    <!-- Strings related to logistic_info——item -->
+    <!-- Strings related to logistic_info_item -->
     <string name="logistic_info1">货物已出仓</string>
     <string name="logistic_info2">【南京市】box快递 江苏南京浦口公司已揽件</string>
     <string name="logistic_info3">【南京市】江苏南京浦口公司已发出</string>
@@ -107,7 +108,47 @@
     <string name="logistic_info5">【北京市】快件已到达北京朝阳区公司</string>
     <string name="logistic_info6">【北京市】北京市朝阳区box快递派件员：12345678正在为您派件</string>
 
+    <!-- Strings related to confirm_order -->
+    <string name="order_confirm">确认订单</string>
+    <string name="order_buyer_address">收货人：\t暗箱\t\t\t\t\t\t\t12345678901\n\n收货地址：\t浙江省杭州市江干区白杨街道box大学box校区box寝室box\n</string>
+    <string name="order_seller">么么</string>
+    <string name="order_intro">包邮 全新国行仅拆封，带防伪码，大昌行货，可以送给女朋友balabalabala</string>
+    <string name="order_num">x1</string>
+    <string name="order_message">买家留言：</string>
+    <string name="order_hint">选填，可填写与卖家达成一致的信息</string>
+    <string name="order_total">合计：￥100.00</string>
+    <string name="order_noname">匿名</string>
+    <string name="order_ensure">提交订单</string>
 
+    <!-- Strings related to pay_online -->
+    <string name="pay_online">在线支付</string>
+    <string name="pay_third">使用第三方平台支付\t\t\t\t\t\t\t\t\t\t￥100</string>
+    <string name="pay_alipay">支付宝</string>
+    <string name="pay_wechat">微信支付</string>
+    <string name="pay_qq">QQ钱包支付</string>
+    <string name="pay_bank">网银支付</string>
+    <string name="pay_more">更多方式</string>
+    <string name="pay_ensure">确认支付</string>
+
+    <!-- Strings related to order_info -->
+    <string name="order_info">订单详情</string>
+    <string name="order_static">状态\t\t\t\t\t\t\t交易完成</string>
+    <string name="order_static_un">状态\t\t\t\t\t\t\t已发货</string>
+    <string name="order_number">订单号\t\t\t\t\t112127782</string>
+    <string name="order_time">下单时间\t\t\t2016-04-23\t00：43</string>
+    <string name="order_buyer">收货人\t\t\t\t\t暗箱\t\t\t\t\t12345678901</string>
+    <string name="order_address">收货地址\t\t\t浙江省杭州市江干区白杨街道box大学box校区box寝室box</string>
+    <string name="order_return">退\t\t货</string>
+    <string name="order_receive">收货评价</string>
+    <string name="order_trace">追踪物流</string>
+    <string name="order_delete">删除订单</string>
+    <string name="order_inbox">加入IBox</string>
+
+    <!-- Strings related to good_return -->
+    <string name="good_return">退货详情</string>
+
+    <!-- Strings related to good_appraise -->
+    <string name="good_appraise">评价详情</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

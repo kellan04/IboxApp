@@ -22,6 +22,8 @@ import com.iboxapp.ibox.ui.MyScrollingActivity;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
+import me.drakeet.materialdialog.MaterialDialog;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,6 +43,7 @@ public class IboxFragment extends Fragment {
     private IboxRecyclerViewAdapter mAdapter;
     private FloatingActionsMenu menuMultipleButton;
     private FloatingActionButton menuEditButton;
+    private FloatingActionButton menuChooseButton;
 
 
     public IboxFragment() {
@@ -108,6 +111,7 @@ public class IboxFragment extends Fragment {
     private void initfab(View view) {
 
         menuMultipleButton = (FloatingActionsMenu) view.findViewById(R.id.multiple_actions);
+        menuChooseButton = (FloatingActionButton) view.findViewById(R.id.action_s);
         menuEditButton = (FloatingActionButton) view.findViewById(R.id.action_b);
         menuEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,6 +121,34 @@ public class IboxFragment extends Fragment {
 
             }
         });
+        menuChooseButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // getActivity().startActivity(new Intent(getActivity(), EditThingsActivity.class));
+                showDialog();
+            }
+        });
     }
+
+    private void showDialog() {
+        final MaterialDialog mMaterialDialog = new MaterialDialog(getActivity());
+        mMaterialDialog.setTitle("筛选");
+        mMaterialDialog.setContentView(R.layout.ibox_meterial_dialog);
+        // mMaterialDialog.setMessage("Hello world!");
+        mMaterialDialog.setPositiveButton("选择", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMaterialDialog.dismiss();
+            }
+        });
+        mMaterialDialog.setNegativeButton("取消", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mMaterialDialog.dismiss();
+            }
+        });
+        mMaterialDialog.show();
+    }
+
 
 }

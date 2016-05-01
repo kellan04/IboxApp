@@ -3,417 +3,411 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--<?xml version="1.0" encoding="utf-8"?>-->
-    <!--<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"-->
-        <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
-        <!--xmlns:tools="http://schemas.android.com/tools"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-        <!--tools:context="com.iboxapp.ibox.ui.MyScrollingActivity"-->
-        <!--tools:showIn="@layout/activity_buy_scrolling">-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="@color/colorButton_unsell">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:orientation="vertical"
-            android:background="@color/colorButton_unsell">
+            android:background="@color/white"
+            android:elevation="3dp">
 
-            <LinearLayout
+            <!-- <com.bigkoo.convenientbanner.ConvenientBanner
+                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                 android:id="@+id/convenientBanner"
+                 android:layout_width="match_parent"
+                 android:layout_height="200dp"
+                 app:canLoop="true"
+             />-->
+
+            <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:orientation="vertical"
-                android:background="@color/white"
-                android:elevation="3dp">
-
-                <!-- <com.bigkoo.convenientbanner.ConvenientBanner
-                     xmlns:app="http://schemas.android.com/apk/res-auto"
-                     android:id="@+id/convenientBanner"
-                     android:layout_width="match_parent"
-                     android:layout_height="200dp"
-                     app:canLoop="true"
-                 />-->
-
-                <ImageButton
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:src="@drawable/p2" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal" >
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/goods_title"
-                        android:id="@+id/text_goods_name"
-                        android:layout_gravity="center_horizontal"
-                        android:textSize="22sp"
-                        android:layout_margin="10dp"/>
-                    <ImageButton
-                        android:layout_width="50dp"
-                        android:layout_height="wrap_content"
-                        android:src="@mipmap/ic_star_white_36dp"
-                        android:id="@+id/share_button"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="10dp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal" >
-
-                    <ImageButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/buy_user"
-                        android:src="@mipmap/ic_account_circle_black_36dp"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="联系方式：QQ479174486"
-                        android:id="@+id/tv_contact"
-                        android:textSize="18sp"
-                        android:layout_alignParentBottom="true"
-                        android:layout_toRightOf="@+id/buy_user"
-                        android:layout_toEndOf="@+id/buy_user"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="王大锤王大锤王大锤"
-                        android:id="@+id/tv_name"
-                        android:textSize="18sp"
-                        android:layout_toRightOf="@+id/buy_user"
-                        android:layout_toEndOf="@+id/buy_user"
-                        android:layout_alignParentTop="true"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="￥ 16.00"
-                        android:textColor="@color/colorTextView_unsell"
-                        android:id="@+id/tv_price"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:textSize="22dp"
-                        android:layout_margin="10dp"/>
-                </RelativeLayout>
-
-                <TableLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:paddingBottom="20dp"
-                    android:paddingTop="5dp"
-                    android:shrinkColumns="1"
-                    android:stretchColumns="4"
-                    android:layout_weight="1"
-                    android:layout_marginTop="15dp" >
-                    <TableRow>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/goods_num"
-                            android:id="@+id/text_goods_num"
-                            android:layout_gravity="center_horizontal"
-                            android:textSize="20sp"
-                            android:paddingLeft="10dp"
-                            android:width="105dp"
-                            android:layout_alignParentBottom="true"
-                            android:textAlignment="center" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/goods_condition"
-                            android:id="@+id/text_goods_condition"
-                            android:layout_gravity="center_horizontal"
-                            android:textSize="20sp"
-                            android:width="105dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_toRightOf="@+id/text_goods_num"
-                            android:layout_toEndOf="@+id/text_goods_num"
-                            android:textAlignment="center" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/goods_addr"
-                            android:id="@+id/text_goods_addr"
-                            android:layout_gravity="center_horizontal"
-                            android:textSize="20sp"
-                            android:width="105dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_toLeftOf="@+id/text_goods_intime"
-                            android:layout_toStartOf="@+id/text_goods_intime"
-                            android:textAlignment="center" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/goods_intime"
-                            android:id="@+id/text_goods_intime"
-                            android:layout_gravity="center_horizontal"
-                            android:textSize="20sp"
-                            android:width="105dp"
-                            android:paddingRight="10dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentEnd="true"
-                            android:textAlignment="center" />
-                    </TableRow>
-                    <TableRow>
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="1台(个/件)"
-                            android:id="@+id/data_goods_num"
-                            android:layout_gravity="center_horizontal"
-                            android:textSize="15sp"
-                            android:width="105dp"
-                            android:paddingLeft="10dp"
-                            android:layout_alignParentBottom="true"
-                            android:textAlignment="center" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/goods_new_condition"
-                            android:id="@+id/data_goods_condition"
-                            android:layout_gravity="center_horizontal"
-                            android:textSize="15sp"
-                            android:width="105dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_toEndOf="@+id/data_goods_num"
-                            android:layout_toRightOf="@+id/data_goods_num"
-                            android:layout_alignParentTop="true"
-                            android:textAlignment="center" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/data_addr"
-                            android:id="@+id/data_goods_addr"
-                            android:layout_gravity="center_horizontal"
-                            android:textSize="15sp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_toLeftOf="@+id/data_goods_intime"
-                            android:layout_toStartOf="@+id/data_goods_intime"
-                            android:width="105dp"
-                            android:textAlignment="center" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/data_intime"
-                            android:id="@+id/data_goods_intime"
-                            android:layout_gravity="center_horizontal"
-                            android:textSize="15sp"
-                            android:paddingRight="10dp"
-                            android:width="105dp"
-                            android:layout_alignParentBottom="true"
-                            android:layout_alignParentRight="true"
-                            android:layout_alignParentEnd="true"
-                            android:textAlignment="center" />
-                    </TableRow>
-                </TableLayout>
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/text_goods_description"
-                    android:text="@string/goods_description" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/data_goods_description"
-                    android:text="@string/data_description"
-                    android:paddingBottom="5dp"/>
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp">
-                    <Button
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:text="喜欢"
-                        android:textSize="20sp"
-                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
-                        android:id="@+id/like_goods"
-                        android:background="@color/colorButton_unsell"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginStart="10dp"/>
-
-                    <Button
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:text="加入购物车"
-                        android:textSize="20sp"
-                        android:textAppearance="?android:attr/textAppearanceLargeInverse"
-                        android:id="@+id/add_into_box"
-                        android:textColor="@color/colorTextView_modify_goods"
-                        android:background="@color/colorTextView_unsell"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_alignTop="@+id/like_goods"
-                        android:layout_alignParentRight="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginEnd="10dp"/>
-                </RelativeLayout>
-            </LinearLayout>
+                android:layout_height="200dp"
+                android:src="@drawable/p2" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="@color/white"
-                android:elevation="3dp" >
-                <TextView
-                    android:layout_width="8dp"
-                    android:layout_height="100dp"
-                    android:background="@color/colorButton_modify_goods"
-                    android:id="@+id/textView15" />
-
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal" >
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="BOXer"
-                    android:textSize="20sp"
-                    android:id="@+id/tv_boxer"
-                    android:layout_alignParentTop="true"
-                    android:layout_toRightOf="@+id/textView15"
-                    android:layout_toEndOf="@+id/textView15"
-                    android:layout_margin="5dp"/>
-
+                    android:text="@string/goods_title"
+                    android:id="@+id/text_goods_name"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="22sp"
+                    android:layout_margin="10dp"/>
                 <ImageButton
                     android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:id="@+id/image_boxer"
-                    android:src="@mipmap/ic_account_circle_black_36dp"
-                    android:layout_below="@+id/tv_boxer"
-                    android:layout_toRightOf="@+id/textView15"
-                    android:layout_toEndOf="@+id/textView15"
-                    android:layout_margin="5dp"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="王大锤"
-                    android:textSize="18sp"
-                    android:id="@+id/textView14"
-                    android:layout_below="@+id/tv_boxer"
-                    android:layout_toRightOf="@+id/tv_boxer"
-                    android:layout_toEndOf="@+id/tv_boxer"
-                    android:layout_marginTop="20dp"/>
-
-                <Button
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:text="关注"
-                    android:id="@+id/buy_followed"
-                    android:textColor="@color/colorTextView_modify_goods"
-                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
-                    android:background="@color/colorButton_modify_goods"
-                    android:layout_centerVertical="true"
+                    android:src="@mipmap/ic_star_white_36dp"
+                    android:id="@+id/share_button"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginEnd="40dp" />
+                    android:layout_margin="10dp" />
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" >
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/buy_user"
+                    android:src="@mipmap/ic_account_circle_black_36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系方式：QQ479174486"
+                    android:id="@+id/tv_contact"
+                    android:textSize="18sp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toRightOf="@+id/buy_user"
+                    android:layout_toEndOf="@+id/buy_user"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="王大锤王大锤王大锤"
+                    android:id="@+id/tv_name"
+                    android:textSize="18sp"
+                    android:layout_toRightOf="@+id/buy_user"
+                    android:layout_toEndOf="@+id/buy_user"
+                    android:layout_alignParentTop="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥ 16.00"
+                    android:textColor="@color/colorTextView_unsell"
+                    android:id="@+id/tv_price"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:textSize="22dp"
+                    android:layout_margin="10dp"/>
+            </RelativeLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingBottom="20dp"
+                android:paddingTop="5dp"
+                android:shrinkColumns="1"
+                android:stretchColumns="4"
+                android:layout_weight="1"
+                android:layout_marginTop="15dp" >
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/goods_num"
+                        android:id="@+id/text_goods_num"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20sp"
+                        android:paddingLeft="10dp"
+                        android:width="105dp"
+                        android:layout_alignParentBottom="true"
+                        android:textAlignment="center" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/goods_condition"
+                        android:id="@+id/text_goods_condition"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20sp"
+                        android:width="105dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/text_goods_num"
+                        android:layout_toEndOf="@+id/text_goods_num"
+                        android:textAlignment="center" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/goods_addr"
+                        android:id="@+id/text_goods_addr"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20sp"
+                        android:width="105dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toLeftOf="@+id/text_goods_intime"
+                        android:layout_toStartOf="@+id/text_goods_intime"
+                        android:textAlignment="center" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/goods_intime"
+                        android:id="@+id/text_goods_intime"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="20sp"
+                        android:width="105dp"
+                        android:paddingRight="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:textAlignment="center" />
+                </TableRow>
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1台(个/件)"
+                        android:id="@+id/data_goods_num"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="15sp"
+                        android:width="105dp"
+                        android:paddingLeft="10dp"
+                        android:layout_alignParentBottom="true"
+                        android:textAlignment="center" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/goods_new_condition"
+                        android:id="@+id/data_goods_condition"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="15sp"
+                        android:width="105dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toEndOf="@+id/data_goods_num"
+                        android:layout_toRightOf="@+id/data_goods_num"
+                        android:layout_alignParentTop="true"
+                        android:textAlignment="center" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/data_addr"
+                        android:id="@+id/data_goods_addr"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="15sp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toLeftOf="@+id/data_goods_intime"
+                        android:layout_toStartOf="@+id/data_goods_intime"
+                        android:width="105dp"
+                        android:textAlignment="center" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/data_intime"
+                        android:id="@+id/data_goods_intime"
+                        android:layout_gravity="center_horizontal"
+                        android:textSize="15sp"
+                        android:paddingRight="10dp"
+                        android:width="105dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:textAlignment="center" />
+                </TableRow>
+            </TableLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
-                android:layout_marginTop="20dp">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/text_goods_comment"
-                    android:text="@string/goods_comment"
-                    android:layout_alignParentBottom="true"
-                    android:textSize="15dp" />
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="@string/data_comment_num"
-                    android:id="@+id/data_goods_comment"
-                    android:textSize="15dp"
-                    android:textColor="@color/colorButton_modify_goods"
-                    android:layout_alignParentBottom="true"
+                android:id="@+id/text_goods_description"
+                android:text="@string/goods_description" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/data_goods_description"
+                android:text="@string/data_description"
+                android:paddingBottom="5dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="喜欢"
+                    android:textSize="20sp"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:id="@+id/like_goods"
+                    android:background="@color/colorButton_unsell"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_centerVertical="true"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_marginLeft="53dp"
-                    android:layout_marginStart="53dp" />
-            </RelativeLayout>
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dip"
-                android:id="@+id/text_line"
-                android:background="#FF909090" />
-
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center_horizontal"
-                android:paddingBottom="5dp"
-                android:background="@color/white"
-                android:elevation="3dp" >
-                <ImageView
-                    android:layout_width="wrap_content"
+                <Button
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_account_circle_black_36dp"
-                    android:id="@+id/imageView3" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/comment_name"
-                    android:textSize="15dp"
-                    android:id="@+id/text_comment_name"
+                    android:text="加入购物车"
+                    android:textSize="20sp"
+                    android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                    android:id="@+id/add_into_box"
+                    android:textColor="@color/colorTextView_modify_goods"
+                    android:background="@color/colorTextView_unsell"
                     android:layout_gravity="center_horizontal"
-                    android:layout_alignParentTop="true"
-                    android:layout_toRightOf="@+id/imageView3"
-                    android:layout_toEndOf="@+id/imageView3" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/comment_content"
-                    android:textSize="15dp"
-                    android:id="@+id/text_comment_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_below="@+id/text_comment_name"
-                    android:layout_toRightOf="@+id/imageView3"
-                    android:layout_toEndOf="@+id/imageView3" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/comment_time"
-                    android:textSize="15dp"
-                    android:id="@+id/text_comment_time"
-                    android:layout_centerVertical="true"
+                    android:layout_alignTop="@+id/like_goods"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
-                    android:layout_margin="5dp"/>
-
+                    android:layout_marginRight="10dp"
+                    android:layout_marginEnd="10dp"/>
             </RelativeLayout>
+        </LinearLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:elevation="3dp" >
+            <TextView
+                android:layout_width="8dp"
+                android:layout_height="100dp"
+                android:background="@color/colorButton_modify_goods"
+                android:id="@+id/textView15" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BOXer"
+                android:textSize="20sp"
+                android:id="@+id/tv_boxer"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView15"
+                android:layout_toEndOf="@+id/textView15"
+                android:layout_margin="5dp"/>
+
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/image_boxer"
+                android:src="@mipmap/ic_account_circle_black_36dp"
+                android:layout_below="@+id/tv_boxer"
+                android:layout_toRightOf="@+id/textView15"
+                android:layout_toEndOf="@+id/textView15"
+                android:layout_margin="5dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="王大锤"
+                android:textSize="18sp"
+                android:id="@+id/textView14"
+                android:layout_below="@+id/tv_boxer"
+                android:layout_toRightOf="@+id/tv_boxer"
+                android:layout_toEndOf="@+id/tv_boxer"
+                android:layout_marginTop="20dp"/>
 
             <Button
-                android:layout_width="140dp"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="关注"
+                android:id="@+id/buy_followed"
+                android:textColor="@color/colorTextView_modify_goods"
+                android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                android:background="@color/colorButton_modify_goods"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="40dp"
+                android:layout_marginEnd="40dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:layout_marginTop="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/text_goods_comment"
+                android:text="@string/goods_comment"
+                android:layout_alignParentBottom="true"
+                android:textSize="15dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/data_comment_num"
+                android:id="@+id/data_goods_comment"
+                android:textSize="15dp"
+                android:textColor="@color/colorButton_modify_goods"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="53dp"
+                android:layout_marginStart="53dp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:id="@+id/text_line"
+            android:background="#FF909090" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="5dp"
+            android:background="@color/white"
+            android:elevation="3dp" >
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_account_circle_black_36dp"
+                android:id="@+id/imageView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/comment_name"
+                android:textSize="15dp"
+                android:id="@+id/text_comment_name"
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView3"
+                android:layout_toEndOf="@+id/imageView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/comment_content"
+                android:textSize="15dp"
+                android:id="@+id/text_comment_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_below="@+id/text_comment_name"
+                android:layout_toRightOf="@+id/imageView3"
+                android:layout_toEndOf="@+id/imageView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/comment_time"
+                android:textSize="15dp"
+                android:id="@+id/text_comment_time"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="5dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            android:layout_margin="20dp">
+            <Button
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="@string/more_comment"
                 android:textSize="15sp"
@@ -422,12 +416,30 @@
                 android:background="@color/colorButton_modify_goods"
                 android:id="@+id/more_comment_button"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="20dp"  />
+                android:layout_marginRight="10dp"
+                android:layout_alignTop="@+id/add_comment_button"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp" />
 
-        </LinearLayout>
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/add_comment"
+                android:textSize="15sp"
+                android:textColor="@color/colorTextView_modify_goods"
+                android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                android:background="@color/colorButton_modify_goods"
+                android:id="@+id/add_comment_button"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp" />
 
+        </RelativeLayout>
+    </LinearLayout>
 
-
-    <!--</android.support.v4.widget.NestedScrollView>-->
 
 </ScrollView>

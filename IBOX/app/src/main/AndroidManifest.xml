@@ -44,7 +44,11 @@
         <activity android:name=".ui.FindActivity" />
         <activity android:name=".ui.MultiCategoryActivity" />
         <activity android:name=".ui.TopThingsActivity" />
-        <activity android:name=".ui.LogisticInfoActivity"></activity>
+        <activity android:name=".ui.LogisticInfoActivity" />
+        <activity android:name=".ui.PayOnlineActivity" />
+        <activity android:name=".ui.OrderInfoActivity" />
+        <activity android:name=".ui.OrderInfoUnActivity" />
+        <activity android:name=".ui.ConfirmOrderActivity"></activity>
     </application>
 
 </manifest>

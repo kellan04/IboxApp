@@ -14,19 +14,21 @@
     <color name="colorButton">#1976D2</color>
     <color name="colorButton_login">#F44336</color>
     <color name="colorButton_register">#E91E63</color>
-    <color name="colorTextView">#fafafa</color>
+    <color name="colorTextView">#FAFAFA</color>
     <color name="colorTextView2">#1976D2</color>
+    <color name="colorDividingLine">#B6B6B6</color>
+    <color name="colorTextView_black">#212121</color>
 
-    <color name="white_fab">#fafafa</color>
-    <color name="white_pressed_fab">#f1f1f1</color>
+    <color name="white_fab">#FAFAFA</color>
+    <color name="white_pressed_fab">#F1F1F1</color>
     <color name="pink_fab">#E91E63</color>
-    <color name="pink_pressed_fab">#ec407a</color>
+    <color name="pink_pressed_fab">#EC407A</color>
     <color name="half_black_fab">#808080</color>
     <color name="half_white_fab">#FFFFFF</color>
     <color name="black_semi_transparentk_fab">#B2000000</color>
-    <color name="backgroundk_fab">#e5e5e5</color>
-    <color name="blue_semi_transparent_fab">#805677fc</color>
-    <color name="blue_semi_transparent_pressed_fab">#80738ffe</color>
+    <color name="backgroundk_fab">#E5E5E5</color>
+    <color name="blue_semi_transparent_fab">#805677FC</color>
+    <color name="blue_semi_transparent_pressed_fab">#80738FFE</color>
 
     <color name="colorButton_unsell">#CBCBCB</color>
     <color name="colorTextView_unsell">#CC3300</color>

@@ -237,10 +237,10 @@
                 <Button
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="喜欢"
+                    android:text="收藏"
                     android:textSize="20sp"
                     android:textAppearance="?android:attr/textAppearanceLargeInverse"
-                    android:id="@+id/like_goods"
+                    android:id="@+id/collect_goods"
                     android:background="@color/colorButton_unsell"
                     android:layout_gravity="center_horizontal"
                     android:layout_centerVertical="true"
@@ -252,14 +252,14 @@
                 <Button
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
-                    android:text="加入购物车"
+                    android:text="购买"
                     android:textSize="20sp"
                     android:textAppearance="?android:attr/textAppearanceLargeInverse"
                     android:id="@+id/add_into_box"
                     android:textColor="@color/colorTextView_modify_goods"
                     android:background="@color/colorTextView_unsell"
                     android:layout_gravity="center_horizontal"
-                    android:layout_alignTop="@+id/like_goods"
+                    android:layout_alignTop="@+id/collect_goods"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true"
                     android:layout_marginRight="10dp"
@@ -406,19 +406,44 @@
 
         </RelativeLayout>
 
-
-
-        <Button
-            android:layout_width="140dp"
-            android:layout_height="wrap_content"
-            android:text="@string/more_comment"
-            android:textSize="15sp"
-            android:textColor="@color/colorTextView_modify_goods"
-            android:textAppearance="?android:attr/textAppearanceLargeInverse"
-            android:background="@color/colorButton_modify_goods"
-            android:id="@+id/more_comment_button"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="20dp"  />
+            android:padding="5dp"
+            android:layout_margin="20dp">
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/more_comment"
+                android:textSize="15sp"
+                android:textColor="@color/colorTextView_modify_goods"
+                android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                android:background="@color/colorButton_modify_goods"
+                android:id="@+id/more_comment_button"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="10dp"
+                android:layout_alignTop="@+id/add_comment_button"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp" />
 
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="@string/add_comment"
+                android:textSize="15sp"
+                android:textColor="@color/colorTextView_modify_goods"
+                android:textAppearance="?android:attr/textAppearanceLargeInverse"
+                android:background="@color/colorButton_modify_goods"
+                android:id="@+id/add_comment_button"
+                android:layout_gravity="center_horizontal"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp" />
+
+        </RelativeLayout>
     </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

@@ -21,6 +21,7 @@ public class MyScrollingActivity extends AppCompatActivity {
     private CollapsingToolbarLayout toolBarLayout;
     private Button mMoreCommentButton;
     private Button mButtonModify;
+    private Button mAddCommentButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,6 +102,20 @@ public class MyScrollingActivity extends AppCompatActivity {
 
                 //先调用接口判断，验证码是否正确。根据返回信息，toast出不同的信息，并跳转
                 startActivity(new Intent(MyScrollingActivity.this, CommentActivity.class));
+
+            }
+        });
+
+        mAddCommentButton = (Button) findViewById(R.id.add_comment_button);
+        mAddCommentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getApplicationContext(), "add comments", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+
+                //先调用接口判断，验证码是否正确。根据返回信息，toast出不同的信息，并跳转
+                startActivity(new Intent(MyScrollingActivity.this, AddCommentActivity.class));
 
             }
         });
