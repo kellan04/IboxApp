@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.iboxapp.ibox.ui.PayOnlineActivity">
+
+    <include
+        android:id="@+id/back_toolbar"
+        layout="@layout/simple_toolbar"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pay_third"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:padding="@dimen/text_padding"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/textView_padding1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline2"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pay_alipay"
+                android:textSize="18sp"
+                android:padding="@dimen/text_padding"
+                android:button="@null"
+                android:drawableRight="@mipmap/ic_check_circle_red_500_36dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/textView_padding2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline1"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pay_qq"
+                android:textSize="18sp"
+                android:padding="@dimen/text_padding"
+                android:button="@null"
+                android:drawableRight="@mipmap/ic_check_circle_grey_500_36dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/textView_padding3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline1"/>
+
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pay_qq"
+                android:textSize="18sp"
+                android:padding="@dimen/text_padding"
+                android:button="@null"
+                android:drawableRight="@mipmap/ic_check_circle_grey_500_36dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/textView_padding4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline1"/>
+
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pay_bank"
+                android:textSize="18sp"
+                android:padding="@dimen/text_padding"
+                android:button="@null"
+                android:drawableRight="@mipmap/ic_check_circle_grey_500_36dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/textView_padding5"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pay_more"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:padding="@dimen/text_padding"
+                android:drawableRight="@mipmap/ic_keyboard_arrow_down_black_36dp"
+                android:background="@color/white"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pay_ensure"
+        android:textSize="18dp"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"/>
+
+</LinearLayout>

@@ -20,7 +20,7 @@
         android:layout_height="150dp"
         android:id="@+id/imageView"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/box_icon_300x300"
+        android:src="@drawable/box_icon_48dp"
         android:scaleType="centerInside" />
 
     <android.support.design.widget.TextInputLayout

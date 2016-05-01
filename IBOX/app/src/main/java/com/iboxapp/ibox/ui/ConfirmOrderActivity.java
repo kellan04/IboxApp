@@ -6,17 +6,17 @@ import android.support.v7.widget.Toolbar;
 
 import com.iboxapp.ibox.R;
 
-public class AddCommentActivity extends AppCompatActivity {
+public class ConfirmOrderActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_comment);
+        setContentView(R.layout.activity_confirm_order);
 
         mToolbar = (Toolbar) findViewById(R.id.simple_toolbar);
-        mToolbar.setTitle("添加评论");
+        mToolbar.setTitle(getResources().getString(R.string.order_confirm));
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

@@ -10,7 +10,7 @@
         android:layout_height="48dp"
         android:layout_margin="10dp"
         android:id="@+id/imageView2"
-        android:src="@drawable/box_icon_300x300" />
+        android:src="@drawable/box_icon_24dp" />
 
     <RelativeLayout
         android:layout_width="220dp"
