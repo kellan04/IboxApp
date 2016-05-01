@@ -42,4 +42,5 @@ dependencies {
     compile 'com.mikepenz:google-material-typeface:2.2.0.1.original@aar'
     compile 'com.github.CodeFalling:RecyclerViewSwipeDismiss:v1.1.1'
     compile 'com.bigkoo:convenientbanner:2.0.5'
+
 }
