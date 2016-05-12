@@ -114,6 +114,7 @@
         android:text="@string/pay_ensure"
         android:textSize="18dp"
         android:textColor="@color/white"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary"
+        android:id="@+id/pay_online_sure_button"/>
 
 </LinearLayout>

@@ -3,10 +3,13 @@ package com.iboxapp.ibox;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +24,9 @@ import com.iboxapp.ibox.ui.MyScrollingActivity;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 import me.drakeet.materialdialog.MaterialDialog;
 
@@ -44,6 +50,13 @@ public class IboxFragment extends Fragment {
     private FloatingActionsMenu menuMultipleButton;
     private FloatingActionButton menuEditButton;
     private FloatingActionButton menuChooseButton;
+    private SwipeRefreshLayout mSwipeRefreshLayout;
+    private Handler handler = new Handler();
+
+    private boolean isLoading;
+    private final String TAG = "Ibox";
+    private ArrayList<String> mDatas = new ArrayList<>();
+    private ArrayList<Integer> mDatasImg = new ArrayList<Integer>();
 
 
     public IboxFragment() {
@@ -86,7 +99,7 @@ public class IboxFragment extends Fragment {
         //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
         mRecyclerView.setHasFixedSize(true);
         //创建并设置Adapter
-        mAdapter = new IboxRecyclerViewAdapter(getActivity());
+        mAdapter = new IboxRecyclerViewAdapter(getActivity(), mDatas, mDatasImg);
         mRecyclerView.setAdapter(mAdapter);
 
         mAdapter.setOnItemClickListener(new IboxRecyclerViewAdapter.OnItemClickListener() {
@@ -102,8 +115,81 @@ public class IboxFragment extends Fragment {
 
         // 设置item动画
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+        mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+
+            /**
+             * 当RecyclerView的滑动状态改变时触发
+             */
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                Log.d("test", "StateChanged = " + newState);
+
+
+            }
+
+            /**
+             * 当RecyclerView滑动时触发
+             * 类似点击事件的MotionEvent.ACTION_MOVE
+             */
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                Log.d("test", "onScrolled");
+
+                int lastVisibleItemPosition = mLayoutManager.findLastVisibleItemPosition();
+                if (lastVisibleItemPosition + 1 == mAdapter.getItemCount()) {
+                    Log.d("test", "loading executed");
+
+                    boolean isRefreshing = mSwipeRefreshLayout.isRefreshing();
+                    if (isRefreshing) {
+                        mAdapter.notifyItemRemoved(mAdapter.getItemCount());
+                        return;
+                    }
+                    if (!isLoading) {
+                        isLoading = true;
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                getData();
+                                initDatasImg();
+                                Log.d("test", "load more completed");
+                                isLoading = false;
+                            }
+                        }, 1000);
+                    }
+                }
+            }
+        });
+
+        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.box_swipeRefreshLayout);
+
+        mSwipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
+        mSwipeRefreshLayout.post(new Runnable() {
+            @Override
+            public void run() {
+                mSwipeRefreshLayout.setRefreshing(true);
+                Log.d(TAG, "post()");
+            }
+        });
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mDatas.clear();
+                        mDatasImg.clear();
+                        getData();
+                        initDatasImg();
+                    }
+                }, 2000);
+                Log.d(TAG, "onRefresh()");
+            }
+        });
 
         initfab(view);
+        initData();
 
         return view;
     }
@@ -150,5 +236,63 @@ public class IboxFragment extends Fragment {
         mMaterialDialog.show();
     }
 
+    public void initData() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mDatas.clear();
+                mDatasImg.clear();
+                getData();
+                initDatasImg();
+            }
+        }, 1500);
+
+    }
+
+    /**
+     * 获取测试数据
+     */
+    private void getData() {
+        /*for (int i = 0; i < 12; i++) {*/
+            mDatas.add("肩部开衩荷叶边");
+            mDatas.add("复古单鞋平底平跟系带休闲文艺女鞋");
+            mDatas.add("YSL/圣罗兰长效丝绸控油粉底液");
+            mDatas.add("PIXELON孙悟空刺绣教练服");
+            mDatas.add("PIXELON男士中邦靴马丁工装鞋");
+            mDatas.add("Pmsix春季新款时尚长款牛皮印花钱包");
+            mDatas.add("疯马皮磨砂男士针扣休闲皮带");
+            mDatas.add("PIXELON复古男士必备黑色伞");
+            mDatas.add("高端蓝牙耳机");
+            mDatas.add("日式抹茶巧克力蛋塔");
+            mDatas.add("日式抹茶巧克力蛋塔");
+            mDatas.add("阳光风车");
+        Log.d(TAG, "getData()");
+        /*}*/
+        mAdapter.notifyDataSetChanged();
+        mSwipeRefreshLayout.setRefreshing(false);
+        mAdapter.notifyItemRemoved(mAdapter.getItemCount());
+    }
+
+    public void initDatasImg() {
+        for (int position = 1; position <= 12; position++)
+            mDatasImg.add(getResId("ic_test_things_" + position + "_1", R.drawable.class));
+    }
+
+    /**
+     * 通过文件名获取资源id 例子：getResId("icon", R.drawable.class);
+     *
+     * @param variableName
+     * @param c
+     * @return
+     */
+    public static int getResId(String variableName, Class<?> c) {
+        try {
+            Field idField = c.getDeclaredField(variableName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
 
 }

@@ -1,41 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="#f0f0e0" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground_light" >
 
-    <RelativeLayout
-        android:id="@+id/rl_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/mmtitle_bg"
-        android:orientation="vertical" >
-
-        <Button
-            android:id="@+id/btn_back"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/selector_btn_back"
-            android:paddingLeft="10dp"
-            android:text="返回"
-            android:textColor="#ffffff"
-            android:textSize="18sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="way"
-            android:textColor="#ffffff"
-            android:textSize="20.0sp" />
-    </RelativeLayout>
+    <include
+        android:id="@+id/back_toolbar"
+        layout="@layout/simple_toolbar"/>
 
     <RelativeLayout
         android:id="@+id/rl_bottom"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@drawable/layout_bg1" >
@@ -47,11 +23,11 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:text="发送" />
+            android:text="@string/message_send" />
 
         <EditText
             android:id="@+id/et_sendmessage"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
@@ -63,11 +39,11 @@
     </RelativeLayout>
 
     <ListView
-        android:id="@+id/listview"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:id="@+id/message_listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@id/rl_bottom"
-        android:layout_below="@id/rl_layout"
+        android:layout_below="@id/back_toolbar"
         android:layout_marginLeft="10.0dip"
         android:layout_marginRight="10.0dip"
         android:layout_marginTop="10.0dip"

@@ -1,7 +1,9 @@
 package com.iboxapp.ibox.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,18 +18,23 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class ChatActivity extends AppCompatActivity implements View.OnClickListener {
+public class ChatActivity extends AppCompatActivity {
 
     private Button mBtnSend;// 发送btn
-    private Button mBtnBack;// 返回btn
     private EditText mEditTextContent;
     private ListView mListView;
     private ChatMsgViewAdapter mAdapter;// 消息视图的Adapter
     private List<ChatMsgEntity> mDataArrays = new ArrayList<ChatMsgEntity>();// 消息对象数组
+    private Toolbar mToolbar;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        mToolbar = (Toolbar) findViewById(R.id.simple_toolbar);
+        mToolbar.setTitle(getResources().getString(R.string.message_title_person));
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         initView();// 初始化view
 
@@ -39,11 +46,14 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
      * 初始化view
      */
     public void initView() {
-        mListView = (ListView) findViewById(R.id.listview);
+        mListView = (ListView) findViewById(R.id.message_listview);
         mBtnSend = (Button) findViewById(R.id.btn_send);
-        mBtnSend.setOnClickListener(this);
-        mBtnBack = (Button) findViewById(R.id.btn_back);
-        mBtnBack.setOnClickListener(this);
+        mBtnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                send();
+            }
+        });
         mEditTextContent = (EditText) findViewById(R.id.et_sendmessage);
     }
 
@@ -56,7 +66,7 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
             "2012-09-22 18:50:26", "2012-09-22 18:52:57",
             "2012-09-22 18:55:11", "2012-09-22 18:56:45",
             "2012-09-22 18:57:33", };
-    private final static int COUNT = 12;// 初始化数组总数
+    private final static int COUNT = 4;// 初始化数组总数
 
     /**
      * 模拟加载消息历史，实际开发可以从数据库中读出
@@ -78,18 +88,6 @@ public class ChatActivity extends AppCompatActivity implements View.OnClickListe
 
         mAdapter = new ChatMsgViewAdapter(this, mDataArrays);
         mListView.setAdapter(mAdapter);
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_send:// 发送按钮点击事件
-                send();
-                break;
-            case R.id.btn_back:// 返回按钮点击事件
-                finish();// 结束,实际开发中，可以返回主界面
-                break;
-        }
     }
 
     /**

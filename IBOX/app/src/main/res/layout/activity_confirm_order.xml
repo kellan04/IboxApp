@@ -156,6 +156,7 @@
         android:text="@string/order_ensure"
         android:textSize="18dp"
         android:textColor="@color/white"
-        android:background="@color/colorPrimary"/>
+        android:background="@color/colorPrimary"
+        android:id="@+id/order_ensure_button"/>
 
 </LinearLayout>

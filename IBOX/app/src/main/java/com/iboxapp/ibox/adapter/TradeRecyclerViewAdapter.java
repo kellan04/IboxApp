@@ -44,8 +44,8 @@ public class TradeRecyclerViewAdapter extends RecyclerView.Adapter<TradeRecycler
 
         public ViewHolder(View view){
             super(view);
-            mCardView = (CardView) view.findViewById(R.id.cv_item_buy);
-            mTextView = (TextView) mCardView.findViewById(R.id.trade_textView1);
+            mCardView = (CardView) view.findViewById(R.id.cv_item_trade);
+            mTextView = (TextView) mCardView.findViewById(R.id.trade_textView_name);
             mImageView = (ImageView) mCardView.findViewById(R.id.image_card_trade);
 
 

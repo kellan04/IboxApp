@@ -7,60 +7,44 @@
         android:id="@+id/sex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp">
+        android:layout_margin="15dp"
+        android:padding="5dp">
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dip"
-            android:background="@color/colorDividingLine" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/has_sold"
+            android:id="@+id/check_default"
+            android:text="默认\\时间流"
+            android:textSize="18dp"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/check_has_sold"
             android:text="已出售"
             android:textSize="18dp"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dip"
-            android:background="@color/colorDividingLine" />
-
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/no_sold"
+            android:id="@+id/check_no_sold"
             android:text="未出售"
             android:textSize="18dp"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dip"
-            android:background="@color/colorDividingLine" />
-
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/has_shown"
+            android:id="@+id/check_has_shown"
             android:text="已展示"
             android:textSize="18dp"/>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dip"
-            android:background="@color/colorDividingLine" />
-
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/no_shown"
+            android:id="@+id/check_no_shown"
             android:text="未展示"
             android:textSize="18dp"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dip"
-            android:background="@color/colorDividingLine" />
 
     </RadioGroup>
 

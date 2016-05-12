@@ -44,7 +44,7 @@ public class CollectRecyclerViewAdapter extends RecyclerView.Adapter<CollectRecy
 
         public ViewHolder(View view){
             super(view);
-            mCardView = (CardView) view.findViewById(R.id.cv_item_cd);
+            mCardView = (CardView) view.findViewById(R.id.cv_item_collect);
             mTextView = (TextView) mCardView.findViewById(R.id.collect_textView1);
             mImageView = (ImageView) mCardView.findViewById(R.id.image_card_collect);
 

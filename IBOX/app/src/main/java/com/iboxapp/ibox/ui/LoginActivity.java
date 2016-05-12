@@ -16,7 +16,7 @@ import com.iboxapp.ibox.R;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText phone;
-    private EditText  password;
+    private EditText password;
     private TextView register;
     private TextView forgetPassword;
     private Button login;
@@ -66,15 +66,4 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-
-
-    public void login(View view){
-        if(phone.getText().toString().equals(null) || password.getText().toString().equals(null)){
-            //提示不能为空
-            Toast.makeText(getApplicationContext(), "用户名和密码不能为空", Toast.LENGTH_SHORT).show();
-        }else{
-            //调用接口？
-
-        }
-    }
 }

@@ -10,15 +10,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
-        <android.support.v7.widget.RecyclerView
-            xmlns:android="http://schemas.android.com/apk/res/android"
+        <com.iboxapp.ibox.widget.CustomSwipeToRefresh
+            android:id="@+id/ishow_refreshLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/recycler_view_show"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_height="match_parent">
 
-        <com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader
+            <android.support.v7.widget.RecyclerView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recycler_view_show"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+        </com.iboxapp.ibox.widget.CustomSwipeToRefresh>
+
+
+
+       <!-- <com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader
             android:id="@+id/show_recyclerview_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,7 +45,7 @@
                     android:id="@+id/imageButton_main"
                     android:layout_centerHorizontal="true"
                     android:background="@color/white"
-                    android:src="@drawable/xiezi" />
+                    android:src="@drawable/ic_test_2" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -56,7 +65,7 @@
                         android:layout_height="120dp"
                         android:id="@+id/imageButton_find"
                         android:layout_weight="1"
-                        android:background="@drawable/test2"
+                        android:background="@drawable/ic_test_3"
                         android:scaleType="centerCrop"
                         android:text="发现"
                         android:textSize="30sp"/>
@@ -66,7 +75,7 @@
                         android:layout_height="120dp"
                         android:id="@+id/imageButton_selection"
                         android:layout_weight="1"
-                        android:background="@drawable/test2"
+                        android:background="@drawable/ic_test_3"
                         android:scaleType="centerCrop"
                         android:text="精选"
                         android:textSize="30sp"/>
@@ -83,7 +92,7 @@
 
             </LinearLayout>
 
-        </com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader>
+        </com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader>-->
 
     </android.support.design.widget.CoordinatorLayout>
 

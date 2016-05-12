@@ -1,6 +1,7 @@
 package com.iboxapp.ibox.ui;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -21,6 +22,8 @@ public class MyScrollingActivity extends AppCompatActivity {
     private CollapsingToolbarLayout toolBarLayout;
     private Button mMoreCommentButton;
     private Button mButtonModify;
+    private Button mButtonCollect;
+    private Button mButtonBuy;
     private Button mAddCommentButton;
 
     @Override
@@ -89,6 +92,41 @@ public class MyScrollingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        mButtonCollect = (Button) findViewById(R.id.collect_goods_button);
+        mButtonCollect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getApplicationContext(), "colllect", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+
+                //先调用接口判断，验证码是否正确。根据返回信息，toast出不同的信息，并跳转
+                String str = mButtonCollect.getText().toString();
+                if(str.equals("收藏")){
+                    mButtonCollect.setText("已收藏");
+                    mButtonCollect.setBackgroundColor(getResources().getColor(R.color.colorButton_unsell));
+                }else{
+                    mButtonCollect.setText("收藏");
+                    mButtonCollect.setBackgroundColor(getResources().getColor(R.color.colorTextView_modify_goods));
+                }
+
+            }
+        });
+
+        mButtonBuy = (Button) findViewById(R.id.add_into_buy__button);
+        mButtonBuy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getApplicationContext(), "buy", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
+
+                //先调用接口判断，验证码是否正确。根据返回信息，toast出不同的信息，并跳转
+                startActivity(new Intent(MyScrollingActivity.this, ConfirmOrderActivity.class));
+
             }
         });
 

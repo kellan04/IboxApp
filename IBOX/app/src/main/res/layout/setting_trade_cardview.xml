@@ -2,7 +2,7 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cv_item_buy"
+    android:id="@+id/cv_item_trade"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
@@ -23,7 +23,7 @@
             <ImageView
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/image_card_trade"
-                android:src="@drawable/test"
+                android:src="@drawable/ic_test_1"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"/>
@@ -34,7 +34,7 @@
                 android:text="绝对限量 Vans x ..."
                 android:layout_marginLeft="100dp"
                 android:textSize="24sp"
-                android:id="@+id/trade_textView1"
+                android:id="@+id/trade_textView_name"
                 android:layout_marginTop="3dp"/>
 
             <TextView
@@ -44,7 +44,7 @@
                 android:layout_marginLeft="100dp"
                 android:textSize="20sp"
                 android:textColor="#ff0000"
-                android:id="@+id/trade_textView2"
+                android:id="@+id/trade_textView_price"
                 android:layout_marginTop="3dp"/>
 
             <TextView
@@ -53,7 +53,7 @@
                 android:text="交易时间：2016-3-23\n交易类型：买进\n买家：张三"
                 android:layout_marginLeft="100dp"
                 android:textSize="18sp"
-                android:id="@+id/trade_textVie3"
+                android:id="@+id/trade_textVie_detail"
                 android:layout_marginTop="3dp"/>
 
 

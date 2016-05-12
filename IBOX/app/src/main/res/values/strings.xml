@@ -6,6 +6,7 @@
     <string name="make_sure">确认</string>
     <string name="back">返回</string>
     <string name="press_again_exit_app">再按一次退出程序</string>
+    <string name="app_loading">正在加载</string>
 
     <!-- Strings related to login -->
     <string name="hint_phone">请输入手机号</string>
@@ -41,6 +42,9 @@
 
     <!-- Strings related to Message -->
     <string name="message_title">消息</string>
+    <string name="message_send">发送</string>
+    <string name="message_title_person">私信</string>
+    <string name="message_title_system">系统信息</string>
 
     <!-- Strings related to ibox -->
     <string name="edit_things_title">添加物品</string>
@@ -51,6 +55,19 @@
     <string name="show_explore">探索</string>
     <string name="show_recommend">推荐</string>
 
+    <!-- Strings related to ishow_find -->
+    <string name="show_find_woman_wear">女装</string>
+    <string name="show_find_woman_shoes">女鞋</string>
+    <string name="show_find_makeup">美妆</string>
+    <string name="show_find_man_wear">男装</string>
+    <string name="show_find_man_shoes">男鞋</string>
+    <string name="show_find_bag">箱包</string>
+    <string name="show_find_jewelry">饰品</string>
+    <string name="show_find_sport">户外\\运动</string>
+    <string name="show_find_digital">数码</string>
+    <string name="show_find_food">美食</string>
+    <string name="show_find_life">日常百货</string>
+    <string name="show_find_furniture">家居装饰</string>
 
     <!-- Strings related to show_goods -->
     <string name="goods_title">高端无线蓝牙耳机</string>

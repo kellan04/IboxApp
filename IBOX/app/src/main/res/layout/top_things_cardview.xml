@@ -21,7 +21,7 @@
             <ImageView
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/image_card_top10"
-                android:src="@drawable/xiezi"
+                android:src="@drawable/ic_test_2"
                 android:scaleType="centerCrop"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"/>
@@ -33,7 +33,7 @@
                 android:layout_gravity="center_horizontal|bottom"
                 android:gravity="center_vertical"
                 android:textSize="25sp"
-                android:text="XXXXXXXXXXX"
+                android:text="薄荷色超酷轻盈跑鞋"
                 android:paddingLeft="10dp"
                 android:background="#b0ffffff"/>
 

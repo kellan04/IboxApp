@@ -13,88 +13,215 @@ import android.widget.TextView;
 
 import com.iboxapp.ibox.R;
 
+import java.util.List;
+
 /**
  * Created by gongchen on 2016/3/15.
  */
-public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<IbuyRecyclerViewAdapter.ViewHolder> {
+public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private final LayoutInflater mLayoutInflater;
     private final Context mContext;
-    private String[] datas;
     private OnItemClickListener mOnItemClickListener;
 
-    public IbuyRecyclerViewAdapter(Context context) {
-        datas = context.getResources().getStringArray(R.array.datas);
-        mContext = context;
-        mLayoutInflater = LayoutInflater.from(context);
+    private static final int TYPE_HEADER = 0;
+    private static final int TYPE_FOOTER = 1;
+    private static final int TYPE_ITEM = 2;
+    private static final int TYPE_EMPTY = 3;
+    private View mHeaderView;
+    private View mFooterView;
+    private View mEmptyView;
+    private List<String> datas;
+
+    public IbuyRecyclerViewAdapter(Context context, List data) {
+        this.mContext = context;
+        this.mLayoutInflater = LayoutInflater.from(context);
+        this.datas = data;
     }
     //创建新View，被LayoutManager所调用
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
-        View view = mLayoutInflater.inflate(R.layout.ibuy_cardview,viewGroup,false);
-        ViewHolder vh = new ViewHolder(view);
-        return vh;
+    public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+
+        if (viewType == TYPE_ITEM) {
+            View view = mLayoutInflater.inflate(R.layout.ibuy_cardview, viewGroup,
+                    false);
+            return new ItemViewHolder(view);
+        } else if (viewType == TYPE_HEADER) {
+            View v = mHeaderView;
+            return new HeaderViewHolder(v);
+        } else if (viewType == TYPE_FOOTER) {
+            View v = mFooterView;
+            return new FooterViewHolder(v);
+        } else if (viewType == TYPE_EMPTY) {
+            View v = mEmptyView;
+            return new EmptyViewHolder(v);
+        }
+
+        throw new RuntimeException("there is no type that matches the type " + viewType + " + make sure your using types correctly");
+
     }
     //将数据与界面进行绑定的操作
     @Override
-    public void onBindViewHolder(final ViewHolder viewHolder, int position) {
-        viewHolder.mTextView.setText(datas[position]);
-        //将数据保存在itemView的Tag中，以便点击时进行获取
-        viewHolder.mCardView.setTag(datas[position]);
-        if(mOnItemClickListener != null) {
-            /**
-             * 这里加了判断，itemViewHolder.itemView.hasOnClickListeners()
-             * 目的是减少对象的创建，如果已经为view设置了click监听事件,就不用重复设置了
-             * 不然每次调用onBindViewHolder方法，都会创建两个监听事件对象，增加了内存的开销
-             */
-            if(!viewHolder.mImageView.hasOnClickListeners()) {
-                Log.e("ListAdapter", "setOnClickListener");
-                viewHolder.mImageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int pos = viewHolder.getPosition();
-                        mOnItemClickListener.onItemClick(v, pos);
-                    }
-                });
+    public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, int position) {
+        if (viewHolder instanceof ItemViewHolder) {
+            ((ItemViewHolder)viewHolder).mTextView.setText(getItem(position));
+            if(mOnItemClickListener != null) {
+                /**
+                 * 这里加了判断，itemViewHolder.itemView.hasOnClickListeners()
+                 * 目的是减少对象的创建，如果已经为view设置了click监听事件,就不用重复设置了
+                 * 不然每次调用onBindViewHolder方法，都会创建两个监听事件对象，增加了内存的开销
+                 */
+                if(!viewHolder.itemView.hasOnClickListeners()) {
+                    Log.e("ListAdapter", "setOnClickListener");
+                    viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int pos = viewHolder.getPosition();
+                            mOnItemClickListener.onItemClick(v, pos);
+                        }
+                    });
+
+                }
+
+                if(!((ItemViewHolder) viewHolder).mButtonOrderInfo.hasOnClickListeners()) {
+                    Log.e("ListAdapter", "setOnClickListener");
+                    ((ItemViewHolder) viewHolder).mButtonOrderInfo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int pos = viewHolder.getPosition();
+                            mOnItemClickListener.onItemButtonOrderInfoClick(v, pos);
+                        }
+                    });
+
+                }
             }
-            if(!viewHolder.mButtonLogistics.hasOnClickListeners()) {
-                Log.e("ListAdapter", "setOnClickListener");
-                viewHolder.mButtonLogistics.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int pos = viewHolder.getPosition();
-                        mOnItemClickListener.onItemButtonClick(v, pos);
-                    }
-                });
-            }
+        } else if (viewHolder instanceof HeaderViewHolder) {
+
+        } else if (viewHolder instanceof FooterViewHolder) {
+
+        } else if (viewHolder instanceof EmptyViewHolder) {
+
         }
     }
     //获取数据的数量
     @Override
     public int getItemCount() {
-        return datas.length;
+        int count;
+        int size = datas.size();
+        if (size == 0 && null != mEmptyView) {
+            count = 1;
+        } else {
+            count = getHeadViewSize() + size + getFooterViewSize();
+        }
+        return count;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        int size = datas.size();
+        if (size == 0 && null != mEmptyView) {
+            return TYPE_EMPTY;
+        } else if (position < getHeadViewSize()) {
+            return TYPE_HEADER;
+        } else if (position >= getHeadViewSize() + datas.size()) {
+            return TYPE_FOOTER;
+        }
+        return TYPE_ITEM;
+    }
+
+    private int getHeadViewSize() {
+        return mHeaderView == null ? 0 : 1;
+    }
+
+    private int getFooterViewSize() {
+        return mFooterView == null ? 0 : 1;
+    }
+
+    private String getItem(int position) {
+        return datas.get(position - getHeadViewSize());
     }
 
     //自定义的ViewHolder，持有每个Item的的所有界面元素
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ItemViewHolder extends RecyclerView.ViewHolder {
+
         public CardView mCardView;
         public TextView mTextView;
         public ImageView mImageView;
-        public Button mButtonConnect;
-        public Button mButtonLogistics;
-        public Button mButtonReceipt;
+        private Button mButtonOrderInfo;
 
-        public ViewHolder(View view){
+        public ItemViewHolder(View view) {
             super(view);
             mCardView = (CardView) view.findViewById(R.id.cv_item_buy);
-            mTextView = (TextView) mCardView.findViewById(R.id.text_card_buy);
-            mImageView = (ImageView) mCardView.findViewById(R.id.image_card_buy);
-            mButtonConnect = (Button) mCardView.findViewById(R.id.button_connect);
-            mButtonLogistics = (Button) mCardView.findViewById(R.id.button_logistics);
-            mButtonReceipt = (Button) mCardView.findViewById(R.id.button_receipt);
-
-
+            mTextView = (TextView) view.findViewById(R.id.text_card_buy);
+            mImageView = (ImageView) view.findViewById(R.id.image_card_buy);
+            mButtonOrderInfo = (Button) view.findViewById(R.id.button_logistics);
         }
+    }
+
+    public static class HeaderViewHolder extends RecyclerView.ViewHolder {
+
+        public HeaderViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
+    public static class FooterViewHolder extends RecyclerView.ViewHolder {
+        public FooterViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
+    public static class EmptyViewHolder extends RecyclerView.ViewHolder {
+        public EmptyViewHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
+    //add a header to the adapter
+    public void addHeader(View header) {
+        mHeaderView = header;
+        notifyItemInserted(0);
+    }
+
+    //remove a header from the adapter
+    public void removeHeader(View header) {
+        notifyItemRemoved(0);
+        mHeaderView = null;
+    }
+
+    //add a footer to the adapter
+    public void addFooter(View footer) {
+        mFooterView = footer;
+        notifyItemInserted(getHeadViewSize() + datas.size());
+    }
+
+    //remove a footer from the adapter
+    public void removeFooter(View footer) {
+        notifyItemRemoved(getHeadViewSize() + datas.size());
+        mFooterView = null;
+    }
+
+    //add data
+    public void addDatas(List<String> data) {
+        datas.addAll(data);
+        notifyItemInserted(getHeadViewSize() + datas.size() - 1);
+    }
+
+    //add data
+    public void addData(String data) {
+        datas.add(data);
+        notifyItemInserted(getHeadViewSize() + datas.size() - 1);
+    }
+
+    //refresh data
+    public void refreshData(List<String> data){
+        datas.clear();
+        addDatas(data);
+    }
+
+    public void setEmptyView(View emptyView) {
+        mEmptyView = emptyView;
+        notifyItemInserted(0);
     }
 
     /**
@@ -102,7 +229,7 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<IbuyRecyclerVi
      */
     public interface OnItemClickListener {
         public void onItemClick(View view, int position);
-        public void onItemButtonClick(View view, int position);
+        public void onItemButtonOrderInfoClick(View view, int position);
     }
 
     //添加点击事件

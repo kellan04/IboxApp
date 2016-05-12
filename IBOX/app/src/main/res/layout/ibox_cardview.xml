@@ -31,81 +31,89 @@
                 android:layout_gravity="center_horizontal|bottom"
                 android:gravity="center_vertical"
                 android:textStyle="bold"
-                android:textSize="25sp"
+                android:textSize="18sp"
                 android:text="My super text"
-                android:background="#b0ffffff"/>
+                android:background="#b0ffffff"
+                android:padding="5dp"/>
 
 
         </FrameLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#7ffbf7f7">
+            android:background="#7ffbf7f7"
+            android:padding="15dp">
 
             <com.mikepenz.iconics.view.IconicsImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 app:iiv_color="#C0C0C0"
                 app:iiv_icon="gmd-loyalty"
-                android:layout_margin="10dp"
-                android:id="@+id/view_loyalty" />
+                android:id="@+id/view_loyalty"
+                android:layout_centerVertical="true"/>
 
             <TextView
                 android:id="@+id/text_loyalty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:text="类别"
+                android:gravity="center"
                 android:textColor="#C0C0C0"
-                android:layout_alignBottom="@+id/view_loyalty"
+                android:layout_alignTop="@+id/view_loyalty"
                 android:layout_toRightOf="@+id/view_loyalty"
-                android:layout_toEndOf="@+id/view_loyalty" />
+                android:layout_toEndOf="@+id/view_loyalty"
+                android:layout_marginLeft="5dp"/>
 
             <com.mikepenz.iconics.view.IconicsImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 app:iiv_color="#C0C0C0"
                 app:iiv_icon="gmd-favorite"
                 android:id="@+id/view_favorite"
-                android:layout_alignBottom="@+id/view_loyalty"
+                android:layout_alignBottom="@+id/text_favorite"
                 android:layout_toLeftOf="@+id/text_favorite"
-                android:layout_toStartOf="@+id/text_favorite" />
+                android:layout_toStartOf="@+id/text_favorite"
+                android:layout_marginRight="5dp"/>
 
             <TextView
                 android:id="@+id/text_favorite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:text="12"
                 android:textColor="#C0C0C0"
-                android:layout_marginRight="95dp"
-                android:layout_marginEnd="95dp"
-                android:layout_alignBottom="@+id/view_loyalty"
+                android:gravity="center"
+                android:layout_marginRight="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_alignTop="@+id/view_loyalty"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"/>
 
             <com.mikepenz.iconics.view.IconicsImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 app:iiv_color="#C0C0C0"
                 app:iiv_icon="gmd-comment"
                 android:id="@+id/view_comment"
-                android:layout_alignBottom="@+id/view_loyalty"
+                android:layout_alignBottom="@+id/text_comment"
                 android:layout_toRightOf="@+id/view_favorite"
                 android:layout_toEndOf="@+id/view_favorite"
-                android:layout_marginLeft="42dp"
-                android:layout_marginStart="42dp" />
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp" />
 
             <TextView
                 android:id="@+id/text_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:text="9"
+                android:gravity="center"
                 android:textColor="#C0C0C0"
-                android:layout_alignBottom="@+id/view_loyalty"
+                android:layout_alignTop="@+id/view_loyalty"
                 android:layout_toRightOf="@+id/view_comment"
-                android:layout_toEndOf="@+id/view_comment" />
+                android:layout_toEndOf="@+id/view_comment"
+                android:layout_marginLeft="5dp" />
 
 
         </RelativeLayout>

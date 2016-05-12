@@ -26,7 +26,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/imageView_top10"
-                    android:src="@drawable/test3"
+                    android:src="@drawable/ic_test_4"
                     android:layout_margin="10dp"/>
             </LinearLayout>
         </com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader>
