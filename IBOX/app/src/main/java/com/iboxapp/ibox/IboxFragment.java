@@ -180,6 +180,7 @@ public class IboxFragment extends Fragment {
                     public void run() {
                         mDatas.clear();
                         mDatasImg.clear();
+                        Log.d(TAG, "onRefresh()111111");
                         getData();
                         initDatasImg();
                     }

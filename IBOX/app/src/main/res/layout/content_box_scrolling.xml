@@ -25,10 +25,16 @@
             android:elevation="3dp">
 
 
-            <ImageButton
+            <!--<ImageButton
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:src="@drawable/p2" />
+                android:src="@drawable/p2" />-->
+
+            <com.bigkoo.convenientbanner.ConvenientBanner
+                android:id="@+id/content_box_convenientBanner"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:canLoop="true" />
 
             <RelativeLayout
                 android:layout_width="match_parent"

@@ -1,6 +1,7 @@
 package com.iboxapp.ibox.adapter;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
@@ -40,12 +41,14 @@ public class IshowRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
     private ArrayList<String> datasCategory = new ArrayList<String>();
     private ArrayList<String> datasTitle = new ArrayList<String>();
     private List<Integer> mDatasImgUser = new ArrayList<Integer>();
+    private TypedArray typedArray;
 
     public IshowRecyclerViewAdapter(Context context, List data, List<Integer> imgs) {
         this.mContext = context;
         this.mLayoutInflater = LayoutInflater.from(context);
         this.datas = data;
         this.mDatasImg = imgs;
+        typedArray = context.getResources().obtainTypedArray(R.array.ishow_user_img);
         datasTitle.add("文艺青年必备麂皮鞋~");
         datasTitle.add("潮爆了，超舒适！");
         datasCategory.add("鞋子");
@@ -84,6 +87,7 @@ public class IshowRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.
             ((ItemViewHolder)viewHolder).mTextViewCategory.setText(getItemC(position));
             ((ItemViewHolder)viewHolder).mTextViewTitle.setText(getItemT(position));
             ((ItemViewHolder)viewHolder).mImageView.setImageBitmap(readBitMap(mContext, mDatasImg.get(position - getHeadViewSize())));
+            ((ItemViewHolder)viewHolder).mImageViewUser.setImageResource(typedArray.getResourceId(position, 0));
 //            ((ItemViewHolder)viewHolder).mImageViewUser.setImageBitmap(readBitMap(mContext, mDatasImg.get(position - getHeadViewSize())));
             if(mOnItemClickListener != null) {
                 /**

@@ -15,7 +15,6 @@ import com.iboxapp.ibox.R;
 
 public class ForgetPassword2Activity extends AppCompatActivity {
 
-    private EditText  phone;
     private EditText  password;
     private EditText  password2;
     private Button modify;
@@ -32,7 +31,6 @@ public class ForgetPassword2Activity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        phone = (EditText)findViewById(R.id.edit_modify_phoneNum);
         password = (EditText)findViewById(R.id.edit_modify_password);
         password2 = (EditText)findViewById(R.id.edit_modify_password2);
         modify = (Button)findViewById(R.id.modify_button);
@@ -40,7 +38,7 @@ public class ForgetPassword2Activity extends AppCompatActivity {
         modify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(phone.getText().toString().equals(null) || password.getText().toString().equals(null) || password2.getText().toString().equals(null)){
+                if(password.getText().toString().equals(null) || password2.getText().toString().equals(null)){
                     Toast toast= Toast.makeText(getApplicationContext(),"手机号或密码不能为空",Toast.LENGTH_SHORT);
                     toast.setGravity(Gravity.CENTER,0,0);
                     toast.show();

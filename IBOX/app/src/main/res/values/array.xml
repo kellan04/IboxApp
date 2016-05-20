@@ -5,4 +5,10 @@
         <item>IOS</item>
     </string-array>
 
+    <string-array name="ishow_user_img">
+        <item>@drawable/user_img_1</item>
+        <item>@drawable/user_img_2</item>
+        <item>@drawable/user_img_3</item>>
+    </string-array>
+
 </resources>

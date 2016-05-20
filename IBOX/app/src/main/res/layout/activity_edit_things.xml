@@ -26,32 +26,27 @@
                 android:background="@color/white"
                 android:elevation="3dp">
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <GridView
+                    android:id="@+id/gridView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="200dp"
+                    android:layout_margin="10dp"
+                    android:background="#EFDFDF"
+                    android:horizontalSpacing="5dp"
+                    android:verticalSpacing="5dp"
+                    android:numColumns="4"
+                    android:columnWidth="90dp"
+                    android:stretchMode="columnWidth"
+                    android:gravity="center" >
+                </GridView>
 
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        android:id="@+id/imageView"
-                        android:layout_margin="10dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:src="@drawable/ic_test_1"/>
-
-                    <com.mikepenz.iconics.view.IconicsImageView
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
-                        app:iiv_color="#C0C0C0"
-                        app:iiv_icon="gmd-add-a-photo"
-                        android:id="@+id/view_add_photo"
-                        android:layout_margin="10dp"
-                        android:layout_alignBottom="@+id/imageView"
-                        android:layout_toRightOf="@+id/imageView"
-                        android:layout_toEndOf="@+id/imageView" />
-
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/text11"
+                    android:layout_below="@+id/gridView1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="(友情提示:只能添加9张图片,长按图片可以删除已添加图片)"
+                    android:gravity="center" />
 
                 <EditText
                     android:layout_width="match_parent"

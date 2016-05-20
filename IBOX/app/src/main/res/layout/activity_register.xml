@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/activity_horizontal_margin"
         android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_vertical_margin" >
+        android:layout_margin="10dp">
 
         <EditText
             android:id="@+id/edit_reg_phoneNum"
@@ -29,7 +29,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin" >
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_margin="10dp">
 
         <EditText
             android:id="@+id/edit_reg_password"
@@ -44,7 +45,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/activity_horizontal_margin"
-        android:paddingRight="@dimen/activity_horizontal_margin" >
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_margin="10dp">
 
         <EditText
             android:id="@+id/edit_reg_password2"
@@ -55,11 +57,11 @@
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_margin="25dp"
         android:text="@string/register"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:textAppearance="?android:attr/textAppearanceLargeInverse"
         android:background="@color/colorButton_register"
         android:id="@+id/reg_button"
