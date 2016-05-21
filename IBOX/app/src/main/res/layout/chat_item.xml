@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="在吗？\n请问包邮吗？\n2:49 PM"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="10dp"

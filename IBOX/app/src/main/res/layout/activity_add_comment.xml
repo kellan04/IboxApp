@@ -23,6 +23,7 @@
         android:layout_margin="10dp"
         android:elevation="3dp"
         android:hint="添加评论"
+        android:textSize="15sp"
         android:gravity="top|left" />
 
     <Button
@@ -30,7 +31,7 @@
         android:layout_height="wrap_content"
         android:text="@string/make_sure"
         android:id="@+id/comment_sure_button"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textColor="@color/colorTextView"
         android:background="@color/colorAccent"
         android:layout_below="@+id/editText8"

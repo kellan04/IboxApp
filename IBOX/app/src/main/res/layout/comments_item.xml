@@ -38,6 +38,8 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="username"
+            android:textSize="15sp"
+            android:layout_marginTop="5dp"
             android:layout_gravity="left" />
 
         <!-- <TextView
@@ -52,8 +54,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="comment——好评！"
+            android:textSize="15sp"
             android:id="@+id/comment_text_content"
             android:layout_gravity="left"
+            android:layout_marginBottom="5dp"
             android:gravity="center"/>
 
     </LinearLayout>
@@ -71,6 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="24dp"
             android:text="1分钟前"
+            android:textSize="15sp"
             android:id="@+id/comment_text_time"
             android:gravity="center"
             android:layout_gravity="center"

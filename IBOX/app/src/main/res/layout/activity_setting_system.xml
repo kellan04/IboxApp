@@ -30,7 +30,9 @@
                 android:text="@string/system_message"
                 android:paddingLeft="@dimen/text_padding"
                 android:id="@+id/switch1"
-                android:textSize="@dimen/abc_text_size_title_material" />
+                android:textSize="18sp" />
+
+            <!--android:textSize="@dimen/abc_text_size_title_material"-->
 
             <TextView
                 android:layout_width="match_parent"
@@ -44,7 +46,7 @@
                 android:text="@string/system_sound"
                 android:paddingLeft="@dimen/text_padding"
                 android:id="@+id/switch2"
-                android:textSize="@dimen/abc_text_size_title_material" />
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -58,7 +60,7 @@
                 android:text="@string/system_shake"
                 android:paddingLeft="@dimen/text_padding"
                 android:id="@+id/switch3"
-                android:textSize="@dimen/abc_text_size_title_material" />
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -79,7 +81,7 @@
                     android:paddingLeft="@dimen/text_padding"
                     android:gravity="center_vertical"
                     android:id="@+id/textView2"
-                    android:textSize="@dimen/abc_text_size_title_material"
+                    android:textSize="18sp"
                     android:textColor="@color/black"
                     android:layout_weight="1.00"/>
 
@@ -119,7 +121,7 @@
                     android:paddingLeft="@dimen/text_padding"
                     android:gravity="center_vertical"
                     android:id="@+id/textView5"
-                    android:textSize="@dimen/abc_text_size_title_material"
+                    android:textSize="18sp"
                     android:textColor="@color/black"
                     android:layout_weight="1.00"/>
                 <ImageButton
@@ -139,7 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_height"
                 android:text="@string/system_quit"
-                android:textSize="@dimen/abc_text_size_title_material"
+                android:textSize="18sp"
                 android:id="@+id/button"
                 android:layout_gravity="center"
                 android:background="@color/colorPrimary"

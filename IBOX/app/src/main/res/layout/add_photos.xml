@@ -36,7 +36,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:text="相册"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:id="@+id/textView2"
                 android:layout_alignParentBottom="true"
                 android:layout_alignLeft="@+id/imageButton2"
