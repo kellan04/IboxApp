@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.GoodsAppraiseActivity">
+
+    <include
+        android:id="@+id/back_toolbar"
+        layout="@layout/simple_toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appraise_personal"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/text_padding"/>
+                <RatingBar
+                    android:id="@+id/ratingbar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:layout_toRightOf="@id/textView1"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView_padding1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline2"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appraise_credit"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/text_padding"/>
+                <RatingBar
+                    android:id="@+id/ratingbar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:layout_toRightOf="@id/textView2"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView_padding2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline2"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appraise_description"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/text_padding"/>
+                <RatingBar
+                    android:id="@+id/ratingbar3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:layout_toRightOf="@id/textView3"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView_padding3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline2"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appraise_logistic"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/text_padding"/>
+                <RatingBar
+                    android:id="@+id/ratingbar4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    android:layout_toRightOf="@id/textView4"/>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView_padding4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_underline2"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white">
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/appraise_message"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:padding="@dimen/text_padding"/>
+                <EditText
+                    android:id="@+id/editText5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="选填 可以写出你对该物品原持有人的意见和建议等评价"
+                    android:textSize="15sp"
+                    android:textColor="@color/black"
+                    android:singleLine="false"
+                    android:padding="@dimen/text_padding"
+                    android:background="@color/white"
+                    android:layout_toRightOf="@+id/textView5"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/goods_appraise_sure_button"
+        android:text="@string/appraise_ensure"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimary"/>
+
+</LinearLayout>

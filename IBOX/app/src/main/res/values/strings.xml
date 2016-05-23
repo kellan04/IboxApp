@@ -147,6 +147,15 @@
     <string name="pay_more">更多方式</string>
     <string name="pay_ensure">确认支付</string>
 
+    <!-- Strings related to good_appraise -->
+    <string name="good_appraise">评价详情</string>
+    <string name="appraise_personal">个人评价</string>
+    <string name="appraise_credit">信用评价</string>
+    <string name="appraise_description">物品描述</string>
+    <string name="appraise_logistic">物流服务</string>
+    <string name="appraise_message">留\t\t\t\t言</string>
+    <string name="appraise_ensure">确认评价</string>
+
     <!-- Strings related to order_info -->
     <string name="order_info">订单详情</string>
     <string name="order_static">状态\t\t\t\t\t\t\t交易完成</string>
@@ -163,9 +172,12 @@
 
     <!-- Strings related to good_return -->
     <string name="good_return">退货详情</string>
+    <string name="return_reason">退货原因：</string>
+    <string name="return_price">退款金额：</string>
+    <string name="return_info">退货说明：</string>
+    <string name="return_proof">退货凭证：</string>
+    <string name="return_apply">提交申请</string>
 
-    <!-- Strings related to good_appraise -->
-    <string name="good_appraise">评价详情</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

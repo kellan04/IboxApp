@@ -11,4 +11,21 @@
         <item>@drawable/user_img_3</item>>
     </string-array>
 
+    <string-array name="spingarr">
+        <item>全新</item>
+        <item>99新</item>
+        <item>8成新</item>
+        <item>7成新</item>
+        <item>6成新</item>
+        <item>5成新</item>
+    </string-array>
+
+    <string-array name="spinner_reason">
+        <item>请选择退货原因</item>
+        <item>版本/颜色/容量与描述不符</item>
+        <item>拍错/不喜欢/效果不好</item>
+        <item>Box小主发错货</item>
+        <item>其他</item>
+    </string-array>
+
 </resources>

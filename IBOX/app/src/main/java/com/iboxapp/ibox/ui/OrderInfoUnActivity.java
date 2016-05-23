@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 
 import com.iboxapp.ibox.MainActivity;
 import com.iboxapp.ibox.R;
@@ -11,6 +13,9 @@ import com.iboxapp.ibox.R;
 public class OrderInfoUnActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
+    private Button mButtonAppraise;
+    private Button mButtonLogisticlnfo;
+    private Button mButtonReturn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +27,33 @@ public class OrderInfoUnActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        mButtonAppraise = (Button) findViewById(R.id.activity_order_info_un_appraise);
+        mButtonAppraise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OrderInfoUnActivity.this, GoodsAppraiseActivity.class);
+                startActivity(intent);
+            }
+        });
 
+
+        mButtonLogisticlnfo = (Button) findViewById(R.id.activity_order_info_un_logisticlnfo);
+        mButtonLogisticlnfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OrderInfoUnActivity.this, LogisticInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mButtonReturn = (Button) findViewById(R.id.activity_order_info_un_return_goods);
+        mButtonReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(OrderInfoUnActivity.this, GoodsReturnActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     /**
