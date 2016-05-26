@@ -11,6 +11,13 @@
         <item>@drawable/user_img_3</item>>
     </string-array>
 
+    <string-array name="user_name">
+        <item>MUY</item>
+        <item>嗷嗷嗷呀</item>
+        <item>雪碧</item>
+        <item>噗噗</item>
+    </string-array>
+
     <string-array name="spingarr">
         <item>全新</item>
         <item>99新</item>
@@ -26,6 +33,30 @@
         <item>拍错/不喜欢/效果不好</item>
         <item>Box小主发错货</item>
         <item>其他</item>
+    </string-array>
+
+    <string-array name="spinner_quality">
+        <item>全新</item>
+        <item>95新</item>
+        <item>9新</item>
+        <item>85新</item>
+        <item>8新</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="spinner_category">
+        <item>女装</item>
+        <item>女鞋</item>
+        <item>美妆</item>
+        <item>男装</item>
+        <item>男鞋</item>
+        <item>箱包</item>
+        <item>饰品</item>
+        <item>户外/运动</item>
+        <item>数码</item>
+        <item>美食</item>
+        <item>日常百货</item>
+        <item>家居装饰</item>
     </string-array>
 
 </resources>

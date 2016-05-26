@@ -35,7 +35,11 @@
                 android:textStyle="bold"
                 android:textSize="18sp"
                 android:text="My super text"
-                android:background="#b0ffffff"/>
+                android:background="#b0ffffff"
+                android:padding="5dp"
+                android:maxEms="10"
+                android:singleLine="true"
+                android:ellipsize="end"/>
 
         </FrameLayout>
 
@@ -70,18 +74,20 @@
             android:background="#7ffbf7f7">
 
             <com.mikepenz.iconics.view.IconicsImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 app:iiv_color="#C0C0C0"
                 app:iiv_icon="gmd-favorite"
-                android:layout_margin="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
                 android:id="@+id/view_like" />
 
             <TextView
                 android:id="@+id/text_like"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:text="喜欢"
                 android:textColor="#C0C0C0"
                 android:layout_alignTop="@+id/view_like"
@@ -89,22 +95,22 @@
                 android:layout_toEndOf="@+id/view_like" />
 
             <com.mikepenz.iconics.view.IconicsImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 app:iiv_color="#C0C0C0"
                 app:iiv_icon="gmd-shopping-cart"
                 android:id="@+id/view_buy"
                 android:layout_alignTop="@+id/text_like"
                 android:layout_toRightOf="@+id/text_like"
                 android:layout_toEndOf="@+id/text_like"
-                android:layout_marginLeft="35dp"
-                android:layout_marginStart="35dp" />
+                android:layout_marginLeft="80dp"
+                android:layout_marginStart="80dp" />
 
             <TextView
                 android:id="@+id/text_buy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:text="加入购物车"
                 android:textColor="#C0C0C0"
                 android:layout_alignTop="@+id/view_like"
@@ -112,8 +118,8 @@
                 android:layout_toEndOf="@+id/view_buy" />
 
             <com.mikepenz.iconics.view.IconicsImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 app:iiv_color="#C0C0C0"
                 app:iiv_icon="gmd-share"
                 android:id="@+id/view_share"
@@ -125,11 +131,11 @@
                 android:id="@+id/text_comment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:text="分享"
                 android:textColor="#C0C0C0"
-                android:layout_marginRight="21dp"
-                android:layout_marginEnd="21dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
                 android:layout_alignTop="@+id/view_like"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true" />

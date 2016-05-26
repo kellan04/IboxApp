@@ -12,5 +12,11 @@
     <dimen name="text_height">60dp</dimen>
     <dimen name="text_underline1">2dp</dimen>
     <dimen name="text_underline2">13dp</dimen>
+
     <dimen name="imagebutton_smallsize">40dp</dimen>
+    <dimen name="imagebutton_bigsize">130dp</dimen>
+
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_middle">15sp</dimen>
+    <dimen name="text_big">18sp</dimen>
 </resources>

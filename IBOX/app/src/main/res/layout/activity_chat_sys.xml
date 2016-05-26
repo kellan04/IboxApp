@@ -24,7 +24,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Text"
+                android:text="新活动！"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
                 android:id="@+id/activity_chat_sys_text1"
                 android:layout_gravity="center_horizontal" />
 
@@ -32,14 +35,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/activity_chat_sys_image"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/ic_test_3"
+                android:layout_margin="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Text"
+                android:text="快来分享属于你的美好物品！"
+                android:textSize="15sp"
                 android:id="@+id/activity_chat_sys_text2"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

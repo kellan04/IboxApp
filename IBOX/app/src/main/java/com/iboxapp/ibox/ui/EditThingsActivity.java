@@ -13,6 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -30,12 +32,14 @@ public class EditThingsActivity extends AppCompatActivity {
 
     private Toolbar mToolbar;
     private GridView gridView1;              //网格显示缩略图
-    private Button buttonPublish;                //发布按钮
     private final int IMAGE_OPEN = 1;        //打开图片标记
     private String pathImage;                //选择图片路径
     private Bitmap bmp;                      //导入临时图片
     private ArrayList<HashMap<String, Object>> imageItem;
     private SimpleAdapter simpleAdapter;     //适配器
+    private Button mButtonEnsure;
+
+    private final String TAG = "edit";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,16 @@ public class EditThingsActivity extends AppCompatActivity {
         mToolbar.setTitle(getResources().getString(R.string.edit_things_title));
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        mButtonEnsure = (Button) findViewById(R.id.edit_things_ensure_button);
+        mButtonEnsure.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(EditThingsActivity.this, "添加成功", Toast.LENGTH_SHORT).show();
+
+                finish();
+            }
+        });
 
         /*
          * 防止键盘挡住输入框
@@ -123,6 +137,7 @@ public class EditThingsActivity extends AppCompatActivity {
     //获取图片路径 响应startActivityForResult
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Log.d(TAG, "onActivityResult");
         //打开图片
         if(resultCode==RESULT_OK && requestCode==IMAGE_OPEN) {
             Uri uri = data.getData();
@@ -149,6 +164,7 @@ public class EditThingsActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        Log.d(TAG, "onResume");
         if(!TextUtils.isEmpty(pathImage)){
             Bitmap addbmp=BitmapFactory.decodeFile(pathImage);
             HashMap<String, Object> map = new HashMap<String, Object>();
@@ -199,5 +215,17 @@ public class EditThingsActivity extends AppCompatActivity {
             }
         });
         builder.create().show();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // TODO Auto-generated method stub
+        if(item.getItemId() == android.R.id.home)
+        {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

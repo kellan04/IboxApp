@@ -1,14 +1,22 @@
 package com.iboxapp.ibox;
 
+import android.app.SearchManager;
+import android.app.SearchableInfo;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -17,6 +25,7 @@ import android.widget.Toast;
 
 import com.iboxapp.ibox.adapter.MyPagerAdapter;
 import com.iboxapp.ibox.ui.MessageActivity;
+import com.iboxapp.ibox.ui.SearchActivity;
 import com.iboxapp.ibox.ui.SettingAboutActivity;
 import com.iboxapp.ibox.ui.SettingCollectActivity;
 import com.iboxapp.ibox.ui.SettingPhotosActivity;
@@ -206,6 +215,50 @@ public class MainActivity extends AppCompatActivity implements BackHandledFragme
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
+        MenuItem searchItem = menu.findItem(R.id.toolbar_search);
+        SearchView mSearchView = (SearchView) searchItem.getActionView();
+        //设置搜索框hint内容
+        mSearchView.setQueryHint("Search...");
+        SearchView.SearchAutoComplete textView = (SearchView.SearchAutoComplete)
+                mSearchView.findViewById(R.id.search_src_text);
+        //设置搜索框中输入文字的颜色
+        textView.setTextColor(Color.WHITE);
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        // Assumes current activity is the searchable activity
+        mSearchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        // 這邊讓icon可以還原到搜尋的icon
+        mSearchView.setIconifiedByDefault(true);
+        //搜索内容监听
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Log.d("onQueryTextSubmit", query);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                Log.d("onQueryTextChange", newText);
+                return false;
+            }
+        });
+
+        MenuItemCompat.setOnActionExpandListener(searchItem, new MenuItemCompat.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem item) {
+                // Do something when action item collapses
+                return true;     //Return true to collapse action view
+            }
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem item) {
+                // Do something when expanded
+                return true;      // Return true to expand action view
+            }
+        });
+
         return true;
     }
 

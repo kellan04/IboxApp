@@ -31,19 +31,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="绝对限量 Vans x ..."
+                android:text="绝对限量 Vans"
                 android:layout_marginLeft="100dp"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:id="@+id/collect_textView1"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/image_card_collect"/>
+                android:layout_below="@+id/image_card_collect"
+                android:maxEms="10"
+                android:singleLine="true"
+                android:ellipsize="end"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="￥ 100"
                 android:layout_marginLeft="100dp"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="#ff0000"
                 android:id="@+id/collect_textView2"
                 android:layout_marginTop="5dp"
@@ -52,7 +55,7 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
+                android:layout_height="1dp"
                 android:background="#B6B6B6"
                 android:layout_gravity="center_horizontal"
                 android:layout_below="@+id/collect_textView2"
@@ -60,23 +63,23 @@
                 android:id="@+id/collect_dividing_line"/>
 
             <com.mikepenz.iconics.view.IconicsImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 app:iiv_color="#C0C0C0"
                 app:iiv_icon="gmd-shopping-cart"
                 android:id="@+id/view_buy"
-                android:layout_marginLeft="32dp"
+                android:layout_marginLeft="30dp"
                 android:layout_below="@+id/collect_dividing_line"
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="13dp" />
+                android:layout_marginTop="15dp" />
 
             <TextView
                 android:id="@+id/text_buy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:text="加入购物车"
                 android:textColor="#C0C0C0"
                 android:layout_alignBottom="@+id/view_buy"
@@ -94,13 +97,13 @@
 
 
             <com.mikepenz.iconics.view.IconicsImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 app:iiv_color="#C0C0C0"
                 app:iiv_icon="gmd-share"
                 android:id="@+id/view_share"
-                android:layout_marginLeft="55dp"
-                android:layout_marginStart="55dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginStart="70dp"
                 android:layout_alignBottom="@+id/view_buy"
                 android:layout_toRightOf="@+id/collect_dividing_line2"
                 android:layout_toEndOf="@+id/collect_dividing_line2" />
@@ -109,7 +112,7 @@
                 android:id="@+id/text_loyalty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="15sp"
                 android:text="分享"
                 android:textColor="#C0C0C0"
                 android:layout_alignBottom="@+id/view_share"

@@ -107,6 +107,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/pay_online_sure_button"
         android:text="@string/pay_ensure"
         android:textSize="18dp"
         android:textColor="@color/white"

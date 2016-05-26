@@ -3,6 +3,7 @@ package com.iboxapp.ibox.ui;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.iboxapp.ibox.R;
@@ -58,7 +59,7 @@ public class LogisticInfoActivity extends AppCompatActivity {
         list.add(map);
 
         map = new HashMap<>();
-        map.put("title",getResources().getString(R.string.logistic_info2));
+        map.put("title", getResources().getString(R.string.logistic_info2));
         list.add(map);
 
         map = new HashMap<>();
@@ -66,5 +67,17 @@ public class LogisticInfoActivity extends AppCompatActivity {
         list.add(map);
 
         return list;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // TODO Auto-generated method stub
+        if(item.getItemId() == android.R.id.home)
+        {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

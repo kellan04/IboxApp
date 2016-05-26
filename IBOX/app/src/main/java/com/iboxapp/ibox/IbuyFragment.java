@@ -4,6 +4,7 @@ package com.iboxapp.ibox;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -13,14 +14,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.iboxapp.ibox.adapter.IboxRecyclerViewAdapter;
 import com.iboxapp.ibox.adapter.IbuyRecyclerViewAdapter;
+import com.iboxapp.ibox.ui.ChatActivity;
 import com.iboxapp.ibox.ui.LogisticInfoActivity;
 import com.iboxapp.ibox.ui.MyScrollingActivity;
 import com.iboxapp.ibox.ui.OrderInfoActivity;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 
@@ -46,6 +51,9 @@ public class IbuyFragment extends Fragment {
     private boolean isLoading;
     private final String TAG = "Ibuy";
     private ArrayList<String> mDatas = new ArrayList<>();
+    private ArrayList<Integer> mDatasImg = new ArrayList<Integer>();
+    private final int REQUESTCODE = 1;//返回的结果码
+    private int delete = -1;
 
 
     public IbuyFragment() {
@@ -89,7 +97,7 @@ public class IbuyFragment extends Fragment {
         //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
         mRecyclerView.setHasFixedSize(true);
         //创建并设置Adapter
-        mAdapter = new IbuyRecyclerViewAdapter(getActivity(), mDatas);
+        mAdapter = new IbuyRecyclerViewAdapter(getActivity(), mDatas, mDatasImg);
         mRecyclerView.setAdapter(mAdapter);
 
         mAdapter.setOnItemClickListener(new IbuyRecyclerViewAdapter.OnItemClickListener() {
@@ -99,7 +107,9 @@ public class IbuyFragment extends Fragment {
 
                 Intent intent = new Intent(getActivity(), OrderInfoActivity.class);
                 intent.putExtra("key", 3);
-                getActivity().startActivity(intent);
+                intent.putExtra("num", position);
+                startActivityForResult(intent, REQUESTCODE);//表示可以返回结果
+
             }
 
             @Override
@@ -109,6 +119,25 @@ public class IbuyFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), LogisticInfoActivity.class);
                 intent.putExtra("key", 3);
                 getActivity().startActivity(intent);
+            }
+
+            @Override
+            public void onItemButtonConnectClick(View view, int position) {
+                Toast.makeText(getActivity(), "Click", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(getActivity(), ChatActivity.class);
+                intent.putExtra("key", 3);
+                getActivity().startActivity(intent);
+            }
+
+            @Override
+            public void onItemButtonReceiptClick(Button mButton, int position, TextView mTextView) {
+                String str = mButton.getText().toString();
+                if(str.equals("确认收货")){
+                    mButton.setText("已收货");
+                    mButton.setBackgroundColor(getResources().getColor(R.color.colorButton_unsell));
+                    mTextView.setText("交易完成");
+                }
             }
         });
 
@@ -120,7 +149,7 @@ public class IbuyFragment extends Fragment {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
-                Log.d("test", "StateChanged = " + newState);
+                Log.d(TAG, "StateChanged = " + newState);
 
 
             }
@@ -132,11 +161,11 @@ public class IbuyFragment extends Fragment {
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
-                Log.d("test", "onScrolled");
+                Log.d(TAG, "onScrolled");
 
                 int lastVisibleItemPosition = mLayoutManager.findLastVisibleItemPosition();
                 if (lastVisibleItemPosition + 1 == mAdapter.getItemCount()) {
-                    Log.d("test", "loading executed");
+                    Log.d(TAG, "loading executed");
 
                     boolean isRefreshing = mSwipeRefreshLayout.isRefreshing();
                     if (isRefreshing) {
@@ -148,8 +177,12 @@ public class IbuyFragment extends Fragment {
                         handler.postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                getData();
-                                Log.d("test", "load more completed");
+
+//                                getData();
+                                mAdapter.notifyDataSetChanged();
+                                mSwipeRefreshLayout.setRefreshing(false);
+                                mAdapter.notifyItemRemoved(mAdapter.getItemCount());
+                                Log.d(TAG, "load more completed");
                                 isLoading = false;
                             }
                         }, 1000);
@@ -161,23 +194,33 @@ public class IbuyFragment extends Fragment {
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.boy_swipeRefreshLayout);
 
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
-        /*mSwipeRefreshLayout.post(new Runnable() {
+        mSwipeRefreshLayout.post(new Runnable() {
             @Override
             public void run() {
                 mSwipeRefreshLayout.setRefreshing(true);
-                Log.d(TAG, "post()");
+                Log.d(TAG, "mSwipeRefreshLayout post()");
             }
 
 
-        });*/
+        });
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        Log.d(TAG, "setOnRefreshListener");
                         mDatas.clear();
-                        getData();
+                        mDatasImg.clear();
+                        if (delete == -1) {
+                            getData();
+                            initDatasImg();
+                        } else {
+                            mAdapter.notifyDataSetChanged();
+                            mSwipeRefreshLayout.setRefreshing(false);
+                            mAdapter.notifyItemRemoved(mAdapter.getItemCount());
+                        }
+
                     }
                 }, 2000);
                 Log.d(TAG, "onRefresh()");
@@ -195,8 +238,19 @@ public class IbuyFragment extends Fragment {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                mDatas.clear();
-                getData();
+                Log.d(TAG, "initData post()");
+                if (delete == -1) {
+                    mDatas.clear();
+                    mDatasImg.clear();
+                    getData();
+                    initDatasImg();
+                } else {
+                    mDatas.remove(delete);
+                    mDatasImg.remove(delete);
+                    mAdapter.notifyDataSetChanged();
+                    mSwipeRefreshLayout.setRefreshing(false);
+                    mAdapter.notifyItemRemoved(mAdapter.getItemCount());
+                }
             }
         }, 1500);
 
@@ -207,11 +261,66 @@ public class IbuyFragment extends Fragment {
      */
     private void getData() {
         for (int i = 0; i < 1; i++) {
-            mDatas.add("标题");
+            mDatas.add("蓝牙耳机");
+            mDatas.add("美味点心");
             Log.d(TAG, "getData()");
         }
         mAdapter.notifyDataSetChanged();
         mSwipeRefreshLayout.setRefreshing(false);
         mAdapter.notifyItemRemoved(mAdapter.getItemCount());
+    }
+
+    public void initDatasImg() {
+        for (int position = 9; position <= 10; position++)
+            mDatasImg.add(getResId("ic_test_things_" + position + "_1", R.drawable.class));
+    }
+
+    /**
+     * 通过文件名获取资源id 例子：getResId("icon", R.drawable.class);
+     *
+     * @param variableName
+     * @param c
+     * @return
+     */
+    public static int getResId(String variableName, Class<?> c) {
+        try {
+            Field idField = c.getDeclaredField(variableName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(TAG, "onResume()");
+        if (delete != -1) {
+            mSwipeRefreshLayout.post(new Runnable() {
+                @Override
+                public void run() {
+                    mSwipeRefreshLayout.setRefreshing(true);
+                    Log.d(TAG, "delete post()");
+                }
+
+            });
+            initData();
+            initDatasImg();
+        }
+
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == 2 && requestCode == REQUESTCODE){
+
+            delete = data.getIntExtra("num",0);
+            Log.d(TAG, Integer.toString(delete));
+        }
+
     }
 }

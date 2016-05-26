@@ -12,6 +12,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -232,6 +233,71 @@ public class MultiCategoryActivity extends AppCompatActivity {
                 mButton8.setText("更多分类");
             }
         });
+        mButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MultiCategoryActivity.this, MultiCategoryMoreActivity.class);
+                intent.putExtra("mButton", R.string.show_find_category_phone_shell);
+                startActivity(intent);
+            }
+        });
+        mButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MultiCategoryActivity.this, MultiCategoryMoreActivity.class);
+                intent.putExtra("mButton", R.string.show_find_category_headset);
+                startActivity(intent);
+            }
+        });
+        mButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MultiCategoryActivity.this, MultiCategoryMoreActivity.class);
+                intent.putExtra("mButton", R.string.show_find_category_mobile_phone);
+                startActivity(intent);
+            }
+        });
+        mButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MultiCategoryActivity.this, MultiCategoryMoreActivity.class);
+                intent.putExtra("mButton", R.string.show_find_category_computer);
+                startActivity(intent);
+            }
+        });
+        mButton5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MultiCategoryActivity.this, MultiCategoryMoreActivity.class);
+                intent.putExtra("mButton", R.string.show_find_category_power_supply);
+                startActivity(intent);
+            }
+        });
+        mButton6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MultiCategoryActivity.this, MultiCategoryMoreActivity.class);
+                intent.putExtra("mButton", R.string.show_find_category_camera);
+                startActivity(intent);
+            }
+        });
+        mButton7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MultiCategoryActivity.this, MultiCategoryMoreActivity.class);
+                intent.putExtra("mButton", R.string.show_find_category_keyboard);
+                startActivity(intent);
+            }
+        });
+        mButton8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MultiCategoryActivity.this, MultiCategoryMoreActivity.class);
+                intent.putExtra("mButton", R.string.show_find_category_more);
+                startActivity(intent);
+            }
+        });
+
     }
 
     public void initData() {
@@ -249,10 +315,14 @@ public class MultiCategoryActivity extends AppCompatActivity {
      * 获取测试数据
      */
     private void getData() {
-        for (int i = 0; i < this.num; i++) {;
-            mDatas.add("user");
-            Log.d(TAG, "getData()");
-        }
+//        for (int i = 0; i < this.num; i++) {;
+//            mDatas.add("user");
+//            Log.d(TAG, "getData()");
+//        }
+        mDatas.add("蓝牙耳机");
+        mDatas.add("iphone");
+        mDatas.add("外设音响");
+        mDatas.add("耳机");
         mAdapter.notifyDataSetChanged();
         mSwipeRefreshLayout.setRefreshing(false);
         mAdapter.notifyItemRemoved(mAdapter.getItemCount());
@@ -279,5 +349,17 @@ public class MultiCategoryActivity extends AppCompatActivity {
             e.printStackTrace();
             return -1;
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // TODO Auto-generated method stub
+        if(item.getItemId() == android.R.id.home)
+        {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

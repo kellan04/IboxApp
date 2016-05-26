@@ -1,6 +1,8 @@
 package com.iboxapp.ibox.adapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 
 import com.iboxapp.ibox.R;
 
+import java.io.InputStream;
 import java.util.List;
 
 /**
@@ -32,11 +35,13 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     private View mFooterView;
     private View mEmptyView;
     private List<String> datas;
+    private List<Integer> mDatasImg;
 
-    public IbuyRecyclerViewAdapter(Context context, List data) {
+    public IbuyRecyclerViewAdapter(Context context, List data, List<Integer> imgs) {
         this.mContext = context;
         this.mLayoutInflater = LayoutInflater.from(context);
         this.datas = data;
+        this.mDatasImg = imgs;
     }
     //创建新View，被LayoutManager所调用
     @Override
@@ -63,8 +68,10 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     //将数据与界面进行绑定的操作
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, int position) {
+
         if (viewHolder instanceof ItemViewHolder) {
             ((ItemViewHolder)viewHolder).mTextView.setText(getItem(position));
+            ((ItemViewHolder)viewHolder).mImageView.setImageBitmap(readBitMap(mContext, mDatasImg.get(position - getHeadViewSize())));
             if(mOnItemClickListener != null) {
                 /**
                  * 这里加了判断，itemViewHolder.itemView.hasOnClickListeners()
@@ -90,6 +97,31 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
                         public void onClick(View v) {
                             int pos = viewHolder.getPosition();
                             mOnItemClickListener.onItemButtonOrderInfoClick(v, pos);
+                        }
+                    });
+
+                }
+
+                if(!((ItemViewHolder) viewHolder).mButtonConnect.hasOnClickListeners()) {
+                    Log.e("ListAdapter", "setOnClickListener");
+                    ((ItemViewHolder) viewHolder).mButtonConnect.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int pos = viewHolder.getPosition();
+                            mOnItemClickListener.onItemButtonConnectClick(v, pos);
+                        }
+                    });
+
+                }
+
+                if(!((ItemViewHolder) viewHolder).mButtonReceipt.hasOnClickListeners()) {
+                    Log.e("ListAdapter", "setOnClickListener");
+                    ((ItemViewHolder) viewHolder).mButtonReceipt.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int pos = viewHolder.getPosition();
+                            ItemViewHolder vh = (ItemViewHolder) viewHolder;
+                            mOnItemClickListener.onItemButtonReceiptClick(vh.mButtonReceipt, pos, vh.mTextViewStatus);
                         }
                     });
 
@@ -148,6 +180,9 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
         public TextView mTextView;
         public ImageView mImageView;
         private Button mButtonOrderInfo;
+        private Button mButtonConnect;
+        private Button mButtonReceipt;
+        public TextView mTextViewStatus;
 
         public ItemViewHolder(View view) {
             super(view);
@@ -155,6 +190,9 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
             mTextView = (TextView) view.findViewById(R.id.text_card_buy);
             mImageView = (ImageView) view.findViewById(R.id.image_card_buy);
             mButtonOrderInfo = (Button) view.findViewById(R.id.button_logistics);
+            mButtonConnect = (Button) view.findViewById(R.id.button_connect);
+            mButtonReceipt = (Button) view.findViewById(R.id.button_receipt);
+            mTextViewStatus = (TextView) view.findViewById(R.id.text_view_status);
         }
     }
 
@@ -230,10 +268,29 @@ public class IbuyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     public interface OnItemClickListener {
         public void onItemClick(View view, int position);
         public void onItemButtonOrderInfoClick(View view, int position);
+        public void onItemButtonConnectClick(View view, int position);
+        public void onItemButtonReceiptClick(Button button, int position, TextView textview);
     }
 
     //添加点击事件
     public void setOnItemClickListener(OnItemClickListener mOnItemClickListener) {
         this.mOnItemClickListener = mOnItemClickListener;
+    }
+
+    /**
+     * 以最省内存的方式读取本地资源的图片
+     * @param context
+     * @param resId
+     * @return
+     */
+    public static Bitmap readBitMap(Context context, int resId){
+
+        BitmapFactory.Options opt = new BitmapFactory.Options();
+        opt.inPreferredConfig = Bitmap.Config.RGB_565;
+        opt.inPurgeable = true;
+        opt.inInputShareable = true;
+        //获取资源图片
+        InputStream is = context.getResources().openRawResource(resId);
+        return BitmapFactory.decodeStream(is, null, opt);
     }
 }

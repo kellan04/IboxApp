@@ -29,7 +29,7 @@
                 fab:fab_colorNormal="@color/white_fab"
                 fab:fab_colorPressed="@color/white_pressed_fab"
                 fab:fab_size="mini"
-                fab:fab_icon="@mipmap/ic_launcher"/>
+                fab:fab_icon="@drawable/user_img_7"/>
 
             <TextView
                 android:id="@+id/text_view_username"
@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:text="鱼丁的BOX"
+                android:text="鱼丁"
                 android:textSize="15sp"
                 android:textStyle="bold" />
 
@@ -49,26 +49,9 @@
                 android:layout_weight="0.12"
                 android:text="交易进行中"
                 android:textSize="15sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:layout_width="2dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:background="#B6B6B6" />
-
-            <TextView
-                android:id="@+id/text_view_edit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:layout_weight="0.30"
-                android:text="编辑"
                 android:textColor="@color/circle_textview_red"
-                android:textSize="15sp"
+                android:layout_marginLeft="10dp"
                 android:textStyle="bold" />
-
 
         </LinearLayout>
 
@@ -92,9 +75,12 @@
                 android:layout_gravity="center_horizontal|bottom"
                 android:gravity="center_vertical"
                 android:background="#b0ffffff"
-                android:text="Sns x Reebok Insta Pump.."
+                android:text="Sns x Reebok Insta Pump"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:maxEms="10"
+                android:singleLine="true"
+                android:ellipsize="end"  />
 
 
         </FrameLayout>

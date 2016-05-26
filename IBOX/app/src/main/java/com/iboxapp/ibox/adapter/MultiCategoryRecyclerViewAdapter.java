@@ -1,6 +1,7 @@
 package com.iboxapp.ibox.adapter;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.widget.CardView;
@@ -36,12 +37,16 @@ public class MultiCategoryRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
     private View mEmptyView;
     private List<String> datas;
     private List<Integer> mDatasImg;
+    private TypedArray typedArray;
+    private String[] datasName;
 
     public MultiCategoryRecyclerViewAdapter(Context context, List data, List<Integer> imgs) {
         this.mContext = context;
         this.mLayoutInflater = LayoutInflater.from(context);
         this.datas = data;
         this.mDatasImg = imgs;
+        datasName = context.getResources().getStringArray(R.array.user_name);
+        typedArray = context.getResources().obtainTypedArray(R.array.ishow_user_img);
     }
     //创建新View，被LayoutManager所调用
     @Override
@@ -69,9 +74,10 @@ public class MultiCategoryRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder viewHolder, int position) {
         if (viewHolder instanceof ItemViewHolder) {
-            ((ItemViewHolder)viewHolder).mTextView.setText(getItem(position));
+            ((ItemViewHolder)viewHolder).mTextViewUserName.setText(datasName[position - getHeadViewSize()]);
+            ((ItemViewHolder)viewHolder).mTextViewTitle.setText(getItem(position));
             ((ItemViewHolder)viewHolder).mImageView.setImageBitmap(readBitMap(mContext, mDatasImg.get(position - getHeadViewSize())));
-
+            ((ItemViewHolder)viewHolder).mImageViewUser.setImageResource(typedArray.getResourceId(position, 0));
             if(mOnItemClickListener != null) {
                 /**
                  * 这里加了判断，itemViewHolder.itemView.hasOnClickListeners()
@@ -140,14 +146,18 @@ public class MultiCategoryRecyclerViewAdapter extends RecyclerView.Adapter<Recyc
     public static class ItemViewHolder extends RecyclerView.ViewHolder {
 
         public CardView mCardView;
-        public TextView mTextView;
+        public TextView mTextViewTitle;
+        public TextView mTextViewUserName;
         public ImageView mImageView;
+        public ImageView mImageViewUser;
 
         public ItemViewHolder(View view) {
             super(view);
             mCardView = (CardView) view.findViewById(R.id.cv_item_popular);
-            mTextView = (TextView) view.findViewById(R.id.username_popular_item);
+            mTextViewTitle = (TextView) view.findViewById(R.id.text_name_popular_item);
+            mTextViewUserName = (TextView) view.findViewById(R.id.username_popular_item);
             mImageView = (ImageView) view.findViewById(R.id.image_card_popular_item);
+            mImageViewUser = (ImageView) view.findViewById(R.id.imageview_user_popular_item);
         }
     }
 

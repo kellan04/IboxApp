@@ -10,7 +10,7 @@ tools:context=".MainActivity" >
         android:orderInCategory="80"
         android:title="toolbar_search"
         app:actionViewClass="android.support.v7.widget.SearchView"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="ifRoom"   />
 
     <item
         android:id="@+id/toolbar_message"

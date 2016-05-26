@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/order_static_un"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textColor="@color/black"
                 android:background="@color/white"
                 android:padding="@dimen/text_padding"/>
@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/order_number"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textColor="@color/black"
                 android:background="@color/white"
                 android:padding="@dimen/text_padding"/>
@@ -50,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/order_time"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textColor="@color/black"
                 android:background="@color/white"
                 android:padding="@dimen/text_padding"/>
@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/order_buyer"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textColor="@color/black"
                 android:background="@color/white"
                 android:padding="@dimen/text_padding" />
@@ -76,7 +76,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/order_address"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textColor="@color/black"
                 android:background="@color/white"
                 android:padding="@dimen/text_padding"/>
@@ -92,15 +92,15 @@
                 android:padding="@dimen/text_padding">
                 <ImageView
                     android:id="@+id/View_intro"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:src="@drawable/box_icon_24dp"/>
                 <TextView
                     android:id="@+id/textView_intro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/order_intro"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"
                     android:ellipsize="end"
                     android:paddingLeft="@dimen/text_padding"
@@ -111,7 +111,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/order_num"
-                    android:textSize="20sp"
+                    android:textSize="15sp"
                     android:textColor="@color/black"
                     android:gravity="right"
                     android:layout_alignParentBottom="true"
@@ -127,7 +127,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/order_total"
-                android:textSize="18sp"
+                android:textSize="15sp"
                 android:textColor="@color/circle_textview_red"
                 android:gravity="right"
                 android:padding="@dimen/text_padding"
@@ -145,7 +145,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/activity_order_info_un_return_goods"
             android:text="@string/order_return"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:textColor="@color/white"
             android:background="@color/colorPrimary"
             android:layout_weight="1.0"/>
@@ -154,7 +154,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/activity_order_info_un_appraise"
             android:text="@string/order_receive"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:textColor="@color/white"
             android:background="@color/colorPrimary"
             android:layout_weight="1.0"/>
@@ -163,7 +163,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/activity_order_info_un_logisticlnfo"
             android:text="@string/order_trace"
-            android:textSize="18dp"
+            android:textSize="15dp"
             android:textColor="@color/white"
             android:background="@color/colorPrimary"
             android:layout_weight="1.0"/>

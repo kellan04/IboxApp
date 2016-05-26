@@ -45,6 +45,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_margin="10dp"
                 android:text="\t\t\t\t活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 活动详情 "
+                android:textSize="18sp"
                 android:id="@+id/textView20" />
         </LinearLayout>
     </ScrollView>

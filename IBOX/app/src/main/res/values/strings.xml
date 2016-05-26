@@ -7,6 +7,7 @@
     <string name="back">返回</string>
     <string name="press_again_exit_app">再按一次退出程序</string>
     <string name="app_loading">正在加载</string>
+    <string name="app_search">搜索结果</string>
 
     <!-- Strings related to login -->
     <string name="hint_phone">请输入手机号</string>
@@ -69,7 +70,17 @@
     <string name="show_find_life">日常百货</string>
     <string name="show_find_furniture">家居装饰</string>
 
-    <!-- Strings related to show_goods -->
+    <!-- Strings related to ishow_find_category -->
+    <string name="show_find_category_phone_shell">手机壳</string>
+    <string name="show_find_category_headset">耳机</string>
+    <string name="show_find_category_mobile_phone">手机</string>
+    <string name="show_find_category_computer">电脑</string>
+    <string name="show_find_category_power_supply">移动电源</string>
+    <string name="show_find_category_camera">相机</string>
+    <string name="show_find_category_keyboard">键盘</string>
+    <string name="show_find_category_more">更多分类</string>
+
+    <!-- Strings related to ishow_goods -->
     <string name="goods_title">高端无线蓝牙耳机</string>
     <string name="unsell">未出售</string>
     <string name="sell">已出售</string>

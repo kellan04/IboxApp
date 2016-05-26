@@ -31,21 +31,24 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="绝对限量 Vans x ..."
+                android:text="绝对限量 Vans x"
                 android:layout_marginLeft="100dp"
-                android:textSize="24sp"
+                android:textSize="18sp"
                 android:id="@+id/trade_textView_name"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="10dp"
+                android:maxEms="10"
+                android:singleLine="true"
+                android:ellipsize="end"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="￥ 100"
                 android:layout_marginLeft="100dp"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textColor="#ff0000"
                 android:id="@+id/trade_textView_price"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="5dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -54,7 +57,7 @@
                 android:layout_marginLeft="100dp"
                 android:textSize="18sp"
                 android:id="@+id/trade_textVie_detail"
-                android:layout_marginTop="3dp"/>
+                android:layout_marginTop="5dp"/>
 
 
         </LinearLayout>

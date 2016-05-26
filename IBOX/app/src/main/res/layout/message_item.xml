@@ -9,13 +9,22 @@
     <de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/myiamge"
-        android:layout_width="48dp"
+        android:layout_width="36dp"
         android:layout_height="48dp"
-        android:src="@mipmap/ic_launcher"
-        android:layout_margin="10dp"
+        android:src="@drawable/user_img_4"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="10dp"
         android:layout_gravity="center" />
+    <!--android:src="@mipmap/ic_launcher"-->
 
-
+    <!--<ImageView-->
+        <!--android:layout_width="48dp"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:src="@drawable/user_img_4"-->
+        <!--android:id="@+id/myiamge"/>-->
 
     <RelativeLayout
         android:layout_width="220dp"
@@ -27,23 +36,25 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="user"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:id="@+id/message_text_username"
+            android:layout_marginTop="5dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
         <TextView
-            android:layout_marginLeft="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/message_text_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="Thank you. You&apos;ve made a purchase fr Thank you. You&apos;"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView" />
+            android:textSize="15sp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@+id/message_text_username"
+            android:layout_alignLeft="@+id/message_text_username"
+            android:layout_alignStart="@+id/message_text_username" />
 
     </RelativeLayout>
 
@@ -65,12 +76,13 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:text="11"
             android:textColor="#000000"
             android:id="@+id/message_text_amount"
             android:layout_below="@+id/message_text_time"
             android:background="@drawable/circle_textview"
+            android:layout_marginTop="4dp"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="10dp"
             android:layout_centerHorizontal="true" />

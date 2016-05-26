@@ -34,7 +34,10 @@
                 android:textSize="18sp"
                 android:text="My super text"
                 android:background="#b0ffffff"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:maxEms="10"
+                android:singleLine="true"
+                android:ellipsize="end"  />
 
 
         </FrameLayout>
