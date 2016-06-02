@@ -41,7 +41,7 @@ public class OrderInfoActivity extends AppCompatActivity {
                 Intent intent = getIntent();
                 //通过Intent对象返回结果，调用setResult方法
                 setResult(2, intent);
-                delay(1000);
+                delay(3000);
                 finish();//结束当前的activity的生命周期
             }
         });

@@ -244,9 +244,16 @@ public class IbuyFragment extends Fragment {
                     mDatasImg.clear();
                     getData();
                     initDatasImg();
+                } else if(delete > -1){
+                    if(mDatas.size() != 0 && mDatasImg.size() != 0){
+                        mDatas.remove(delete);
+                        mDatasImg.remove(delete);
+                    }
+                    delete = -2;
+                    mAdapter.notifyDataSetChanged();
+                    mSwipeRefreshLayout.setRefreshing(false);
+                    mAdapter.notifyItemRemoved(mAdapter.getItemCount());
                 } else {
-                    mDatas.remove(delete);
-                    mDatasImg.remove(delete);
                     mAdapter.notifyDataSetChanged();
                     mSwipeRefreshLayout.setRefreshing(false);
                     mAdapter.notifyItemRemoved(mAdapter.getItemCount());

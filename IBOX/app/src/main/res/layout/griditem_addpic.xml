@@ -17,6 +17,6 @@
             android:layout_height="match_parent"
             android:scaleType="fitXY"
             android:gravity="center"
-            android:src="@drawable/gridview_addpic" />
+            android:src="@mipmap/ic_add_a_photo_grey_700_24dp" />
     </RelativeLayout>
 </LinearLayout>

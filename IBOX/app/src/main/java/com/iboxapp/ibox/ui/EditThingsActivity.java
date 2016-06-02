@@ -46,8 +46,21 @@ public class EditThingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_things);
 
+        int key = 0;
+        int value = R.string.app_name;
+        //接收时
+        if (getIntent() != null) {
+            key = getIntent().getIntExtra("key", 0);
+        }
+        if (key == 1) {
+            value = R.string.edit_things_title;
+        } else if (key == 4) {
+            value = R.string.modify_things_title;
+        }
+
+
         mToolbar = (Toolbar) findViewById(R.id.simple_toolbar);
-        mToolbar.setTitle(getResources().getString(R.string.edit_things_title));
+        mToolbar.setTitle(getResources().getString(value));
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 

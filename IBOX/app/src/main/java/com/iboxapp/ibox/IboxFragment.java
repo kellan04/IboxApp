@@ -204,7 +204,10 @@ public class IboxFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                getActivity().startActivity(new Intent(getActivity(), EditThingsActivity.class));
+                Intent intent = new Intent(getActivity(), EditThingsActivity.class);
+                intent.putExtra("key", 1);
+                getActivity().startActivity(intent);
+
 
             }
         });

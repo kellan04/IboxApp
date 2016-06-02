@@ -3,16 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.iboxapp.ibox.ui.SearchActivity">
+    tools:context="com.iboxapp.ibox.ui.SearchActivity"
+    android:orientation="vertical">
 
     <include
         android:id="@+id/back_toolbar"
         layout="@layout/simple_toolbar"/>
 
-    <TextView
+    <!--<TextView
         android:id="@+id/tv_search_queryText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="you're searching for :"/>
+        android:text="you're searching for :"/>-->
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/search_swipeRefreshLayout">
+
+        <android.support.v7.widget.RecyclerView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view_search"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"/>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 </LinearLayout>

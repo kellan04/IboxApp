@@ -49,6 +49,7 @@
 
     <!-- Strings related to ibox -->
     <string name="edit_things_title">添加物品</string>
+    <string name="modify_things_title">修改物品</string>
 
     <!-- Strings related to ishow -->
     <string name="show_find">发现</string>

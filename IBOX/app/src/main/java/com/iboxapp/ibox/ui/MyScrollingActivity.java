@@ -83,7 +83,7 @@ public class MyScrollingActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Click", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(MyScrollingActivity.this, EditThingsActivity.class);
-                intent.putExtra("key", 1);
+                intent.putExtra("key", 4);
                 startActivity(intent);
             }
         });
